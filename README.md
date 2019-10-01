@@ -27,7 +27,8 @@ This project is intended to reproduce 12 stability scenarios for the "All-In-One
 **Disturbance:** Sever disturbance is consideres, two circuits are tripped between Bus 1 and Bus 3 at t = 1.00 secs.<br/>
 **Observations:** The generator and load are now "islanded". The power consumed by the load is P = 400 MW while the generator capacity is P = 450 MW. The governor is able to restore the frequency close to its nominal value, allowing operation of the island to continue. <br/>
 
-## 5**Simulation time:** 10 secs. <br/>
+## 5
+**Simulation time:** 10 secs. <br/>
 **Power Flow:** 3. <br/>  
 **Disturbance:** Same distrubance as #4, however, now the power consumed by the load is P = 500 MW. <br/>
 **Observations:** The power demanded by the load, the generator cannot provide. The frequency decay cannot be stopped. This shows a case of frequenc instability. <br/>
