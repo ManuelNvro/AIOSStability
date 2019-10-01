@@ -1,8 +1,14 @@
 # AIOSStability
 
-This project is intended to reproduce 12 stability scenarios for the "All-In-One-System" (AIOS). The scenarios are:
+This project is intended to reproduce 12 stability scenarios for the "All-In-One-System" (AIOS) using Modelica and the OpenIPSL library. The scenarios are:
 
 ## 1
+Simulation time: 10 secs.
+Power Flow: 1 
+Disturbance:
+Observations: system equilibrium.
+
+
 
 ## 2
 
