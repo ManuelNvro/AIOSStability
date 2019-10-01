@@ -3,7 +3,7 @@
 This project is intended to reproduce 12 stability scenarios for the "All-In-One-System" (AIOS) using Modelica and the OpenIPSL library. The scenarios are:
 
 ## 1
-\newline Simulation time: 10 secs.
+Simulation time: 10 secs. <br/>
 \neeline Power Flow: 1 
 \newline Disturbance:
 \newline Observations: system equilibrium.
