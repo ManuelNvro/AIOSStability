@@ -8,6 +8,9 @@ This project is intended to reproduce 12 stability scenarios for the "All-In-One
 **Disturbance:** None. <br/> 
 **Observations:** System equilibrium. <br/>
 
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/OneDiagram.png)
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/OnePQ.png)
+
 ## 2
 **Simulation time:** 10 secs. <br/>
 **Power Flow:** 1. <br/>  
