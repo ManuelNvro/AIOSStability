@@ -19,6 +19,7 @@ This project is intended to reproduce 12 stability scenarios for the "All-In-One
 
 ![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/TwoDiagram.png)
 ![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/TwoDelta.png)
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/TwoP.png)
 
 ## 3
 **Simulation time:** 10 secs. <br/>
@@ -26,6 +27,8 @@ This project is intended to reproduce 12 stability scenarios for the "All-In-One
 **Disturbance:** Same fault ast #1, however, fault now lasts for t = 0.15 secs. <br/>
 **Disturbance Changes:** Change time from t = 1.14 secs. to 1.15 secs. in two places.<br/>
 **Observations:** The fault is too long now, the generator will loose synchronism. This is an example of transient (angle) instability. <br/>
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/ThreeDiagram.png)
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/ThreeDelta.png)
 
 ## 4
 **Simulation time:** 15 secs. <br/>
