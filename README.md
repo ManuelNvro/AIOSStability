@@ -17,6 +17,9 @@ This project is intended to reproduce 12 stability scenarios for the "All-In-One
 **Disturbance:** Fault applies at t = 1.00 secs. at Bus 3 and clear by opening a circuit between Bus 1 and Bus 3 at t = 1.14 secs. <br/>
 **Observations:** Fault lasts for 0.14 secs. The fault is really short and it preserves stability, the system will return to a new equilibrium. <br/>
 
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/TwoDiagram.png)
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/TwoDelta.png)
+
 ## 3
 **Simulation time:** 10 secs. <br/>
 **Power Flow:** 1. <br/>  
