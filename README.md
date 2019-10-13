@@ -42,11 +42,19 @@ This project is intended to reproduce 12 stability scenarios for the "All-In-One
 **Disturbance:** Same distrubance as #4, however, now the power consumed by the load is P = 500 MW. <br/>
 **Observations:** The power demanded by the load, the generator cannot provide. The frequency decay cannot be stopped. This shows a case of frequenc instability. <br/>
 
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/FiveDiagram.png)
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/FiveP.png)
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/FiveFrequency.png)
+
 ## 6
 **Simulation time:** 10 secs. <br/>
 **Power Flow:** 4. <br/>  
 **Disturbance:** A severe disturbance is considered, this consists of tirpping the generator as well as one circuit betwen Bus 1 and Bus 3 at t = 1.00 secs. <br/>
 **Observations:** The motor (load at Bus 4), stalls and the voltages collapse. This shows a case of short-term voltage instability, there is a loss of short-term equilibrium. <br/>
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/SixDiagram.png)
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/SixPConsumed.png)
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/SixSpeed.png)
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/SixV3.png)
 
 ## 7
 **Simulation time:** 10 secs. <br/>
