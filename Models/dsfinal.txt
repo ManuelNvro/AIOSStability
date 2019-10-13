@@ -508,17 +508,17 @@ double initialValue(385,6)
   6   256   # ThreeBus.S_b
  -2      50                       0                       0                
   6   256   # ThreeBus.fn
- -2  1.0655233945606888E+00       0                       0                
+ -2  9.8614813745760621E-01       0                       0                
   6   260   # ThreeBus.p.vr
- -2  9.0530887750874339E-02       0                       0                
+ -2 -2.6935134366164915E-01       0                       0                
   6   260   # ThreeBus.p.vi
  -2       0                       0                       0                
   6   388   # ThreeBus.p.ir
  -2       0                       0                       0                
   6   388   # ThreeBus.p.ii
- -2  1.0693624016174754E+00       0                       0                
+ -2  1.0222711457061877E+00       0                       0                
   6   256   # ThreeBus.V
- -2  4.8564021437807758E+00       0                       0                
+ -2 -1.5276847880226407E+01       0                       0                
   6   256   # ThreeBus.angle
  -1       1                       0                       0                
   1   281   # ThreeBus.displayPF
@@ -536,7 +536,7 @@ double initialValue(385,6)
   6   256   # OneBus.S_b
  -2      50                       0                       0                
   6   256   # OneBus.fn
- -2  1.0600000000000001E+00       0                       0                
+ -2  1.0800000000000001E+00       0                       0                
   6   260   # OneBus.p.vr
  -2       0                       0                       0                
   6   260   # OneBus.p.vi
@@ -544,19 +544,19 @@ double initialValue(385,6)
   6   388   # OneBus.p.ir
  -2       0                       0                       0                
   6   388   # OneBus.p.ii
- -2  1.0600000000000001E+00       0                       0                
+ -2  1.0800000000000001E+00       0                       0                
   6   256   # OneBus.V
  -2       0                       0                       0                
   6   256   # OneBus.angle
  -1       1                       0                       0                
   1   281   # OneBus.displayPF
- -2 -2.1849771783947933E-01       0                       0                
+ -2  6.5008369352369733E-01       0                       0                
   6   388   # pwLine1.p.ir
- -2  1.3330799423490972E-02       0                       0                
+ -2 -2.2651294259841745E-01       0                       0                
   6   388   # pwLine1.p.ii
- -2  2.1849771783947936E-01       0                       0                
+ -2 -6.5008369352369755E-01       0                       0                
   6   388   # pwLine1.n.ir
- -2 -1.3330799423491392E-02       0                       0                
+ -2  2.2651294259841726E-01       0                       0                
   6   388   # pwLine1.n.ii
  -1       0                       0                       0                
   1   280   # pwLine1.R
@@ -576,13 +576,13 @@ double initialValue(385,6)
   6   258   # pwLine1.opening
  -1       0                       0                       0                
   1   281   # pwLine1.displayPF
- -2 -1.7370568568238608E+02       0                       0                
+ -2  5.2656779175419490E+02       0                       0                
   6   256   # pwLine1.P12
- -2 -1.7370568568238608E+02       0                       0                
+ -2  5.2656779175419501E+02       0                       0                
   6   256   # pwLine1.P21
- -2 -1.0597985541675323E+01       0                       0                
+ -2  1.8347548350471814E+02       0                       0                
   6   256   # pwLine1.Q12
- -2 -2.5488803266105755E+01       0                       0                
+ -2  3.6205800082751388E+01       0                       0                
   6   256   # pwLine1.Q21
  -2       0                       0                       0                
   6  1280   # pwLine1.Y.re
@@ -592,13 +592,13 @@ double initialValue(385,6)
   6  1280   # pwLine1.Z.re
  -2  4.1433333330000000E-01       0                       0                
   6  1280   # pwLine1.Z.im
- -2 -2.1849771799768361E-01       0                       0                
+ -2  6.5008369399439347E-01       0                       0                
   6   388   # pwLine3.p.ir
- -2  1.3330799433143199E-02       0                       0                
+ -2 -2.2651294276242517E-01       0                       0                
   6   388   # pwLine3.p.ii
- -2  2.1849771799768364E-01       0                       0                
+ -2 -6.5008369399439359E-01       0                       0                
   6   420   # pwLine3.n.ir
- -2 -1.3330799433143617E-02       0                       0                
+ -2  2.2651294276242503E-01       0                       0                
   6   420   # pwLine3.n.ii
  -1       0                       0                       0                
   1   280   # pwLine3.R
@@ -618,13 +618,13 @@ double initialValue(385,6)
   6   258   # pwLine3.opening
  -1       0                       0                       0                
   1   281   # pwLine3.displayPF
- -2 -1.7370568580815848E+02       0                       0                
+ -2  5.2656779213545872E+02       0                       0                
   6   256   # pwLine3.P12
- -2 -1.7370568580815845E+02       0                       0                
+ -2  5.2656779213545883E+02       0                       0                
   6   256   # pwLine3.P21
- -2 -1.0597985549348843E+01       0                       0                
+ -2  1.8347548363756439E+02       0                       0                
   6   256   # pwLine3.Q12
- -2 -2.5488803284561040E+01       0                       0                
+ -2  3.6205800108966415E+01       0                       0                
   6   256   # pwLine3.Q21
  -2       0                       0                       0                
   6  1280   # pwLine3.Y.re
@@ -636,25 +636,25 @@ double initialValue(385,6)
   6  1280   # pwLine3.Z.im
  -1     380                       0                       0                
   1   280   # infiniteBus.V_b
- -2  1.0600000000000001E+00       0                       0                
+ -2  1.0800000000000001E+00       0                       0                
   6   256   # infiniteBus.V_0
  -2       0                       0                       0                
   6   256   # infiniteBus.angle_0
- -2 -3.4712000000000000E+02       0                       0                
+ -2    1050                       0                       0                
   6   256   # infiniteBus.P_0
- -2  2.0239999999999998E+01       0                       0                
+ -2     374                       0                       0                
   6   256   # infiniteBus.Q_0
  -2     750                       0                       0                
   6   256   # infiniteBus.S_b
  -2      50                       0                       0                
   6   256   # infiniteBus.fn
- -2 -3.4741137149054452E+02       0                       0                
+ -2  1.0531355838896536E+03       0                       0                
   6   256   # infiniteBus.P
- -2  2.1195971091024166E+01       0                       0                
+ -2 -3.6695096714228254E+02       0                       0                
   6   256   # infiniteBus.Q
- -2  4.3699543583716294E-01       0                       0                
+ -2 -1.3001673875180908E+00       0                       0                
   6   388   # infiniteBus.p.ir
- -2 -2.6661598856634171E-02       0                       0                
+ -2  4.5302588536084265E-01       0                       0                
   6   388   # infiniteBus.p.ii
  -1       1                       0                       0                
   1   281   # infiniteBus.displayPF
@@ -672,27 +672,27 @@ double initialValue(385,6)
   6   256   # TwoBus.S_b
  -2      50                       0                       0                
   6   256   # TwoBus.fn
- -2  1.0293193424774960E+00       0                       0                
+ -2  9.9002112008174725E-01       0                       0                
   6   260   # TwoBus.p.vr
- -2  1.5205457667603106E-01       0                       0                
+ -2 -2.0069514885298217E-01       0                       0                
   6   260   # TwoBus.p.vi
  -2       0                       0                       0                
   6   388   # TwoBus.p.ir
  -2       0                       0                       0                
   6   388   # TwoBus.p.ii
- -2  1.0404897419419530E+00       0                       0                
+ -2  1.0101585820954242E+00       0                       0                
   6   256   # TwoBus.V
- -2  8.4031552306126382E+00       0                       0                
+ -2 -1.1459596859194846E+01       0                       0                
   6   256   # TwoBus.angle
  -1       1                       0                       0                
   1   281   # TwoBus.displayPF
- -2  5.8591755726571582E-01       0                       0                
+ -2  5.2544603673941270E-01       0                       0                
   6   388   # twoWindingTransformer1.p.ir
- -2 -4.3062254004530454E-02       0                       0                
+ -2 -3.7677317103756214E-01       0                       0                
   6   388   # twoWindingTransformer1.p.ii
- -2 -5.6338226660164947E-01       0                       0                
+ -2 -5.0523657378789721E-01       0                       0                
   6   420   # twoWindingTransformer1.n.ir
- -2  4.1406013465891262E-02       0                       0                
+ -2  3.6228189522842269E-01       0                       0                
   6   420   # twoWindingTransformer1.n.ii
  -1     750                       0                       0                
   1   280   # twoWindingTransformer1.S_b
@@ -732,27 +732,27 @@ double initialValue(385,6)
   6   256   # FiveBus.S_b
  -2      50                       0                       0                
   6   256   # FiveBus.fn
- -2  1.0650810622755762E+00       0                       0                
+ -2  9.6168891250934552E-01       0                       0                
   6   260   # FiveBus.p.vr
- -2  8.6739284140846154E-02       0                       0                
+ -2 -3.2351344374629248E-01       0                       0                
   6   260   # FiveBus.p.vi
  -2       0                       0                       0                
   6   388   # FiveBus.p.ir
  -2       0                       0                       0                
   6   388   # FiveBus.p.ii
- -2  1.0686072115755798E+00       0                       0                
+ -2  1.0146460036525020E+00       0                       0                
   6   256   # FiveBus.V
- -2  4.6558440281305371E+00       0                       0                
+ -2 -1.8593008656476336E+01       0                       0                
   6   256   # FiveBus.angle
  -1       1                       0                       0                
   1   281   # FiveBus.displayPF
- -2  1.2638683076448648E-01       0                       0                
+ -2  1.8054039613059882E+00       0                       0                
   6   420   # pwLine2.p.ir
- -2 -1.4744414609256250E-02       0                       0                
+ -2 -8.1530778058926501E-01       0                       0                
   6   420   # pwLine2.p.ii
- -2 -1.2638683076448648E-01       0                       0                
+ -2 -1.8054039613059882E+00       0                       0                
   6   420   # pwLine2.n.ir
- -2  1.4744414609256250E-02       0                       0                
+ -2  8.1530778058926501E-01       0                       0                
   6   420   # pwLine2.n.ii
  -1       0                       0                       0                
   1   280   # pwLine2.R
@@ -772,13 +772,13 @@ double initialValue(385,6)
   6   258   # pwLine2.opening
  -1       1                       0                       0                
   1   281   # pwLine2.displayPF
- -2  9.9999974999999992E+01       0                       0                
+ -2    1500                       0                       0                
   6   256   # pwLine2.P12
- -2  9.9999975000000006E+01       0                       0                
+ -2    1500                       0                       0                
   6   256   # pwLine2.P21
- -2  2.0364323020795055E+01       0                       0                
+ -2  2.3829469983972479E+02       0                       0                
   6   256   # pwLine2.Q12
- -2  2.0000025000000001E+01       0                       0                
+ -2  1.4999999999999997E+02       0                       0                
   6   256   # pwLine2.Q21
  -2       0                       0                       0                
   6  1280   # pwLine2.Y.re
@@ -790,13 +790,13 @@ double initialValue(385,6)
   6  1280   # pwLine2.Z.im
  -1     380                       0                       0                
   1   280   # lOADPQ.V_b
- -2  1.0686100000000001E+00       0                       0                
+ -2  1.0128999999999999E+00       0                       0                
   6   256   # lOADPQ.V_0
- -2  4.6558500000000000E+00       0                       0                
+ -2 -1.8600000000000001E+01       0                       0                
   6   256   # lOADPQ.angle_0
- -2  9.9999975000000006E+01       0                       0                
+ -2    1500                       0                       0                
   6   256   # lOADPQ.P_0
- -2  2.0000025000000001E+01       0                       0                
+ -2     150                       0                       0                
   6   256   # lOADPQ.Q_0
  -2     750                       0                       0                
   6   256   # lOADPQ.S_b
@@ -804,15 +804,15 @@ double initialValue(385,6)
   6   256   # lOADPQ.fn
  -2     750                       0                       0                
   6   256   # lOADPQ.Sn
- -2  1.0686072115755798E+00       0                       0                
+ -2  1.0146460036525020E+00       0                       0                
   6   256   # lOADPQ.V
- -2  8.1259807750193369E-02       0                       0                
+ -2 -3.2450921890731932E-01       0                       0                
   6   256   # lOADPQ.Angle_V
- -2  1.3333330000000002E-01       0                       0                
+ -2       2                       0                       0                
   6   256   # lOADPQ.P
- -2  2.6666700000000002E-02       0                       0                
+ -2  2.0000000000000001E-01       0                       0                
   6   256   # lOADPQ.Q
- -2  8.1259911978977986E-02       0                       0                
+ -2 -3.2463124087094530E-01       0                       0                
   6  1280   # lOADPQ.angle_0rad
  -2       1                       0                       0                
   6  1280   # lOADPQ.CoB
@@ -822,9 +822,9 @@ double initialValue(385,6)
   6   256   # lOADPQ.Vmin
  -2       1                       0                       0                
   6   257   # lOADPQ.forcePQ
- -2  2.1890400403766480E-01       0                       0                
+ -2  6.8841624213573727E-01       0                       0                
   6   256   # Imag
- -1  1.0600000000000001E+00       0                       0                
+ -1  1.0800000000000001E+00       0                       0                
   1   280   # PowerFlow.voltage.InfiniteBusV_0
  -1       0                       0                       0                
   1   280   # PowerFlow.voltage.InfiniteBusangle_0
@@ -832,29 +832,29 @@ double initialValue(385,6)
   1   281   # PowerFlow.voltage.BreakerenableTrigger
  -1    9999                       0                       0                
   1   280   # PowerFlow.voltage.TransformerB3B4m
- -1  1.0404899999999999E+00       0                       0                
+ -1  1.0100000000000000E+00       0                       0                
   1   280   # PowerFlow.voltage.GeneratorV_0
- -1  8.4031699999999994E+00       0                       0                
+ -1 -1.1100000000000000E+01       0                       0                
   1   280   # PowerFlow.voltage.Generatorangle_0
- -1  1.0078000000000000E+00       0                       0                
+ -1  1.0004999999999999E+00       0                       0                
   1   280   # PowerFlow.voltage.MotorV_0
- -1  4.9000000000000004E+00       0                       0                
+ -1 -1.5300000000000001E+01       0                       0                
   1   280   # PowerFlow.voltage.Motorangle_0
- -1  1.0686100000000001E+00       0                       0                
+ -1  1.0128999999999999E+00       0                       0                
   1   280   # PowerFlow.voltage.PQLoadV_0
- -1  4.6558500000000000E+00       0                       0                
+ -1 -1.8600000000000001E+01       0                       0                
   1   280   # PowerFlow.voltage.PQLoadangle_0
- -1 -3.4712000000000000E+02       0                       0                
+ -1    1050                       0                       0                
   1   280   # PowerFlow.power.InfiniteBusP_0
- -1  2.0239999999999998E+01       0                       0                
+ -1     374                       0                       0                
   1   280   # PowerFlow.power.InfiniteBusQ_0
- -1  4.4741100000000000E+02       0                       0                
+ -1     450                       0                       0                
   1   280   # PowerFlow.power.GeneratorP_0
- -1  1.0005674999999999E+02       0                       0                
+ -1     198                       0                       0                
   1   280   # PowerFlow.power.GeneratorQ_0
- -1  9.9999975000000006E+01       0                       0                
+ -1    1500                       0                       0                
   1   280   # PowerFlow.power.PQLoadP_0
- -1  2.0000025000000001E+01       0                       0                
+ -1     150                       0                       0                
   1   280   # PowerFlow.power.PQLoadQ_0
  -1       0                       0                       0                
   1   280   # PowerFlow.power.MotorP_0
@@ -868,25 +868,25 @@ double initialValue(385,6)
   1   280   # pSATGeneratorTGOV.SysData.fn
  -1      20                       0                       0                
   1   280   # pSATGeneratorTGOV.V_b
- -2  1.0404899999999999E+00       0                       0                
+ -2  1.0100000000000000E+00       0                       0                
   6   256   # pSATGeneratorTGOV.V_0
- -2  8.4031699999999994E+00       0                       0                
+ -2 -1.1100000000000000E+01       0                       0                
   6   256   # pSATGeneratorTGOV.angle_0
- -2  4.4741100000000000E+02       0                       0                
+ -2     450                       0                       0                
   6   256   # pSATGeneratorTGOV.P_0
- -2  1.0005674999999999E+02       0                       0                
+ -2     198                       0                       0                
   6   256   # pSATGeneratorTGOV.Q_0
  -1     750                       0                       0                
   1   280   # pSATGeneratorTGOV.M_b
  -2      20                       0                       0                
   6   256   # pSATGeneratorTGOV.order5.V_b
- -2  1.0404899999999999E+00       0                       0                
+ -2  1.0100000000000000E+00       0                       0                
   6   256   # pSATGeneratorTGOV.order5.V_0
- -2  8.4031699999999994E+00       0                       0                
+ -2 -1.1100000000000000E+01       0                       0                
   6   256   # pSATGeneratorTGOV.order5.angle_0
- -2  4.4741100000000000E+02       0                       0                
+ -2     450                       0                       0                
   6   256   # pSATGeneratorTGOV.order5.P_0
- -2  1.0005674999999999E+02       0                       0                
+ -2     198                       0                       0                
   6   256   # pSATGeneratorTGOV.order5.Q_0
  -2     750                       0                       0                
   6   256   # pSATGeneratorTGOV.order5.S_b
@@ -904,37 +904,37 @@ double initialValue(385,6)
   1   280   # pSATGeneratorTGOV.order5.M
  -2       0                       0                       0                
   6   256   # pSATGeneratorTGOV.order5.D
- -2  7.9086273686053021E-01       0                       0                
+ -2  3.8887057640218242E-01       0                       0                
   2   272   # pSATGeneratorTGOV.order5.delta
- -2 -6.0353427746000735E-07       0                       0                
+ -2  2.8980036933968579E-05       0                       0                
   3   256   # pSATGeneratorTGOV.order5.der(delta)
- -2  9.9999999807889073E-01       0                       0                
+ -2  1.0000000922463226E+00       0                       0                
   2   272   # pSATGeneratorTGOV.order5.w
- -2  7.7511180236446213E-11       0                       0                
+ -2  3.2664905048742082E-08       0                       0                
   3   256   # pSATGeneratorTGOV.order5.der(w)
- -2  1.0404897419419530E+00       0                       0                
+ -2  1.0101585820954242E+00       0                       0                
   6   256   # pSATGeneratorTGOV.order5.v
- -2  5.9654846198739264E-01       0                       0                
+ -2  5.9581922148046196E-01       0                       0                
   6   256   # pSATGeneratorTGOV.order5.P
- -2  1.3341625711463481E-01       0                       0                
+ -2  2.6755892624973304E-01       0                       0                
   6   256   # pSATGeneratorTGOV.order5.Q
- -2  1.9528900895955226E+00       0                       0                
+ -2  2.2128898782846016E+00       0                       0                
   6   256   # pSATGeneratorTGOV.order5.vf
- -2  6.0000000006721010E-01       0                       0                
+ -2  6.0000001669143765E-01       0                       0                
   6   256   # pSATGeneratorTGOV.order5.pm
- -2  1.4666272633037392E-01       0                       0                
+ -2 -2.0000769614415106E-01       0                       0                
   6   256   # pSATGeneratorTGOV.order5.anglev
- -2  6.2487545271566769E-01       0                       0                
+ -2  5.6107095097911330E-01       0                       0                
   6   256   # pSATGeneratorTGOV.order5.vd
- -2  8.3195527023982563E-01       0                       0                
+ -2  8.4001175524419391E-01       0                       0                
   6   256   # pSATGeneratorTGOV.order5.vq
- -2  4.4684685175386923E-01       0                       0                
+ -2  5.4786196145723154E-01       0                       0                
   6   256   # pSATGeneratorTGOV.order5.id
- -2  3.8142054573636919E-01       0                       0                
+ -2  3.4336399218189906E-01       0                       0                
   6   256   # pSATGeneratorTGOV.order5.iq
- -2  5.9999999940371440E-01       0                       0                
+ -2  5.9999973707985044E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.pe
- -2  1.9528900895955226E+00       0                       0                
+ -2  2.2128898782846016E+00       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.vf_MB
  -2  3.1415926535897933E+02       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.w_b
@@ -946,51 +946,51 @@ double initialValue(385,6)
   6  1280   # pSATGeneratorTGOV.order5.V_MBtoSB
  -2       1                       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.Z_MBtoSB
- -2  5.9654799999999997E-01       0                       0                
+ -2  5.9999999999999998E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.p0
- -2  1.3340900000000000E-01       0                       0                
+ -2  2.6400000000000001E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.q0
- -2  1.0293195585692789E+00       0                       0                
+ -2  9.9110559063216763E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.Vt0.re
- -2  1.5205487972026638E-01       0                       0                
+ -2 -1.9444718619116649E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.Vt0.im
- -2  5.9654799999999997E-01       0                       0                
+ -2  5.9999999999999998E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.S0.re
- -2 -1.3340900000000000E-01       0                       0                
+ -2 -2.6400000000000001E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.S0.im
- -2  5.8591596453819050E-01       0                       0                
+ -2  5.3262356359654206E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.I0.re
- -2 -4.3055257346476201E-02       0                       0                
+ -2 -3.7086578535593778E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.I0.im
- -2  1.0293195585692789E+00       0                       0                
+ -2  9.9110559063216763E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.vr0
- -2  1.5205487972026638E-01       0                       0                
+ -2 -1.9444718619116649E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.vi0
- -2 -5.8591596453819050E-01       0                       0                
+ -2 -5.3262356359654206E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.ir0
- -2  4.3055257346476201E-02       0                       0                
+ -2  3.7086578535593778E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.ii0
  -2  1.6499999999999999E+00       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.xq0
- -2  7.9086684275819652E-01       0                       0                
+ -2  4.0035291472427920E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.delta0
- -2  6.2487880915731175E-01       0                       0                
+ -2  5.6534782120037685E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.Vdq0.re
- -2  8.3195307197349788E-01       0                       0                
+ -2  8.3694793211046692E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.Vdq0.im
- -2  4.4684236519843407E-01       0                       0                
+ -2  5.4912552376961998E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.Idq0.re
- -2  3.8142256533896723E-01       0                       0                
+ -2  3.4596307662913506E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.Idq0.im
- -2  6.2487880915731175E-01       0                       0                
+ -2  5.6534782120037685E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.vd0
- -2  8.3195307197349788E-01       0                       0                
+ -2  8.3694793211046692E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.vq0
- -2  4.4684236519843407E-01       0                       0                
+ -2  5.4912552376961998E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.id0
- -2  3.8142256533896723E-01       0                       0                
+ -2  3.4596307662913506E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.iq0
- -2  5.9999951272685892E-01       0                       0                
+ -2  6.0421229291245959E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.pm00
  -1  2.5000000000000000E+00       0                       0                
   1   280   # pSATGeneratorTGOV.order5.xd
@@ -1008,31 +1008,31 @@ double initialValue(385,6)
   1   280   # pSATGeneratorTGOV.order5.T2q0
  -1  2.0000000000000000E-03       0                       0                
   1   280   # pSATGeneratorTGOV.order5.Taa
- -2  1.1834719956368789E+00       0                       0                
+ -2  1.2698201348865317E+00       0                       0                
   2   272   # pSATGeneratorTGOV.order5.e1q
- -2  6.8774563808382540E-07       0                       0                
+ -2 -4.1553314533526733E-05       0                       0                
   3   256   # pSATGeneratorTGOV.order5.der(e1q)
- -2  1.1128145237845883E+00       0                       0                
+ -2  1.1831198112694965E+00       0                       0                
   2   272   # pSATGeneratorTGOV.order5.e2q
- -2  6.5407814140237085E-07       0                       0                
+ -2 -3.7913597463380759E-05       0                       0                
   3   256   # pSATGeneratorTGOV.order5.der(e2q)
- -2  4.0812000470611220E-01       0                       0                
+ -2  3.6739845512818420E-01       0                       0                
   2   272   # pSATGeneratorTGOV.order5.e2d
- -2 -2.3075774686138257E-07       0                       0                
+ -2  1.1294516085971454E-05       0                       0                
   3   256   # pSATGeneratorTGOV.order5.der(e2d)
- -2  1.1128095640499165E+00       0                       0                
+ -2  1.1808653876139226E+00       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.e2q0
- -2  4.0812214491269505E-01       0                       0                
+ -2  3.7018049199317477E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.e2d0
  -2  1.7201273684210525E+00       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.K1
  -2  1.5987263157894738E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.K2
- -2  1.1834662795909021E+00       0                       0                
+ -2  1.2677702416172192E+00       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.e1q0
- -2  1.9528732106229725E+00       0                       0                
+ -2  2.2132213723008078E+00       0                       0                
   6  1280   # pSATGeneratorTGOV.order5.vf00
- -2  1.0795484715112811E+00       0                       0                
+ -2  1.0542651642579086E+00       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.vref
  -1      -5                       0                       0                
   1   280   # pSATGeneratorTGOV.avr2.vrmin
@@ -1056,25 +1056,25 @@ double initialValue(385,6)
   1   280   # pSATGeneratorTGOV.avr2.Ae
  -1       1                       0                       0                
   1   280   # pSATGeneratorTGOV.avr2.Be
- -2  1.0404899999999999E+00       0                       0                
+ -2  1.0100000000000000E+00       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.v0
- -2  1.9528732106229725E+00       0                       0                
+ -2  2.2132213723008078E+00       0                       0                
   6  1280   # pSATGeneratorTGOV.avr2.vfstate
- -2  1.9528732106229725E+00       0                       0                
+ -2  2.2132213723008078E+00       0                       0                
   6  1280   # pSATGeneratorTGOV.avr2.vf00
- -2  1.9528732106229725E+00       0                       0                
+ -2  2.2132213723008078E+00       0                       0                
   6  1280   # pSATGeneratorTGOV.avr2.vr10
- -2 -1.3019154737486483E+02       0                       0                
+ -2 -1.4754809148672052E+02       0                       0                
   6  1280   # pSATGeneratorTGOV.avr2.vr20
- -2  1.0795474642124594E+00       0                       0                
+ -2  1.0542644274460162E+00       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.vref0
- -2  1.9528732106229725E+00       0                       0                
+ -2  2.2132213723008078E+00       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.vf0
- -2  1.9528900896878054E+00       0                       0                
+ -2  2.2128898632343366E+00       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.feedback.u1
  -2       0                       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.feedback.u2
- -2  1.9528900896878054E+00       0                       0                
+ -2  2.2128898632343366E+00       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.feedback.y
  -1       1                       0                       0                
   1   280   # pSATGeneratorTGOV.avr2.ExcitationSystem.b[1]
@@ -1084,11 +1084,11 @@ double initialValue(385,6)
   6   256   # pSATGeneratorTGOV.avr2.ExcitationSystem.a[2]
  -2       4                       1                       4                
   6   258   # pSATGeneratorTGOV.avr2.ExcitationSystem.initType
- -2  1.9528732106229725E+00       0                       0                
+ -2  2.2132213723008078E+00       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.ExcitationSystem.x_start[1]
- -2  1.9528732106229725E+00       0                       0                
+ -2  2.2132213723008078E+00       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.ExcitationSystem.y_start
- -2  1.9528900895955226E+00       0                       0                
+ -2  2.2128898782846016E+00       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.ExcitationSystem.x[1]
  -2       2                       0                       0                
   6  1282   # pSATGeneratorTGOV.avr2.ExcitationSystem.na
@@ -1104,9 +1104,9 @@ double initialValue(385,6)
   6  1280   # pSATGeneratorTGOV.avr2.ExcitationSystem.d
  -2       1                       0                       0                
   6  1280   # pSATGeneratorTGOV.avr2.ExcitationSystem.a_end
- -2  1.9528900895955226E+00       0                       0                
+ -2  2.2128898782846016E+00       0                       0                
   2  1296   # pSATGeneratorTGOV.avr2.ExcitationSystem.x_scaled[1]
- -2  9.2282848029867637E-07       0                       0                
+ -2 -1.5050265034233234E-04       0                       0                
   3  1280   # pSATGeneratorTGOV.avr2.ExcitationSystem.der(x_scaled[1])
  -2       0                       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.ceilingBlock.Ae
@@ -1118,19 +1118,19 @@ double initialValue(385,6)
   6   256   # pSATGeneratorTGOV.avr2.derivativeBlock.T
  -2       2                       1                       4                
   6   258   # pSATGeneratorTGOV.avr2.derivativeBlock.initType
- -2  1.9528732106229725E+00       0                       0                
+ -2  2.2132213723008078E+00       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.derivativeBlock.x_start
  -1       0                       0                       0                
   1   280   # pSATGeneratorTGOV.avr2.derivativeBlock.y_start
- -2  9.2607107167926494E-07       0                       0                
+ -2 -1.5074578939196689E-04       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.derivativeBlock.y
- -2  1.9528900757044565E+00       0                       0                
+ -2  2.2128921394714425E+00       0                       0                
   2   272   # pSATGeneratorTGOV.avr2.derivativeBlock.x
- -2  9.2607107167926494E-07       0                       0                
+ -2 -1.5074578939196689E-04       0                       0                
   3   256   # pSATGeneratorTGOV.avr2.derivativeBlock.der(x)
  -2       0                       0                       0                
   6  1281   # pSATGeneratorTGOV.avr2.derivativeBlock.zeroGain
- -2  3.9058731556064874E-02       0                       0                
+ -2  4.4106449471227549E-02       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.feedback1.u1
  -1       1                       0                       0                
   1   280   # pSATGeneratorTGOV.avr2.firstOrder2.k
@@ -1138,23 +1138,23 @@ double initialValue(385,6)
   6   256   # pSATGeneratorTGOV.avr2.firstOrder2.T
  -2       2                       1                       4                
   6   258   # pSATGeneratorTGOV.avr2.firstOrder2.initType
- -2  1.0404899999999999E+00       0                       0                
+ -2  1.0100000000000000E+00       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.firstOrder2.y_start
- -2  1.0404897399552162E+00       0                       0                
+ -2  1.0101587147866811E+00       0                       0                
   2   272   # pSATGeneratorTGOV.avr2.firstOrder2.y
- -2  1.9867367750947551E-07       0                       0                
+ -2 -1.3269125687109806E-05       0                       0                
   3   256   # pSATGeneratorTGOV.avr2.firstOrder2.der(y)
- -2  3.9057805484993192E-02       0                       0                
+ -2  4.4257195260619518E-02       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.simpleLagLim.u
- -2  1.9528900896878054E+00       0                       0                
+ -2  2.2128898632343366E+00       0                       0                
   2   272   # pSATGeneratorTGOV.avr2.simpleLagLim.state
- -2  9.2280927121990430E-07       0                       0                
+ -2 -1.5050101680236239E-04       0                       0                
   3   256   # pSATGeneratorTGOV.avr2.simpleLagLim.der(state)
  -2      50                       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.simpleLagLim.K
  -2  2.0000000000000001E-01       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.simpleLagLim.T
- -2  1.9528732106229725E+00       0                       0                
+ -2  2.2132213723008078E+00       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.simpleLagLim.y_start
  -2       5                       0                       0                
   6   256   # pSATGeneratorTGOV.avr2.simpleLagLim.outMax
@@ -1162,15 +1162,15 @@ double initialValue(385,6)
   6   256   # pSATGeneratorTGOV.avr2.simpleLagLim.outMin
  -2  2.0000000000000001E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.avr2.simpleLagLim.T_mod
- -2  1.8177121204527751E+00       0                       0                
+ -2  2.0849926045582645E+00       0                       0                
   6   256   # pSATGeneratorTGOV.oel.field_current.ifield
  -2  2.5000000000000000E+00       0                       0                
   6   256   # pSATGeneratorTGOV.oel.field_current.xd
  -2  1.6499999999999999E+00       0                       0                
   6   256   # pSATGeneratorTGOV.oel.field_current.xq
- -2  9.4600160155553981E-01       0                       0                
+ -2  9.7321522864604426E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.oel.field_current.gamma_p
- -2  2.1157039359973667E-01       0                       0                
+ -2  4.3703259679909945E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.oel.field_current.gamma_q
  -1      10                       0                       0                
   1   280   # pSATGeneratorTGOV.oel.T0
@@ -1192,7 +1192,7 @@ double initialValue(385,6)
   6  1280   # pSATGeneratorTGOV.oel.Z_MBtoSB
  -2       1                       0                       0                
   6  1280   # pSATGeneratorTGOV.oel.I_MBtoSB
- -2 -1.0072878795472251E+00       0                       0                
+ -2 -7.4000739544173566E-01       0                       0                
   6   256   # pSATGeneratorTGOV.oel.add.y
  -2  2.8250000000000002E+00       0                       0                
   6   256   # pSATGeneratorTGOV.oel.currentLimit.k
@@ -1210,7 +1210,7 @@ double initialValue(385,6)
   1   280   # pSATGeneratorTGOV.oel.limIntegrator.y_start
  -2       1                       0                       0                
   6   257   # pSATGeneratorTGOV.oel.limIntegrator.strict
- -2 -1.0072988216739438E-06       0                       0                
+ -2 -7.3681189245386728E-07       0                       0                
   2   272   # pSATGeneratorTGOV.oel.limIntegrator.y
  -2       0                       0                       0                
   3   256   # pSATGeneratorTGOV.oel.limIntegrator.der(y)
@@ -1234,7 +1234,7 @@ double initialValue(385,6)
   1   280   # pSATGeneratorTGOV.tGTypeI.T4
  -1       4                       0                       0                
   1   280   # pSATGeneratorTGOV.tGTypeI.T5
- -2  6.0000000007684440E-01       0                       0                
+ -2  5.9999999631014711E-01       0                       0                
   6   256   # pSATGeneratorTGOV.tGTypeI.pin
  -2  5.9999999999999998E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.tGTypeI.pin0
@@ -1244,19 +1244,19 @@ double initialValue(385,6)
   6  1280   # pSATGeneratorTGOV.tGTypeI.xg20
  -2  2.5050000000000000E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.tGTypeI.xg30
- -2  6.0000000007684440E-01       0                       0                
+ -2  5.9999999631014711E-01       0                       0                
   6  1280   # pSATGeneratorTGOV.tGTypeI.pinstar
- -2  6.0000000007711785E-01       0                       0                
+ -2  5.9999999645051461E-01       0                       0                
   2  1296   # pSATGeneratorTGOV.tGTypeI.xg1
- -2 -2.7344793096517606E-12       0                       0                
+ -2 -1.4036749540480287E-09       0                       0                
   3  1280   # pSATGeneratorTGOV.tGTypeI.der(xg1)
- -2  6.0000000007743459E-01       0                       0                
+ -2  5.9999999723735653E-01       0                       0                
   2  1296   # pSATGeneratorTGOV.tGTypeI.xg2
- -2 -7.9186657231389290E-13       0                       0                
+ -2 -1.9671048123726109E-09       0                       0                
   3  1280   # pSATGeneratorTGOV.tGTypeI.der(xg2)
- -2  2.5050000002210437E-01       0                       0                
+ -2  2.5050001830067742E-01       0                       0                
   2  1296   # pSATGeneratorTGOV.tGTypeI.xg3
- -2  2.5561358585335370E-12       0                       0                
+ -2 -4.8635202670732625E-09       0                       0                
   3  1280   # pSATGeneratorTGOV.tGTypeI.der(xg3)
  -1  5.9999999999999998E-01       0                       0                
   1  1304   # pSATGeneratorTGOV.p0
