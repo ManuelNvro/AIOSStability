@@ -75,6 +75,10 @@ This project is intended to reproduce 12 stability scenarios for the "All-In-One
 **Power Flow:** 5. <br/>  
 **Disturbance:** Once circuit between Bus 1 and Bus 3 is tripped at t = 1.00 secs. <br/>
 **Observations:** The automatic tap changer restores the voltage at the load us within the deadband. This happens withing 2 steps and the system response is stable.<br/>
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/NineDiagram.png)
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/NineGenFieldCurrent.png)
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/NineGenRotorSpeed.png)
+![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/NineV3V5.png)
 
 ## 10
 **Simulation time:** 250 secs. <br/>
