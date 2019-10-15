@@ -50,13 +50,14 @@ package AIOSStability
         x1d=0.76,
         x2d=0.62,
         x2q=0.58,
-        ra=0.01,
+        ra=0,
         Sn=M_b,
         V_b=V_b,
         V_0=V_0,
         angle_0=angle_0,
         P_0=P_0,
         Q_0=Q_0) annotation (Placement(transformation(extent={{30,-24},{78,24}})));
+             //from 0.01
       OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII avr2(
         Ta=0.2,
         Ke=1,
@@ -80,20 +81,20 @@ package AIOSStability
         annotation (Placement(transformation(extent={{-28,-120},{-66,-86}})));
       OpenIPSL.Electrical.Controls.PSAT.TG.TGTypeI tGTypeI(
         pref=p0,
-        R=25,
         pmax=1,
         pmin=0,
         Ts=0.1,
         Tc=0.4,
         T3=0,
         T4=2.33,
-        T5=4)
+        T5=4,
+        R=1/25)
         annotation (Placement(transformation(extent={{-10,-26},{14,-2}})));
 
-          parameter Real p0 = 0.6; // for PF1 PF7
+          //parameter Real p0 = 0.6; // for PF1 PF7
          //parameter Real p0 = 0.466666667; // for PF2 PF3
          //parameter Real p0 = 0.4;// for PF4 PF5 PF6 PF8
-          //parameter Real p0 = P_0/M_b;
+         parameter Real p0 = P_0/M_b;
     equation
       connect(order5.p, pwPin)
         annotation (Line(points={{78,0},{92,0},{92,-2},{104,-2}},
@@ -1908,8 +1909,9 @@ package AIOSStability
       extends AIOSStability.Data.Records.PowerPFData(
           InfiniteBusP_0=150,
           InfiniteBusQ_0=66,
-          GeneratorP_0=350,
-          GeneratorQ_0=50,
+          GeneratorP_0=0.466674
+                              *750,
+          GeneratorQ_0=0.0669297*750,
           PQLoadP_0=500,
           PQLoadQ_0=80,
           MotorP_0=0,
@@ -2584,7 +2586,7 @@ package AIOSStability
 
      Real Imag;
       Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
-            Data.VoltageData.VPF1, redeclare record Power = Data.PowerData.PPF1)
+            Data.VoltageData.VPF3, redeclare record Power = Data.PowerData.PPF3)
         annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
       Components.PSATGeneratorTGOV pSATGeneratorTGOV(
        V_b=20,
@@ -2778,7 +2780,6 @@ package AIOSStability
         X=0.4143333333,
         G=0,
         B=0,
-        t1=1,
         displayPF=true)
         annotation (Placement(transformation(extent={{-180,-64},{-160,-44}})));
       OpenIPSL.Electrical.Branches.PwLine pwLine3(
@@ -2786,7 +2787,6 @@ package AIOSStability
         X=0.414333333,
         G=0,
         B=0,
-        t1=1,
         displayPF=true)
         annotation (Placement(transformation(extent={{-182,-26},{-162,-6}})));
       OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
