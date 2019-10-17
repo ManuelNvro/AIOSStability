@@ -1897,7 +1897,7 @@ package AIOSStability
           InfiniteBusP_0=47.3387,
           InfiniteBusQ_0=73.1987,
           GeneratorP_0=0.464514*750,
-          GeneratorQ_0=0.0643916*750,
+          GeneratorQ_0=0.0624152*750,
           PQLoadP_0=399.9975,
           PQLoadQ_0=80.0025,
           MotorP_0=0,
@@ -1911,7 +1911,7 @@ package AIOSStability
           InfiniteBusQ_0=66,
           GeneratorP_0=0.466674
                               *750,
-          GeneratorQ_0=0.0669297*750,
+          GeneratorQ_0=0.0670596*750,
           PQLoadP_0=500,
           PQLoadQ_0=80,
           MotorP_0=0,
@@ -1938,7 +1938,7 @@ package AIOSStability
           InfiniteBusQ_0=236,
           GeneratorP_0=0.398018
                               *750,
-          GeneratorQ_0=0.203279
+          GeneratorQ_0=0.078709
                               *750,
           PQLoadP_0=1.74767*750,
           PQLoadQ_0=0,
@@ -1953,7 +1953,8 @@ package AIOSStability
           InfiniteBusQ_0=434,
           GeneratorP_0=0.39763
                              *750,
-          GeneratorQ_0=150,
+          GeneratorQ_0=0.278659
+                              *750,
           PQLoadP_0=1500,
           PQLoadQ_0=150,
           MotorP_0=0,
@@ -1967,7 +1968,7 @@ package AIOSStability
           InfiniteBusQ_0=374,
           GeneratorP_0=0.593391
                              *750,
-          GeneratorQ_0=0.553615
+          GeneratorQ_0=0.267634
                               *750,
           PQLoadP_0=1500,
           PQLoadQ_0=150,
@@ -1980,8 +1981,10 @@ package AIOSStability
       extends AIOSStability.Data.Records.PowerPFData(
           InfiniteBusP_0=1200,
           InfiniteBusQ_0=454,
-          GeneratorP_0=300,
-          GeneratorQ_0=177,
+          GeneratorP_0=0.400004
+                              *750,
+          GeneratorQ_0=0.237901
+                              *750,
           PQLoadP_0=900,
           PQLoadQ_0=50,
           MotorP_0=0.01333,
@@ -2038,8 +2041,8 @@ package AIOSStability
             InfiniteBusangle_0=0.0,
             BreakerenableTrigger=false,
             TransformerB3B4m=9999,
-            GeneratorV_0=1.01008,
-            Generatorangle_0=2.17373,
+            GeneratorV_0=1.01015,
+            Generatorangle_0=2.17342,
             MotorV_0=1.0041,
             Motorangle_0=-0.7,
             PQLoadV_0=1.03782,
@@ -2053,7 +2056,7 @@ package AIOSStability
           BreakerenableTrigger=false,
           TransformerB3B4m=9999,
           GeneratorV_0=1.01,
-          Generatorangle_0=1.0,
+          Generatorangle_0=0.781516,
           MotorV_0=1.0036,
           Motorangle_0=-2.1,
           PQLoadV_0=1.0404,
@@ -2080,8 +2083,8 @@ package AIOSStability
           InfiniteBusangle_0=0.0,
           BreakerenableTrigger=false,
           TransformerB3B4m=9999,
-          GeneratorV_0=1.00381,
-          Generatorangle_0=-12.1129,
+          GeneratorV_0=1.00898,
+          Generatorangle_0=-11.8905,
           MotorV_0=1.0053,
           Motorangle_0=-12.7,
           PQLoadV_0=1.09164,
@@ -2094,8 +2097,8 @@ package AIOSStability
           InfiniteBusangle_0=0.0,
           BreakerenableTrigger=false,
           TransformerB3B4m=9999,
-          GeneratorV_0=1.00987,
-          Generatorangle_0=-15.0121,
+          GeneratorV_0=1.00649,
+          Generatorangle_0=-15.0406,
           MotorV_0=0.9966,
           Motorangle_0=-17.6,
           PQLoadV_0=1.0089,
@@ -2108,8 +2111,8 @@ package AIOSStability
           InfiniteBusangle_0=0.0,
           BreakerenableTrigger=false,
           TransformerB3B4m=9999,
-          GeneratorV_0=0.998254,
-          Generatorangle_0=-13.9169,
+          GeneratorV_0=1.01012,
+          Generatorangle_0=-11.5029,
           MotorV_0=1.0005,
           Motorangle_0=-15.3,
           PQLoadV_0=1.0129,
@@ -2122,8 +2125,8 @@ package AIOSStability
           InfiniteBusangle_0=0.0,
           BreakerenableTrigger=false,
           TransformerB3B4m=9999,
-          GeneratorV_0=1,
-          Generatorangle_0=-14.8,
+          GeneratorV_0=0.999888,
+          Generatorangle_0=-14.8818,
           MotorV_0=0.9990,
           Motorangle_0=-21.3,
           PQLoadV_0=1.0091,
@@ -2331,7 +2334,7 @@ package AIOSStability
             rotation=90,
             origin={74,-92})));
       Data.SystemData.SystemData.PF8 PowerFlow(redeclare record Voltage =
-            Data.VoltageData.VPF4, redeclare record Power = Data.PowerData.PPF4)
+            Data.VoltageData.VPF8, redeclare record Power = Data.PowerData.PPF8)
         annotation (Placement(transformation(extent={{-204,58},{-184,78}})));
       Components.PSATGeneratorTGOV pSATGeneratorTGOV(
         V_b=20,
@@ -3502,7 +3505,7 @@ package AIOSStability
 
      Real Imag;
       Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
-            Data.VoltageData.VPF6, redeclare record Power = Data.PowerData.PPF6)
+            Data.VoltageData.VPF7, redeclare record Power = Data.PowerData.PPF7)
         annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
       Components.PSATGeneratorTGOV pSATGeneratorTGOV(
        V_b=20,
@@ -4420,6 +4423,114 @@ package AIOSStability
                 -140},{140,80}})),      Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
     end Eleven;
+
+    model AIOSNoMotorPSATLEXP
+      OpenIPSL.Electrical.Buses.Bus ThreeBus(
+        V_b=380,
+        V_0=1.0455,
+        angle_0=-12.7,
+        P_0=1200,
+        Q_0=53)
+        annotation (Placement(transformation(extent={{-82,-102},{-62,-82}})));
+      inner OpenIPSL.Electrical.SystemBase SysData(S_b=750)
+        annotation (Placement(transformation(extent={{-274,56},{-214,76}})));
+      OpenIPSL.Electrical.Buses.Bus OneBus(
+        angle_0=0,
+        V_b=380,
+        V_0=1.08,
+        P_0=450,
+        Q_0=118)
+        annotation (Placement(transformation(extent={{-244,-26},{-224,-6}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine1(
+        R=0,
+        X=0.4143333333,
+        G=0,
+        B=0,
+        displayPF=false)
+        annotation (Placement(transformation(extent={{-180,-64},{-160,-44}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine3(
+        R=0,
+        X=0.414333333,
+        G=0,
+        B=0,
+        displayPF=false)
+        annotation (Placement(transformation(extent={{-180,-26},{-160,-6}})));
+      OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
+        V_b=380,
+        displayPF=true,
+        V_0=PowerFlow.voltage.InfiniteBusV_0,
+        angle_0=PowerFlow.voltage.InfiniteBusangle_0,
+        P_0=PowerFlow.power.InfiniteBusP_0,
+        Q_0=PowerFlow.power.InfiniteBusQ_0)
+        annotation (Placement(transformation(extent={{-290,-26},{-270,-6}})));
+      OpenIPSL.Electrical.Buses.Bus TwoBus(V_b=750) annotation (Placement(
+            transformation(extent={{-174,-102},{-154,-82}})));
+      OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
+        twoWindingTransformer1(
+        Sn=500,
+        V_b=20,
+        Vn=20,
+        S_b=750,
+        rT=0,
+        xT=0.08,
+        m=1/1.04)
+        annotation (Placement(transformation(extent={{-142,-102},{-122,-82}})));
+      OpenIPSL.Electrical.Buses.Bus FiveBus(
+        V_b=380,
+        V_0=1.0455,
+        angle_0=-15.2,
+        P_0=1200,
+        Q_0=0)
+        annotation (Placement(transformation(extent={{18,-102},{38,-82}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine2(
+        R=0,
+        X=0.029999989612,
+        G=0,
+        B=0,
+        displayPF=true)
+        annotation (Placement(transformation(extent={{-28,-102},{-8,-82}})));
+
+     Real Imag;
+      Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
+            Data.VoltageData.VPF7, redeclare record Power = Data.PowerData.PPF7)
+        annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
+      Components.PSATGeneratorTGOV pSATGeneratorTGOV(
+       V_b=20,
+        M_b=750,
+        V_0=PowerFlow.voltage.GeneratorV_0,
+        angle_0=PowerFlow.voltage.Generatorangle_0,
+        P_0=PowerFlow.power.GeneratorP_0,
+        Q_0=PowerFlow.power.GeneratorQ_0)
+        annotation (Placement(transformation(extent={{-220,-106},{-200,-82}})));
+    equation
+      Imag =  sqrt(pwLine3.p.ir^2+pwLine3.p.ii^2);
+      connect(TwoBus.p, twoWindingTransformer1.p)
+        annotation (Line(points={{-164,-92},{-143,-92}}, color={0,0,255}));
+      connect(twoWindingTransformer1.n, ThreeBus.p)
+        annotation (Line(points={{-121,-92},{-72,-92}}, color={0,0,255}));
+      connect(FiveBus.p, pwLine2.n)
+        annotation (Line(points={{28,-92},{-9,-92}}, color={0,0,255}));
+      connect(pwLine2.p, ThreeBus.p)
+        annotation (Line(points={{-27,-92},{-72,-92}}, color={0,0,255}));
+      connect(infiniteBus.p, OneBus.p)
+        annotation (Line(points={{-270,-16},{-234,-16}},
+                                                       color={0,0,255}));
+      connect(OneBus.p, pwLine1.p) annotation (Line(points={{-234,-16},{-226,
+              -16},{-226,-54},{-179,-54}},
+                                        color={0,0,255}));
+      connect(pwLine3.p, pwLine1.p) annotation (Line(points={{-179,-16},{-226,
+              -16},{-226,-54},{-179,-54}}, color={0,0,255}));
+      connect(pwLine3.n, pwLine1.n) annotation (Line(points={{-161,-16},{-116,
+              -16},{-116,-54},{-161,-54}}, color={0,0,255}));
+      connect(ThreeBus.p, pwLine1.n) annotation (Line(points={{-72,-92},{-72,
+              -38},{-116,-38},{-116,-54},{-161,-54}}, color={0,0,255}));
+      connect(TwoBus.p, pSATGeneratorTGOV.pwPin) annotation (Line(points={{-164,
+              -92},{-198,-92},{-198,-92.2},{-199.6,-92.2}},
+                                                       color={0,0,255}));
+      annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
+                -140},{140,80}})),      Diagram(coordinateSystem(
+              preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
+    end AIOSNoMotorPSATLEXP;
   end Scenarios;
   annotation (uses(iPSL(version="1.1.0"),
       Modelica(version="3.2.2"),
