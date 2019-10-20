@@ -4640,8 +4640,7 @@ package AIOSStability
 
      Real Imag;
       Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
-            Data.VoltageData.VPF2EX, redeclare record Power =
-            Data.PowerData.PPF2EX)
+            Data.VoltageData.VPF3, redeclare record Power = Data.PowerData.PPF3)
         annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
       Components.PSATGeneratorTGOV pSATGeneratorTGOV(
        V_b=20,
@@ -5198,6 +5197,299 @@ package AIOSStability
                 -140},{140,80}})),      Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
     end Four6EXP;
+
+    model AIOSNoMotor6
+      OpenIPSL.Electrical.Buses.Bus ThreeBus(
+        V_b=380,
+        V_0=1.0455,
+        angle_0=-12.7,
+        P_0=1200,
+        Q_0=53)
+        annotation (Placement(transformation(extent={{-82,-102},{-62,-82}})));
+      inner OpenIPSL.Electrical.SystemBase SysData(S_b=750)
+        annotation (Placement(transformation(extent={{-274,56},{-214,76}})));
+      OpenIPSL.Electrical.Buses.Bus OneBus(
+        angle_0=0,
+        V_b=380,
+        V_0=1.08,
+        P_0=450,
+        Q_0=118)
+        annotation (Placement(transformation(extent={{-244,-26},{-224,-6}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine1(
+        R=0,
+        X=0.4143333333,
+        G=0,
+        B=0,
+        displayPF=false)
+        annotation (Placement(transformation(extent={{-180,-64},{-160,-44}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine3(
+        R=0,
+        X=0.414333333,
+        G=0,
+        B=0,
+        displayPF=false)
+        annotation (Placement(transformation(extent={{-180,-26},{-160,-6}})));
+      OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
+        V_b=380,
+        displayPF=true,
+        V_0=PowerFlow.voltage.InfiniteBusV_0,
+        angle_0=PowerFlow.voltage.InfiniteBusangle_0,
+        P_0=PowerFlow.power.InfiniteBusP_0,
+        Q_0=PowerFlow.power.InfiniteBusQ_0)
+        annotation (Placement(transformation(extent={{-290,-26},{-270,-6}})));
+      OpenIPSL.Electrical.Buses.Bus TwoBus(V_b=750) annotation (Placement(
+            transformation(extent={{-174,-102},{-154,-82}})));
+      OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
+        twoWindingTransformer1(
+        Sn=500,
+        V_b=20,
+        Vn=20,
+        S_b=750,
+        rT=0,
+        xT=0.08,
+        m=1/1.04)
+        annotation (Placement(transformation(extent={{-142,-102},{-122,-82}})));
+      OpenIPSL.Electrical.Buses.Bus FiveBus(
+        V_b=380,
+        V_0=1.0455,
+        angle_0=-15.2,
+        P_0=1200,
+        Q_0=0)
+        annotation (Placement(transformation(extent={{18,-102},{38,-82}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine2(
+        R=0,
+        X=0.029999989612,
+        G=0,
+        B=0,
+        displayPF=true)
+        annotation (Placement(transformation(extent={{-28,-102},{-8,-82}})));
+
+     Real Imag;
+      Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
+            Data.VoltageData.VPF2EX, redeclare record Power =
+            Data.PowerData.PPF2EX)
+        annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
+      OpenIPSL.Electrical.Loads.PSAT.ExponentialRecovery exponentialRecovery(
+        V_b=380,
+        V_0=PowerFlow.voltage.PQLoadV_0,
+        angle_0=PowerFlow.voltage.PQLoadangle_0,
+        Q_0=PowerFlow.power.PQLoadQ_0,
+        Tp=0.05,
+        Tq=0.05,
+        alpha_s=1.5,
+        alpha_t=2,
+        beta_s=2.5,
+        beta_t=0.05,
+        P_0=PowerFlow.power.PQLoadP_0)
+        annotation (Placement(transformation(extent={{40,-118},{60,-98}})));
+      Components.PSATGeneratorTGOV6 pSATGeneratorTGOV6_1(
+        V_b=20,
+        V_0=PowerFlow.voltage.GeneratorV_0,
+        angle_0=PowerFlow.voltage.Generatorangle_0,
+        P_0=PowerFlow.power.GeneratorP_0,
+        Q_0=PowerFlow.power.GeneratorQ_0,
+        M_b=750)
+        annotation (Placement(transformation(extent={{-252,-106},{-232,-82}})));
+    equation
+      Imag =  sqrt(pwLine3.p.ir^2+pwLine3.p.ii^2);
+      connect(TwoBus.p, twoWindingTransformer1.p)
+        annotation (Line(points={{-164,-92},{-143,-92}}, color={0,0,255}));
+      connect(twoWindingTransformer1.n, ThreeBus.p)
+        annotation (Line(points={{-121,-92},{-72,-92}}, color={0,0,255}));
+      connect(FiveBus.p, pwLine2.n)
+        annotation (Line(points={{28,-92},{-9,-92}}, color={0,0,255}));
+      connect(pwLine2.p, ThreeBus.p)
+        annotation (Line(points={{-27,-92},{-72,-92}}, color={0,0,255}));
+      connect(infiniteBus.p, OneBus.p)
+        annotation (Line(points={{-270,-16},{-234,-16}},
+                                                       color={0,0,255}));
+      connect(OneBus.p, pwLine1.p) annotation (Line(points={{-234,-16},{-226,
+              -16},{-226,-54},{-179,-54}},
+                                        color={0,0,255}));
+      connect(pwLine3.p, pwLine1.p) annotation (Line(points={{-179,-16},{-226,
+              -16},{-226,-54},{-179,-54}}, color={0,0,255}));
+      connect(pwLine3.n, pwLine1.n) annotation (Line(points={{-161,-16},{-116,
+              -16},{-116,-54},{-161,-54}}, color={0,0,255}));
+      connect(ThreeBus.p, pwLine1.n) annotation (Line(points={{-72,-92},{-72,
+              -38},{-116,-38},{-116,-54},{-161,-54}}, color={0,0,255}));
+      connect(exponentialRecovery.p, FiveBus.p) annotation (Line(points={{50,
+              -98},{50,-92},{28,-92}}, color={0,0,255}));
+      connect(TwoBus.p, pSATGeneratorTGOV6_1.pwPin) annotation (Line(points={{
+              -164,-92},{-198,-92},{-198,-92.2},{-231.6,-92.2}}, color={0,0,255}));
+      annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
+                -140},{140,80}})),      Diagram(coordinateSystem(
+              preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
+    end AIOSNoMotor6;
+
+    model AIOSMotor6
+      OpenIPSL.Electrical.Buses.Bus ThreeBus(
+        V_b=380,
+        V_0=1.0455,
+        angle_0=-12.7,
+        P_0=1200,
+        Q_0=53)
+        annotation (Placement(transformation(extent={{-82,-102},{-62,-82}})));
+      inner OpenIPSL.Electrical.SystemBase SysData(S_b=750)
+        annotation (Placement(transformation(extent={{-274,56},{-214,76}})));
+      OpenIPSL.Electrical.Buses.Bus OneBus(
+        angle_0=0,
+        V_b=380,
+        V_0=1.08,
+        P_0=450,
+        Q_0=118)
+        annotation (Placement(transformation(extent={{-244,-26},{-224,-6}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine1(
+        R=0,
+        X=0.4143333333,
+        G=0,
+        B=0,
+        displayPF=false)
+        annotation (Placement(transformation(extent={{-180,-64},{-160,-44}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine3(
+        R=0,
+        X=0.414333333,
+        G=0,
+        B=0,
+        displayPF=false)
+        annotation (Placement(transformation(extent={{-180,-26},{-160,-6}})));
+      OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
+        V_b=380,
+        displayPF=true,
+        V_0=PowerFlow.voltage.InfiniteBusV_0,
+        angle_0=PowerFlow.voltage.InfiniteBusangle_0,
+        P_0=PowerFlow.power.InfiniteBusP_0,
+        Q_0=PowerFlow.power.InfiniteBusQ_0)
+        annotation (Placement(transformation(extent={{-290,-26},{-270,-6}})));
+      OpenIPSL.Electrical.Buses.Bus TwoBus(V_b=750) annotation (Placement(
+            transformation(extent={{-174,-102},{-154,-82}})));
+      OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
+        twoWindingTransformer1(
+        Sn=500,
+        V_b=20,
+        Vn=20,
+        S_b=750,
+        rT=0,
+        xT=0.08,
+        m=1/1.04)
+        annotation (Placement(transformation(extent={{-142,-102},{-122,-82}})));
+      OpenIPSL.Electrical.Buses.Bus FiveBus(
+        V_b=380,
+        V_0=1.0455,
+        angle_0=-15.2,
+        P_0=1200,
+        Q_0=0)
+        annotation (Placement(transformation(extent={{18,-102},{38,-82}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine2(
+        R=0,
+        X=0.029999989612,
+        G=0,
+        B=0,
+        displayPF=true)
+        annotation (Placement(transformation(extent={{-28,-102},{-8,-82}})));
+
+     Real Imag;
+      Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
+            Data.VoltageData.VPF2EX, redeclare record Power =
+            Data.PowerData.PPF2EX)
+        annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
+      OpenIPSL.Electrical.Loads.PSAT.ExponentialRecovery exponentialRecovery(
+        V_b=380,
+        V_0=PowerFlow.voltage.PQLoadV_0,
+        angle_0=PowerFlow.voltage.PQLoadangle_0,
+        Q_0=PowerFlow.power.PQLoadQ_0,
+        Tp=0.05,
+        Tq=0.05,
+        alpha_s=1.5,
+        alpha_t=2,
+        beta_s=2.5,
+        beta_t=0.05,
+        P_0=PowerFlow.power.PQLoadP_0)
+        annotation (Placement(transformation(extent={{40,-118},{60,-98}})));
+      Components.PSATGeneratorTGOV6 pSATGeneratorTGOV6_1(
+        V_b=20,
+        V_0=PowerFlow.voltage.GeneratorV_0,
+        angle_0=PowerFlow.voltage.Generatorangle_0,
+        P_0=PowerFlow.power.GeneratorP_0,
+        Q_0=PowerFlow.power.GeneratorQ_0,
+        M_b=750)
+        annotation (Placement(transformation(extent={{-252,-106},{-232,-82}})));
+      OpenIPSL.Electrical.Buses.Bus FourBus(
+        V_b=380,
+        V_0=1.0455,
+        angle_0=-12.7,
+        P_0=-300,
+        Q_0=-23)
+        annotation (Placement(transformation(extent={{-4,-48},{16,-28}})));
+      OpenIPSL.Electrical.Machines.PSAT.MotorTypeIII motorTypeIII(
+        Hm=0.6,
+        V_b=15,
+        Sup=0,
+        Rs=0.031,
+        Xs=0.1,
+        Rr1=0.05,
+        Xr1=0.07,
+        Xm=3.20,
+        a=0.78,
+        P_0=PowerFlow.power.MotorP_0,
+        Q_0=PowerFlow.power.MotorQ_0,
+        V_0=PowerFlow.voltage.MotorV_0,
+        angle_0=PowerFlow.voltage.Motorangle_0)
+        annotation (Placement(transformation(extent={{74,-48},{54,-28}})));
+      OpenIPSL.Electrical.Banks.PwShuntC pwShuntC(Vbase=15, Qnom=PowerFlow.power.ShuntCapacitorQnom)
+        annotation (Placement(transformation(
+            extent={{-10,-10},{10,10}},
+            rotation=90,
+            origin={64,-72})));
+      OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
+        twoWindingTransformer2(
+        Sn=750,
+        V_b=380,
+        Vn=380,
+        S_b=750,
+        rT=0,
+        xT=0.08,
+        m=1)
+        annotation (Placement(transformation(extent={{-40,-48},{-20,-28}})));
+    equation
+      Imag =  sqrt(pwLine3.p.ir^2+pwLine3.p.ii^2);
+      connect(TwoBus.p, twoWindingTransformer1.p)
+        annotation (Line(points={{-164,-92},{-143,-92}}, color={0,0,255}));
+      connect(twoWindingTransformer1.n, ThreeBus.p)
+        annotation (Line(points={{-121,-92},{-72,-92}}, color={0,0,255}));
+      connect(FiveBus.p, pwLine2.n)
+        annotation (Line(points={{28,-92},{-9,-92}}, color={0,0,255}));
+      connect(pwLine2.p, ThreeBus.p)
+        annotation (Line(points={{-27,-92},{-72,-92}}, color={0,0,255}));
+      connect(infiniteBus.p, OneBus.p)
+        annotation (Line(points={{-270,-16},{-234,-16}},
+                                                       color={0,0,255}));
+      connect(OneBus.p, pwLine1.p) annotation (Line(points={{-234,-16},{-226,
+              -16},{-226,-54},{-179,-54}},
+                                        color={0,0,255}));
+      connect(pwLine3.p, pwLine1.p) annotation (Line(points={{-179,-16},{-226,
+              -16},{-226,-54},{-179,-54}}, color={0,0,255}));
+      connect(pwLine3.n, pwLine1.n) annotation (Line(points={{-161,-16},{-116,
+              -16},{-116,-54},{-161,-54}}, color={0,0,255}));
+      connect(ThreeBus.p, pwLine1.n) annotation (Line(points={{-72,-92},{-72,
+              -38},{-116,-38},{-116,-54},{-161,-54}}, color={0,0,255}));
+      connect(exponentialRecovery.p, FiveBus.p) annotation (Line(points={{50,
+              -98},{50,-92},{28,-92}}, color={0,0,255}));
+      connect(TwoBus.p, pSATGeneratorTGOV6_1.pwPin) annotation (Line(points={{
+              -164,-92},{-198,-92},{-198,-92.2},{-231.6,-92.2}}, color={0,0,255}));
+      connect(FourBus.p,motorTypeIII. p)
+        annotation (Line(points={{6,-38},{54,-38}},
+                                                 color={0,0,255}));
+      connect(pwShuntC.p,motorTypeIII. p) annotation (Line(points={{54,-72},{30,
+              -72},{30,-38},{54,-38}},color={0,0,255}));
+      connect(FourBus.p,twoWindingTransformer2. n)
+        annotation (Line(points={{6,-38},{-19,-38}},
+                                                  color={0,0,255}));
+      connect(twoWindingTransformer2.p, pwLine1.n) annotation (Line(points={{
+              -41,-38},{-116,-38},{-116,-54},{-161,-54}}, color={0,0,255}));
+      annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
+                -140},{140,80}})),      Diagram(coordinateSystem(
+              preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
+    end AIOSMotor6;
   end Scenarios;
   annotation (uses(iPSL(version="1.1.0"),
       Modelica(version="3.2.2"),

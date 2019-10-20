@@ -1,0 +1,7 @@
+﻿//Checks the PF of all of the scenarios of AIOS Motor
+simulateModel("AIOSStability.Scenarios.AIOSMotor6", stopTime=100, method="dassl", resultFile="AIOSMotor6");
+createPlot(id=1, position={0, 0, 1053, 440}, y={"pSATGeneratorTGOV6_1.order6_1.P", "pSATGeneratorTGOV6_1.order6_1.Q", 
+"pSATGeneratorTGOV6_1.order6_1.v", "pSATGeneratorTGOV6_1.order6_1.anglev"}, range={0.0, 100.0, 0.0, 4.0}, grid=true, colors={{28,108,200}, {238,46,47}, {0,140,72}, {217,67,180}}, displayUnits={"", "", "", "deg"});
+createPlot(id=2, position={15, 10, 592, 427}, y={"exponentialRecovery.P", "exponentialRecovery.Q", "exponentialRecovery.V", 
+"exponentialRecovery.Angle_V"}, range={0.0, 100.0, -2.0, 1.5}, grid=true, colors={{28,108,200}, {238,46,47}, {0,140,72}, {217,67,180}}, displayUnits={"", "", "", "deg"});
+createPlot(id=2, position={15, 10, 592, 427}, y={"motorTypeIII.P", "motorTypeIII.Q", "motorTypeIII.anglev", "motorTypeIII.v"}, range={0.0, 100.0, -0.5, 1.5}, grid=true, colors={{28,108,200}, {238,46,47}, {0,140,72}, {217,67,180}});
