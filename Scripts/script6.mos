@@ -1,0 +1,1 @@
+﻿simulateModel("AIOSStability.Scenarios.Four6EXP", stopTime=40, method="dassl", resultFile="Four6EXP");
