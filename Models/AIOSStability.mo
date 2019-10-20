@@ -2146,6 +2146,37 @@ package AIOSStability
           MotorQ_0=0,
           ShuntCapacitorQnom=117);
       end PPF2;
+
+      record PPF5EX
+      extends AIOSStability.Data.Records.PowerPFData(
+          InfiniteBusP_0=9000,
+          InfiniteBusQ_0=236,
+          GeneratorP_0=0.398018
+                              *750,
+          GeneratorQ_0=0.0570227
+                              *750,
+          PQLoadP_0=1.63453*750,
+          PQLoadQ_0=1.84298*10^(-17)*750,
+          MotorP_0=0,
+          MotorQ_0=0,
+          ShuntCapacitorQnom=117);
+      end PPF5EX;
+
+      record PPF7EX
+      extends AIOSStability.Data.Records.PowerPFData(
+          InfiniteBusP_0=1050,
+          InfiniteBusQ_0=374,
+          GeneratorP_0=0.593179
+                             *750,
+          GeneratorQ_0=0.247215
+                              *750,
+          PQLoadP_0=1.98635*750,
+          PQLoadQ_0=0.19774
+                          *750,
+          MotorP_0=0,
+          MotorQ_0=0,
+          ShuntCapacitorQnom=117);
+      end PPF7EX;
     end PowerData;
 
     package VoltageData
@@ -2303,6 +2334,34 @@ package AIOSStability
             PQLoadV_0=1.03782,
             PQLoadangle_0=-0.169653);
         end VPF2;
+
+        record VPF5EX
+        extends AIOSStability.Data.Records.VoltagePFData(
+          InfiniteBusV_0=1.08,
+          InfiniteBusangle_0=0.0,
+          BreakerenableTrigger=false,
+          TransformerB3B4m=9999,
+          GeneratorV_0=1.01018,
+          Generatorangle_0=-10.625,
+          MotorV_0=1.0053,
+          Motorangle_0=-12.7,
+          PQLoadV_0=1.044,
+          PQLoadangle_0=-15.6943);
+        end VPF5EX;
+
+        record VPF7EX
+        extends AIOSStability.Data.Records.VoltagePFData(
+          InfiniteBusV_0=1.08,
+          InfiniteBusangle_0=0.0,
+          BreakerenableTrigger=false,
+          TransformerB3B4m=9999,
+          GeneratorV_0=1.00073,
+          Generatorangle_0=-11.4064,
+          MotorV_0=1.0005,
+          Motorangle_0=-15.3,
+          PQLoadV_0=1.0083,
+          PQLoadangle_0=-18.623);
+        end VPF7EX;
     end VoltageData;
 
     package SystemData
@@ -5266,8 +5325,8 @@ package AIOSStability
 
      Real Imag;
       Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
-            Data.VoltageData.VPF2EX, redeclare record Power =
-            Data.PowerData.PPF2EX)
+            Data.VoltageData.VPF7EX, redeclare record Power =
+            Data.PowerData.PPF7EX)
         annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
       OpenIPSL.Electrical.Loads.PSAT.ExponentialRecovery exponentialRecovery(
         V_b=380,
@@ -5389,8 +5448,7 @@ package AIOSStability
 
      Real Imag;
       Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
-            Data.VoltageData.VPF2EX, redeclare record Power =
-            Data.PowerData.PPF2EX)
+            Data.VoltageData.VPF8, redeclare record Power = Data.PowerData.PPF8)
         annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
       OpenIPSL.Electrical.Loads.PSAT.ExponentialRecovery exponentialRecovery(
         V_b=380,

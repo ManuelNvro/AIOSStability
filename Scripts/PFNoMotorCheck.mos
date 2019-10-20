@@ -1,5 +1,5 @@
 ﻿//Checks the PF of all of the scenarios of AIOS No Motor
-simulateModel("AIOSStability.Scenarios.AIOSNoMotor6", stopTime=100, method="dassl", resultFile="AIOSNoMotor6");
+simulateModel("AIOSStability.Scenarios.AIOSNoMotor6", stopTime=1000, method="dassl", resultFile="AIOSNoMotor6");
 createPlot(id=1, position={0, 0, 1053, 440}, y={"pSATGeneratorTGOV6_1.order6_1.P", "pSATGeneratorTGOV6_1.order6_1.Q", 
 "pSATGeneratorTGOV6_1.order6_1.v", "pSATGeneratorTGOV6_1.order6_1.anglev"}, range={0.0, 100.0, 0.0, 4.0}, grid=true,  colors={{28,108,200}, {238,46,47}, {0,140,72}, {217,67,180}}, displayUnits={"", "", "", "deg"});
 createPlot(id=2, position={15, 10, 592, 427}, y={"exponentialRecovery.P", "exponentialRecovery.Q", "exponentialRecovery.V", 
