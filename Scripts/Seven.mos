@@ -1,0 +1,4 @@
+﻿//Checks Seventh Scenario
+simulateModel("AIOSStability.Scenarios6.Seven6", stopTime=10, method="dassl", resultFile="Seven6");
+createPlot(id=1, position={55, 50, 594, 434}, y={"ThreeBus.V"}, range={0.0, 10.0, 0.75, 1.05}, grid=true,colors={{28,108,200}});
+plotExpression(apply(1-Seven6[end].motorTypeIII.s), false, "1-Seven6[end].motorTypeIII.s", 2);

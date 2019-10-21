@@ -1,0 +1,4 @@
+﻿//Checks Second Scenario
+simulateModel("AIOSStability.Scenarios6.Two6", stopTime=10, method="dassl", resultFile="AIOSNoMotor6");
+createPlot(id=1, position={75, 70, 594, 434}, y={"pSATGeneratorTGOV6_1.order6_1.delta"}, range={0.0, 10.0, 0.6000000000000001, 2.0}, erase=false, grid=true, colors={{28,108,200}});
+createPlot(id=2, position={95, 90, 594, 434}, y={"pSATGeneratorTGOV6_1.order6_1.P"}, range={0.0, 10.0, 0.1, 0.8}, erase=false, grid=true,colors={{28,108,200}});

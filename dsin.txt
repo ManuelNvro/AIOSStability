@@ -9,7 +9,7 @@ Modelica experiment file
 double experiment(7,1)
        0                   # StartTime    Time at which integration starts
                            #              (and linearization and trimming time)
-    1000                   # StopTime     Time at which integration stops
+      10                   # StopTime     Time at which integration stops
        0                   # Increment    Communication step size, if > 0
      500                   # nInterval    Number of communication intervals, if > 0
   1.0000000000000000E-04   # Tolerance    Relative precision of signals for
@@ -102,7 +102,7 @@ int settings(13,1)
 
 
 #    Names of initial variables
-char initialName(401,59)
+char initialName(507,59)
 SysData.S_b
 SysData.fn
 ThreeBus.V_b
@@ -272,34 +272,6 @@ PowerFlow.power.PQLoadQ_0
 PowerFlow.power.MotorP_0
 PowerFlow.power.MotorQ_0
 PowerFlow.power.ShuntCapacitorQnom
-exponentialRecovery.V_b
-exponentialRecovery.V_0
-exponentialRecovery.angle_0
-exponentialRecovery.P_0
-exponentialRecovery.Q_0
-exponentialRecovery.S_b
-exponentialRecovery.fn
-exponentialRecovery.Sn
-exponentialRecovery.V
-exponentialRecovery.Angle_V
-exponentialRecovery.P
-exponentialRecovery.Q
-exponentialRecovery.angle_0rad
-exponentialRecovery.CoB
-exponentialRecovery.Tp
-exponentialRecovery.Tq
-exponentialRecovery.alpha_s
-exponentialRecovery.alpha_t
-exponentialRecovery.beta_s
-exponentialRecovery.beta_t
-exponentialRecovery.ps
-exponentialRecovery.pt
-exponentialRecovery.qs
-exponentialRecovery.qt
-exponentialRecovery.xp
-exponentialRecovery.der(xp)
-exponentialRecovery.xq
-exponentialRecovery.der(xq)
 pSATGeneratorTGOV6_1.SysData.S_b
 pSATGeneratorTGOV6_1.SysData.fn
 pSATGeneratorTGOV6_1.V_b
@@ -504,8 +476,142 @@ pSATGeneratorTGOV6_1.order6_1.K1
 pSATGeneratorTGOV6_1.order6_1.K2
 pSATGeneratorTGOV6_1.order6_1.e1q0
 pSATGeneratorTGOV6_1.order6_1.vf00
+FourBus.V_b
+FourBus.V_0
+FourBus.angle_0
+FourBus.P_0
+FourBus.Q_0
+FourBus.S_b
+FourBus.fn
+FourBus.p.vr
+FourBus.p.vi
+FourBus.p.ir
+FourBus.p.ii
+FourBus.V
+FourBus.angle
+FourBus.displayPF
+motorTypeIII.V_b
+motorTypeIII.V_0
+motorTypeIII.angle_0
+motorTypeIII.P_0
+motorTypeIII.Q_0
+motorTypeIII.S_b
+motorTypeIII.fn
+motorTypeIII.Sup
+motorTypeIII.Rs
+motorTypeIII.Xs
+motorTypeIII.Rr1
+motorTypeIII.Xr1
+motorTypeIII.Xm
+motorTypeIII.Hm
+motorTypeIII.a
+motorTypeIII.b
+motorTypeIII.c
+motorTypeIII.tup
+motorTypeIII.v
+motorTypeIII.anglev
+motorTypeIII.s
+motorTypeIII.der(s)
+motorTypeIII.Tm
+motorTypeIII.Te
+motorTypeIII.P
+motorTypeIII.Q
+motorTypeIII.Ir
+motorTypeIII.Im
+motorTypeIII.epr
+motorTypeIII.der(epr)
+motorTypeIII.epm
+motorTypeIII.der(epm)
+motorTypeIII.I
+motorTypeIII.anglei
+motorTypeIII.pi
+motorTypeIII.Omegab
+motorTypeIII.vr0
+motorTypeIII.vi0
+motorTypeIII.ir0
+motorTypeIII.ii0
+motorTypeIII.i2
+motorTypeIII.A
+motorTypeIII.B
+motorTypeIII.C
+motorTypeIII.X0
+motorTypeIII.Xp
+motorTypeIII.Tp0
+motorTypeIII.RZs2
+motorTypeIII.K
+motorTypeIII.K2
+motorTypeIII.K1
+motorTypeIII.a03
+motorTypeIII.a13
+motorTypeIII.a23
+motorTypeIII.S0
+motorTypeIII.epm0
+motorTypeIII.epr0
+pwShuntC.p.ir
+pwShuntC.p.ii
+pwShuntC.pi
+pwShuntC.Qnom
+pwShuntC.Vbase
+pwShuntC.fn
+pwShuntC.Zbase
+pwShuntC.C
+pwShuntC.v
+pwShuntC.anglev
+pwShuntC.i
+pwShuntC.anglei
+twoWindingTransformer2.p.ir
+twoWindingTransformer2.p.ii
+twoWindingTransformer2.n.ir
+twoWindingTransformer2.n.ii
+twoWindingTransformer2.S_b
+twoWindingTransformer2.V_b
+twoWindingTransformer2.Sn
+twoWindingTransformer2.Vn
+twoWindingTransformer2.rT
+twoWindingTransformer2.xT
+twoWindingTransformer2.m
+twoWindingTransformer2.Zn
+twoWindingTransformer2.Zb
+twoWindingTransformer2.r
+twoWindingTransformer2.x
+twoWindingTransformer2.tc
+exponentialRecovery.V_b
+exponentialRecovery.V_0
+exponentialRecovery.angle_0
+exponentialRecovery.P_0
+exponentialRecovery.Q_0
+exponentialRecovery.S_b
+exponentialRecovery.fn
+exponentialRecovery.Sn
+exponentialRecovery.V
+exponentialRecovery.Angle_V
+exponentialRecovery.P
+exponentialRecovery.Q
+exponentialRecovery.angle_0rad
+exponentialRecovery.CoB
+exponentialRecovery.Tp
+exponentialRecovery.Tq
+exponentialRecovery.alpha_s
+exponentialRecovery.alpha_t
+exponentialRecovery.beta_s
+exponentialRecovery.beta_t
+exponentialRecovery.ps
+exponentialRecovery.pt
+exponentialRecovery.qs
+exponentialRecovery.qt
+exponentialRecovery.xp
+exponentialRecovery.der(xp)
+exponentialRecovery.xq
+exponentialRecovery.der(xq)
+pwFault.p.ir
+pwFault.p.ii
+pwFault.R
+pwFault.X
+pwFault.t1
+pwFault.t2
+pwFault.ground
 
-double initialValue(401,6)
+double initialValue(507,6)
  -1     750                       0                       0                
   1   280   # SysData.S_b
  -1      50                       0                       0                
@@ -584,7 +690,7 @@ double initialValue(401,6)
   1   280   # pwLine1.B
   0       0                       0                       0                
   6   256   # pwLine1.S_b
-  0  9.9999999999999995E+59       0                       0                
+  0  1.1499999999999999E+00       0                       0                
   6   256   # pwLine1.t1
   0  9.9999999999999995E+59       0                       0                
   6   256   # pwLine1.t2
@@ -806,7 +912,7 @@ double initialValue(401,6)
   6  1280   # pwLine2.Z.im
   0       0                       0                       0                
   6   256   # Imag
- -1  1.0800000000000001E+00       0                       0                
+ -1  1.0400000000000000E+00       0                       0                
   1   280   # PowerFlow.voltage.InfiniteBusV_0
  -1       0                       0                       0                
   1   280   # PowerFlow.voltage.InfiniteBusangle_0
@@ -814,92 +920,36 @@ double initialValue(401,6)
   1   281   # PowerFlow.voltage.BreakerenableTrigger
  -1    9999                       0                       0                
   1   280   # PowerFlow.voltage.TransformerB3B4m
- -1  1.0007299999999999E+00       0                       0                
+ -1  9.9888299999999997E-01       0                       0                
   1   280   # PowerFlow.voltage.GeneratorV_0
- -1 -1.1406400000000000E+01       0                       0                
+ -1 -9.6761499999999998E+00       0                       0                
   1   280   # PowerFlow.voltage.Generatorangle_0
- -1  1.0004999999999999E+00       0                       0                
+ -1  9.9299999999999999E-01       0                       0                
   1   280   # PowerFlow.voltage.MotorV_0
- -1 -1.5300000000000001E+01       0                       0                
+ -1 -1.5900000000000000E+01       0                       0                
   1   280   # PowerFlow.voltage.Motorangle_0
- -1  1.0083000000000000E+00       0                       0                
+ -1  1.0019000000000000E+00       0                       0                
   1   280   # PowerFlow.voltage.PQLoadV_0
- -1 -1.8623000000000001E+01       0                       0                
+ -1 -1.3931699999999999E+01       0                       0                
   1   280   # PowerFlow.voltage.PQLoadangle_0
- -1    1050                       0                       0                
+ -1     400                       0                       0                
   1   280   # PowerFlow.power.InfiniteBusP_0
- -1     374                       0                       0                
+ -1     107                       0                       0                
   1   280   # PowerFlow.power.InfiniteBusQ_0
- -1  4.4488425000000001E+02       0                       0                
+ -1  2.9819999999999999E+02       0                       0                
   1   280   # PowerFlow.power.GeneratorP_0
- -1  1.8541125000000000E+02       0                       0                
+ -1  2.1892200000000000E+02       0                       0                
   1   280   # PowerFlow.power.GeneratorQ_0
- -1  1.4897625000000000E+03       0                       0                
+ -1     500                       0                       0                
   1   280   # PowerFlow.power.PQLoadP_0
- -1  1.4830500000000001E+02       0                       0                
+ -1      80                       0                       0                
   1   280   # PowerFlow.power.PQLoadQ_0
- -1       0                       0                       0                
+ -1  1.3330000000000000E-02       0                       0                
   1   280   # PowerFlow.power.MotorP_0
  -1       0                       0                       0                
   1   280   # PowerFlow.power.MotorQ_0
  -1     117                       0                       0                
   1   280   # PowerFlow.power.ShuntCapacitorQnom
- -1     380                       0                       0                
-  1   280   # exponentialRecovery.V_b
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.V_0
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.angle_0
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.P_0
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.Q_0
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.S_b
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.fn
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.Sn
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.V
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.Angle_V
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.P
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.Q
-  0       0                       0                       0                
-  6  1280   # exponentialRecovery.angle_0rad
-  0       0                       0                       0                
-  6  1280   # exponentialRecovery.CoB
- -1  5.0000000000000003E-02       0                       0                
-  1   280   # exponentialRecovery.Tp
- -1  5.0000000000000003E-02       0                       0                
-  1   280   # exponentialRecovery.Tq
- -1  1.5000000000000000E+00       0                       0                
-  1   280   # exponentialRecovery.alpha_s
- -1       2                       0                       0                
-  1   280   # exponentialRecovery.alpha_t
- -1  2.5000000000000000E+00       0                       0                
-  1   280   # exponentialRecovery.beta_s
- -1  5.0000000000000003E-02       0                       0                
-  1   280   # exponentialRecovery.beta_t
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.ps
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.pt
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.qs
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.qt
- -1       0                       0                       0                
-  2  1304   # exponentialRecovery.xp
-  0       0                       0                       0                
-  3  1280   # exponentialRecovery.der(xp)
- -1       0                       0                       0                
-  2  1304   # exponentialRecovery.xq
-  0       0                       0                       0                
-  3  1280   # exponentialRecovery.der(xq)
  -1     750                       0                       0                
   1   280   # pSATGeneratorTGOV6_1.SysData.S_b
  -1      50                       0                       0                
@@ -1308,6 +1358,274 @@ double initialValue(401,6)
   6  1280   # pSATGeneratorTGOV6_1.order6_1.e1q0
   0       0                       0                       0                
   6  1280   # pSATGeneratorTGOV6_1.order6_1.vf00
+ -1     380                       0                       0                
+  1   280   # FourBus.V_b
+ -1  1.0455000000000001E+00       0                       0                
+  1   280   # FourBus.V_0
+ -1 -1.2699999999999999E+01       0                       0                
+  1   280   # FourBus.angle_0
+ -1    -300                       0                       0                
+  1   280   # FourBus.P_0
+ -1     -23                       0                       0                
+  1   280   # FourBus.Q_0
+  0       0                       0                       0                
+  6   256   # FourBus.S_b
+  0       0                       0                       0                
+  6   256   # FourBus.fn
+  0       0                       0                       0                
+  6   260   # FourBus.p.vr
+  0       0                       0                       0                
+  6   260   # FourBus.p.vi
+  0       0                       0                       0                
+  6   388   # FourBus.p.ir
+  0       0                       0                       0                
+  6   388   # FourBus.p.ii
+  0       0                       0                       0                
+  6   256   # FourBus.V
+  0       0                       0                       0                
+  6   256   # FourBus.angle
+ -1       1                       0                       0                
+  1   281   # FourBus.displayPF
+ -1      15                       0                       0                
+  1   280   # motorTypeIII.V_b
+  0       0                       0                       0                
+  6   256   # motorTypeIII.V_0
+  0       0                       0                       0                
+  6   256   # motorTypeIII.angle_0
+  0       0                       0                       0                
+  6   256   # motorTypeIII.P_0
+  0       0                       0                       0                
+  6   256   # motorTypeIII.Q_0
+  0       0                       0                       0                
+  6   256   # motorTypeIII.S_b
+  0       0                       0                       0                
+  6   256   # motorTypeIII.fn
+ -1       0                       0                       0                
+  1   282   # motorTypeIII.Sup
+ -1  3.1000000000000000E-02       0                       0                
+  1   280   # motorTypeIII.Rs
+ -1  1.0000000000000001E-01       0                       0                
+  1   280   # motorTypeIII.Xs
+ -1  5.0000000000000003E-02       0                       0                
+  1   280   # motorTypeIII.Rr1
+ -1  7.0000000000000007E-02       0                       0                
+  1   280   # motorTypeIII.Xr1
+ -1  3.2000000000000002E+00       0                       0                
+  1   280   # motorTypeIII.Xm
+ -1  5.9999999999999998E-01       0                       0                
+  1   280   # motorTypeIII.Hm
+ -1  7.8000000000000003E-01       0                       0                
+  1   280   # motorTypeIII.a
+ -1       0                       0                       0                
+  1   280   # motorTypeIII.b
+ -1       0                       0                       0                
+  1   280   # motorTypeIII.c
+ -1       0                       0                       0                
+  1   280   # motorTypeIII.tup
+  0       0                       0                       0                
+  6   256   # motorTypeIII.v
+  0       0                       0                       0                
+  6   256   # motorTypeIII.anglev
+ -1       0                       0                       0                
+  2   272   # motorTypeIII.s
+  0       0                       0                       0                
+  3   256   # motorTypeIII.der(s)
+  0       0                       0                       0                
+  6   256   # motorTypeIII.Tm
+  0       0                       0                       0                
+  6   256   # motorTypeIII.Te
+  0       0                       0                       0                
+  6   256   # motorTypeIII.P
+  0       0                       0                       0                
+  6   256   # motorTypeIII.Q
+  0       0                       0                       0                
+  6   256   # motorTypeIII.Ir
+  0       0                       0                       0                
+  6   256   # motorTypeIII.Im
+ -1       0                       0                       0                
+  2   272   # motorTypeIII.epr
+  0       0                       0                       0                
+  3   256   # motorTypeIII.der(epr)
+ -1       0                       0                       0                
+  2   272   # motorTypeIII.epm
+  0       0                       0                       0                
+  3   256   # motorTypeIII.der(epm)
+  0       0                       0                       0                
+  6   256   # motorTypeIII.I
+  0       0                       0                       0                
+  6   256   # motorTypeIII.anglei
+  0  3.1415926535897931E+00       0                       0                
+  6  1280   # motorTypeIII.pi
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.Omegab
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.vr0
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.vi0
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.ir0
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.ii0
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.i2
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.A
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.B
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.C
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.X0
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.Xp
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.Tp0
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.RZs2
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.K
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.K2
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.K1
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.a03
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.a13
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.a23
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.S0
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.epm0
+  0       0                       0                       0                
+  6  1280   # motorTypeIII.epr0
+  0       0                       0                       0                
+  6   388   # pwShuntC.p.ir
+  0       0                       0                       0                
+  6   388   # pwShuntC.p.ii
+  0  3.1415926535897931E+00       0                       0                
+  6   256   # pwShuntC.pi
+  0       0                       0                       0                
+  6   256   # pwShuntC.Qnom
+ -1      15                       0                       0                
+  1   280   # pwShuntC.Vbase
+ -1      50                       0                       0                
+  1   280   # pwShuntC.fn
+  0       0                       0                       0                
+  6   256   # pwShuntC.Zbase
+  0       0                       0                       0                
+  6   256   # pwShuntC.C
+  0       0                       0                       0                
+  6   256   # pwShuntC.v
+  0       0                       0                       0                
+  6   256   # pwShuntC.anglev
+  0       0                       0                       0                
+  6   256   # pwShuntC.i
+  0       0                       0                       0                
+  6   256   # pwShuntC.anglei
+  0       0                       0                       0                
+  6   420   # twoWindingTransformer2.p.ir
+  0       0                       0                       0                
+  6   420   # twoWindingTransformer2.p.ii
+  0       0                       0                       0                
+  6   420   # twoWindingTransformer2.n.ir
+  0       0                       0                       0                
+  6   420   # twoWindingTransformer2.n.ii
+ -1     750                       0                       0                
+  1   280   # twoWindingTransformer2.S_b
+ -1     380                       0                       0                
+  1   280   # twoWindingTransformer2.V_b
+ -1     750                       0                       0                
+  1   280   # twoWindingTransformer2.Sn
+ -1     380                       0                       0                
+  1   280   # twoWindingTransformer2.Vn
+ -1       0                       0                       0                
+  1   280   # twoWindingTransformer2.rT
+ -1  8.0000000000000002E-02       0                       0                
+  1   280   # twoWindingTransformer2.xT
+ -1       1                       0                       0                
+  1   280   # twoWindingTransformer2.m
+  0       0                       0                       0                
+  6  1280   # twoWindingTransformer2.Zn
+  0       0                       0                       0                
+  6  1280   # twoWindingTransformer2.Zb
+  0       0                       0                       0                
+  6  1280   # twoWindingTransformer2.r
+  0       0                       0                       0                
+  6  1280   # twoWindingTransformer2.x
+  0       0                       0                       0                
+  6  1281   # twoWindingTransformer2.tc
+ -1     380                       0                       0                
+  1   280   # exponentialRecovery.V_b
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.V_0
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.angle_0
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.P_0
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.Q_0
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.S_b
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.fn
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.Sn
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.V
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.Angle_V
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.P
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.Q
+  0       0                       0                       0                
+  6  1280   # exponentialRecovery.angle_0rad
+  0       0                       0                       0                
+  6  1280   # exponentialRecovery.CoB
+ -1  5.0000000000000003E-02       0                       0                
+  1   280   # exponentialRecovery.Tp
+ -1  5.0000000000000003E-02       0                       0                
+  1   280   # exponentialRecovery.Tq
+ -1  1.5000000000000000E+00       0                       0                
+  1   280   # exponentialRecovery.alpha_s
+ -1       2                       0                       0                
+  1   280   # exponentialRecovery.alpha_t
+ -1  2.5000000000000000E+00       0                       0                
+  1   280   # exponentialRecovery.beta_s
+ -1  5.0000000000000003E-02       0                       0                
+  1   280   # exponentialRecovery.beta_t
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.ps
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.pt
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.qs
+  0       0                       0                       0                
+  6   256   # exponentialRecovery.qt
+ -1       0                       0                       0                
+  2  1304   # exponentialRecovery.xp
+  0       0                       0                       0                
+  3  1280   # exponentialRecovery.der(xp)
+ -1       0                       0                       0                
+  2  1304   # exponentialRecovery.xq
+  0       0                       0                       0                
+  3  1280   # exponentialRecovery.der(xq)
+  0       0                       0                       0                
+  6   388   # pwFault.p.ir
+  0       0                       0                       0                
+  6   388   # pwFault.p.ii
+  0       0                       0                       0                
+  6   256   # pwFault.R
+  0  5.9999999999999998E-01       0                       0                
+  6   256   # pwFault.X
+  0       1                       0                       0                
+  6   256   # pwFault.t1
+  0  1.1399999999999999E+00       0                       0                
+  6   256   # pwFault.t2
+  0       0                       0                       0                
+  6  1281   # pwFault.ground
 
 
 # Matrix with 6 columns defining the initial value calculation
@@ -1358,7 +1676,7 @@ double initialValue(401,6)
 #   nominal value (and maybe minimum and maximum values given in 
 #   column 3 and 4). If these values are zero, scale(i)=1 is used).
 #
-char initialDescription(401,127)
+char initialDescription(507,127)
 System base [MVA]
 System Frequency [Hz]
 Base voltage of the bus [kV]
@@ -1515,8 +1833,8 @@ Imaginary part of complex number [1]
 
 [1]
 [deg]
-
-
+[1]
+[deg]
 [1]
 [deg]
 [MW]
@@ -1525,37 +1843,9 @@ Imaginary part of complex number [1]
 [Mvar]
 [MW]
 [Mvar]
+[MW]
+[Mvar]
 
-
-
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Power rating (MVA) [MVA]
-Voltage magnitude (pu) [1]
-voltage angle (rad) [rad|deg]
-Active power (pu) [1]
-Reactive power (pu) [1]
-[rad|deg]
-Change of base between Machine and System [1]
-Active power time constant (s) [s]
-Reactive power time constant (s) [s]
-Static active power exponent
-Dynamic active power exponent
-Static reactive power exponent
-Dynamic reactive power exponent
-Static real power absorption (pu) [1]
-Transient real power absorption (pu) [1]
-Static imaginary power absorption (pu) [1]
-Transient imaginary power absorption (pu) [1]
-[s]
-[1]
-[s]
-[1]
 System base [MVA]
 System Frequency [Hz]
 Base voltage of the bus [kV]
@@ -1760,4 +2050,138 @@ Initialitation [1]
 [1]
 [1]
 Init. val. (pu, SB) [1]
+Base voltage of the bus [kV]
+Voltage magnitude (pu) [1]
+Voltage angle [deg]
+Active power [MW]
+Reactive power [Mvar]
+System base power [MVA]
+System Frequeny [Hz]
+Real part of the voltage
+Imaginary part of the voltage
+Real part of the current
+Imaginary part of the current
+Bus voltage magnitude (pu) [1]
+Bus voltage angle [deg]
+Display voltage values: [:#(type=Boolean)]
+Base voltage of the bus [kV]
+Voltage magnitude (pu) [1]
+Voltage angle [deg]
+Active power [MW]
+Reactive power [Mvar]
+System base power [MVA]
+System Frequeny [Hz]
+Start up control [:#(type=Integer)]
+Stator resistance (pu)
+Stator reactance (pu)
+1st cage rotor resistance (pu)
+1st cage rotor reactance (pu)
+Magnetizing reactance (pu)
+Inertia constant (s)
+1st coefficient of tau_m(w) (pu)
+2nd coefficient of tau_m(w) (pu)
+3rd coefficient of tau_m(w) (pu)
+Start up time (s)
+Bus voltage magnitude [1]
+ Bus voltage angle [deg]
+
+
+
+
+[MW]
+[Mvar]
+
+
+
+
+
+
+
+
+
+Base freq in rad/s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Real part of the current
+Imaginary part of the current
+
+Reactive power produced by the shunt capacitor under 1 p.u voltage, Mvar
+Base voltage of the bus, kV
+Frequency rating, Hz
+
+Capacitance in p.u
+
+
+
+
+Real part of the current
+Imaginary part of the current
+Real part of the current
+Imaginary part of the current
+System base power (MVA)
+Sending end bus voltage (kV)
+Power rating (MVA)
+Voltage rating of transformer (kV)
+Resistance (pu, transformer base)
+Reactance (pu, transformer base)
+Optional fixed tap ratio
+Transformer base impedance
+System base impedance
+Resistance (pu, system base)
+Reactance (pu, system base)
+Internal parameter to switch on the icon arrow [:#(type=Boolean)]
+Base voltage of the bus [kV]
+Voltage magnitude (pu) [1]
+Voltage angle [deg]
+Active power [MW]
+Reactive power [Mvar]
+System base power [MVA]
+System Frequeny [Hz]
+Power rating (MVA) [MVA]
+Voltage magnitude (pu) [1]
+voltage angle (rad) [rad|deg]
+Active power (pu) [1]
+Reactive power (pu) [1]
+[rad|deg]
+Change of base between Machine and System [1]
+Active power time constant (s) [s]
+Reactive power time constant (s) [s]
+Static active power exponent
+Dynamic active power exponent
+Static reactive power exponent
+Dynamic reactive power exponent
+Static real power absorption (pu) [1]
+Transient real power absorption (pu) [1]
+Static imaginary power absorption (pu) [1]
+Transient imaginary power absorption (pu) [1]
+[s]
+[1]
+[s]
+[1]
+Real part of the current
+Imaginary part of the current
+Resistance (pu)
+Reactance (pu)
+Start time of the fault (s)
+End time of the fault (s)
+[:#(type=Boolean)]
 

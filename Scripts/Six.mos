@@ -1,0 +1,5 @@
+﻿//Checks Sixth Scenario
+simulateModel("AIOSStability.Scenarios6.Six6", stopTime=10, method="dassl", resultFile="Six6");
+createPlot(id=1, position={55, -49, 594, 434}, y={"ThreeBus.V"}, range={0.0, 10.0, 0.30000000000000004, 1.1}, erase=false, grid=true,colors={{28,108,200}});
+plotExpression(apply(1-Six6[end].motorTypeIII.s), false, "1-Six6[end].motorTypeIII.s", 4);
+createPlot(id=3, position={55, -49, 594, 434}, y={"motorTypeIII.P"}, range={0.0, 10.0, 0.30000000000000004, 1.1}, erase=false, grid=true, colors={{28,108,200}});
