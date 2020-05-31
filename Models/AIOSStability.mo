@@ -2786,6 +2786,26 @@ package AIOSStability
         P_0=PowerFlow.power.GeneratorP_0,
         Q_0=PowerFlow.power.GeneratorQ_0)
         annotation (Placement(transformation(extent={{-258,-176},{-238,-146}})));
+      OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ1(
+        V_b=380,
+        V_0=PowerFlow.voltage.InfiniteBusV_0,
+        angle_0=PowerFlow.voltage.InfiniteBusangle_0,
+        P_0=PowerFlow.power.InfiniteBusP_0,
+        Q_0=PowerFlow.power.InfiniteBusQ_0)
+                                       annotation (Placement(transformation(
+            extent={{-18,-18},{18,18}},
+            rotation=0,
+            origin={-252,-110})));
+      OpenIPSL.Electrical.Events.Breaker breaker(
+        enableTrigger=true,
+        rc_enabled=false,
+        t_rc=1) annotation (Placement(transformation(
+            extent={{-10,-10},{10,10}},
+            rotation=-90,
+            origin={-252,-68})));
+      Modelica.Blocks.Sources.BooleanStep booleanStep(startTime=
+            0.999999999999999, startValue=false)
+        annotation (Placement(transformation(extent={{-188,-94},{-208,-74}})));
     equation
       Imag =  sqrt(pwLine3.p.ir^2+pwLine3.p.ii^2);
       connect(TwoBus.p, twoWindingTransformer1.p)
@@ -2817,6 +2837,12 @@ package AIOSStability
                                                        color={0,0,255}));
       connect(ThreeBus.p, pwLine1.n) annotation (Line(points={{-66,-158},{-66,
               -34},{-116,-34},{-116,-54},{-161,-54}}, color={0,0,255}));
+      connect(lOADPQ1.p, breaker.r)
+        annotation (Line(points={{-252,-92},{-252,-78}}, color={0,0,255}));
+      connect(breaker.s, OneBus.p) annotation (Line(points={{-252,-58},{-252,
+              -16},{-234,-16}}, color={0,0,255}));
+      connect(breaker.Trigger, booleanStep.y) annotation (Line(points={{-240,
+              -68},{-222,-68},{-222,-84},{-209,-84}}, color={255,0,255}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
                 -200},{120,80}})),      Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-300,-200},{120,80}})));
@@ -3114,9 +3140,9 @@ package AIOSStability
         X=0.414333333,
         G=0,
         B=0,
-        displayPF=true,
-        t1=1)
-        annotation (Placement(transformation(extent={{-194,-24},{-174,-4}})));
+        t1=1,
+        displayPF=true)
+        annotation (Placement(transformation(extent={{-190,-26},{-170,-6}})));
       OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
         V_b=380,
         displayPF=true,
@@ -3210,13 +3236,10 @@ package AIOSStability
         angle_0=PowerFlow.voltage.Generatorangle_0,
         P_0=PowerFlow.power.GeneratorP_0,
         Q_0=PowerFlow.power.GeneratorQ_0)
-        annotation (Placement(transformation(extent={{-226,-102},{-206,-76}})));
+        annotation (Placement(transformation(extent={{-222,-108},{-202,-84}})));
     equation
       connect(pwLine1.p,OneBus. p) annotation (Line(points={{-191,38},{-210,
               38},{-210,10},{-234,10}},
-                                  color={0,0,255}));
-      connect(pwLine3.p,OneBus. p) annotation (Line(points={{-193,-14},{-210,
-              -14},{-210,10},{-234,10}},
                                   color={0,0,255}));
       connect(infiniteBus.p,OneBus. p)
         annotation (Line(points={{-250,10},{-234,10}},
@@ -3231,8 +3254,8 @@ package AIOSStability
         annotation (Line(points={{-27,-92},{-72,-92}}, color={0,0,255}));
       connect(pwLine1.n, ThreeBus.p) annotation (Line(points={{-173,38},{-146,
               38},{-146,6},{-72,6},{-72,-92}},      color={0,0,255}));
-      connect(pwLine3.n, ThreeBus.p) annotation (Line(points={{-175,-14},{
-              -146,-14},{-146,6},{-72,6},{-72,-92}}, color={0,0,255}));
+      connect(pwLine3.n, ThreeBus.p) annotation (Line(points={{-171,-16},{-146,
+              -16},{-146,6},{-72,6},{-72,-92}},      color={0,0,255}));
       connect(FourBus.p,motorTypeIII. p)
         annotation (Line(points={{-6,6},{42,6}}, color={0,0,255}));
       connect(pwShuntC.p,motorTypeIII. p) annotation (Line(points={{42,-28},{18,
@@ -3243,8 +3266,8 @@ package AIOSStability
         annotation (Line(points={{-53,6},{-72,6},{-72,-92}}, color={0,0,255}));
       connect(lOADPQ.p, FiveBus.p) annotation (Line(points={{56,-92},{42,-92},{
               42,-92},{28,-92}}, color={0,0,255}));
-      connect(TwoBus.p, pSATGeneratorTGOV.pwPin) annotation (Line(points={{-164,
-              -92},{-184,-92},{-184,-87.05},{-205.6,-87.05}}, color={0,0,255}));
+      connect(pwLine3.p, OneBus.p) annotation (Line(points={{-189,-16},{-210,
+              -16},{-210,10},{-234,10}}, color={0,0,255}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
                 -280,-140},{140,80}})), Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-280,-140},{140,80}})));
@@ -3792,7 +3815,8 @@ package AIOSStability
 
      Real Imag;
       Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
-            Data.VoltageData.VPF4, redeclare record Power = Data.PowerData.PPF4)
+            Data.VoltageData.VPF4EX, redeclare record Power =
+            Data.PowerData.PPF4EX)
         annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
       Components.PSATGeneratorTGOV pSATGeneratorTGOV(
        V_b=20,
@@ -4413,6 +4437,7 @@ package AIOSStability
         X=0.4143333333,
         G=0,
         B=0,
+        t1=1,
         displayPF=false)
         annotation (Placement(transformation(extent={{-180,-64},{-160,-44}})));
       OpenIPSL.Electrical.Branches.PwLine pwLine3(
@@ -4420,6 +4445,7 @@ package AIOSStability
         X=0.414333333,
         G=0,
         B=0,
+        t1=1,
         displayPF=false)
         annotation (Placement(transformation(extent={{-180,-26},{-160,-6}})));
       OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
@@ -4459,7 +4485,8 @@ package AIOSStability
 
      Real Imag;
       Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
-            Data.VoltageData.VPF5, redeclare record Power = Data.PowerData.PPF5)
+            Data.VoltageData.VPF2EX, redeclare record Power =
+            Data.PowerData.PPF2EX)
         annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
       OpenIPSL.Electrical.Loads.PSAT.ExponentialRecovery exponentialRecovery(
         V_b=380,
@@ -5080,16 +5107,16 @@ package AIOSStability
         X=0.4143333333,
         G=0,
         B=0,
-        displayPF=false,
-        t1=1)
+        t1=1,
+        displayPF=true)
         annotation (Placement(transformation(extent={{-180,-64},{-160,-44}})));
       OpenIPSL.Electrical.Branches.PwLine pwLine3(
         R=0,
         X=0.414333333,
         G=0,
         B=0,
-        displayPF=false,
-        t1=1)
+        t1=1,
+        displayPF=true)
         annotation (Placement(transformation(extent={{-180,-26},{-160,-6}})));
       OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
         V_b=380,
@@ -5151,7 +5178,7 @@ package AIOSStability
         P_0=PowerFlow.power.GeneratorP_0,
         Q_0=PowerFlow.power.GeneratorQ_0,
         M_b=750)
-        annotation (Placement(transformation(extent={{-256,-106},{-238,-84}})));
+        annotation (Placement(transformation(extent={{-276,-106},{-258,-84}})));
     equation
       Imag =  sqrt(pwLine3.p.ir^2+pwLine3.p.ii^2);
       connect(TwoBus.p, twoWindingTransformer1.p)
@@ -5177,7 +5204,7 @@ package AIOSStability
       connect(exponentialRecovery.p, FiveBus.p) annotation (Line(points={{50,
               -98},{50,-92},{28,-92}}, color={0,0,255}));
       connect(TwoBus.p, pSATGeneratorTGOV6_1.pwPin) annotation (Line(points={{-164,
-              -92},{-198,-92},{-198,-93.35},{-237.64,-93.35}},   color={0,0,255}));
+              -92},{-198,-92},{-198,-93.35},{-257.64,-93.35}},   color={0,0,255}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
                 -140},{140,80}})),      Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
@@ -5205,7 +5232,7 @@ package AIOSStability
         X=0.4143333333,
         G=0,
         B=0,
-        displayPF=false,
+        displayPF=true,
         t1=1)
         annotation (Placement(transformation(extent={{-180,-64},{-160,-44}})));
       OpenIPSL.Electrical.Branches.PwLine pwLine3(
@@ -5213,7 +5240,7 @@ package AIOSStability
         X=0.414333333,
         G=0,
         B=0,
-        displayPF=false,
+        displayPF=true,
         t1=1)
         annotation (Placement(transformation(extent={{-180,-26},{-160,-6}})));
       OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
@@ -5253,8 +5280,7 @@ package AIOSStability
 
      Real Imag;
       Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
-            Data.VoltageData.VPF5EX, redeclare record Power =
-            Data.PowerData.PPF5EX)
+            Data.VoltageData.VPF3, redeclare record Power = Data.PowerData.PPF3)
         annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
       OpenIPSL.Electrical.Loads.PSAT.ExponentialRecovery exponentialRecovery(
         V_b=380,
@@ -5777,7 +5803,7 @@ package AIOSStability
       OpenIPSL.Electrical.Events.PwFault pwFault(
         R=0,
         t1=1,
-        X=0.6,
+        X=2,
         t2=1.14)
                annotation (Placement(transformation(extent={{-132,-64},{-120,
                 -76}})));
@@ -5847,7 +5873,7 @@ package AIOSStability
         G=0,
         B=0,
         displayPF=false,
-        t1=1.15)
+        t1=1.14)
         annotation (Placement(transformation(extent={{-180,-64},{-160,-44}})));
       OpenIPSL.Electrical.Branches.PwLine pwLine3(
         R=0,
@@ -5955,10 +5981,10 @@ package AIOSStability
         P_0=PowerFlow.power.PQLoadP_0)
         annotation (Placement(transformation(extent={{40,-118},{60,-98}})));
       OpenIPSL.Electrical.Events.PwFault pwFault(
-        R=0,
+        R=1,
         t1=1,
-        t2=1.14,
-        X=0.6) annotation (Placement(transformation(extent={{-132,-64},{-120,
+        t2=1.15,
+        X=0.9) annotation (Placement(transformation(extent={{-132,-64},{-120,
                 -76}})));
     equation
       Imag =  sqrt(pwLine3.p.ir^2+pwLine3.p.ii^2);
