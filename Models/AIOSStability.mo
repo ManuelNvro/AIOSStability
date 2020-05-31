@@ -2523,8 +2523,8 @@ package AIOSStability
 
      Real Imag;
       Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
-            Data.VoltageData.VPF3, redeclare record Power = Data.PowerData.PPF3)
-        annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
+            Data.VoltageData.VPF1, redeclare record Power = Data.PowerData.PPF1)
+        annotation (Placement(transformation(extent={{-200,58},{-180,78}})));
       Components.PSATGeneratorTGOV pSATGeneratorTGOV(
        V_b=20,
         M_b=750,
@@ -2702,7 +2702,7 @@ package AIOSStability
         angle_0=-12.7,
         P_0=1200,
         Q_0=53)
-        annotation (Placement(transformation(extent={{-82,-102},{-62,-82}})));
+        annotation (Placement(transformation(extent={{-76,-168},{-56,-148}})));
       inner OpenIPSL.Electrical.SystemBase SysData(S_b=750)
         annotation (Placement(transformation(extent={{-274,56},{-214,76}})));
       OpenIPSL.Electrical.Buses.Bus OneBus(
@@ -2717,6 +2717,7 @@ package AIOSStability
         X=0.4143333333,
         G=0,
         B=0,
+        t1=1,
         displayPF=true)
         annotation (Placement(transformation(extent={{-180,-64},{-160,-44}})));
       OpenIPSL.Electrical.Branches.PwLine pwLine3(
@@ -2724,6 +2725,8 @@ package AIOSStability
         X=0.414333333,
         G=0,
         B=0,
+        t1=1,
+        opening=1,
         displayPF=true)
         annotation (Placement(transformation(extent={{-182,-26},{-162,-6}})));
       OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
@@ -2735,7 +2738,7 @@ package AIOSStability
         Q_0=PowerFlow.power.InfiniteBusQ_0)
         annotation (Placement(transformation(extent={{-290,-26},{-270,-6}})));
       OpenIPSL.Electrical.Buses.Bus TwoBus(V_b=750) annotation (Placement(
-            transformation(extent={{-184,-102},{-164,-82}})));
+            transformation(extent={{-178,-168},{-158,-148}})));
       OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
         twoWindingTransformer1(
         Sn=500,
@@ -2745,21 +2748,21 @@ package AIOSStability
         rT=0,
         xT=0.08,
         m=1/1.04)
-        annotation (Placement(transformation(extent={{-142,-102},{-122,-82}})));
+        annotation (Placement(transformation(extent={{-136,-168},{-116,-148}})));
       OpenIPSL.Electrical.Buses.Bus FiveBus(
         V_b=380,
         V_0=1.0455,
         angle_0=-15.2,
         P_0=1200,
         Q_0=0)
-        annotation (Placement(transformation(extent={{18,-102},{38,-82}})));
+        annotation (Placement(transformation(extent={{24,-168},{44,-148}})));
       OpenIPSL.Electrical.Branches.PwLine pwLine2(
         R=0,
         X=0.029999989612,
         G=0,
         B=0,
         displayPF=true)
-        annotation (Placement(transformation(extent={{-28,-102},{-8,-82}})));
+        annotation (Placement(transformation(extent={{-22,-168},{-2,-148}})));
       OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ(
         V_b=380,
         V_0=PowerFlow.voltage.PQLoadV_0,
@@ -2768,12 +2771,12 @@ package AIOSStability
         Q_0=PowerFlow.power.PQLoadQ_0) annotation (Placement(transformation(
             extent={{-18,-18},{18,18}},
             rotation=90,
-            origin={74,-92})));
+            origin={80,-158})));
 
      Real Imag;
       Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Power =
-            Data.PowerData.PPF4, redeclare record Voltage =
-            Data.VoltageData.VPF4)
+            Data.PowerData.PPF2EX, redeclare record Voltage =
+            Data.VoltageData.VPF2EX)
         annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
       Components.PSATGeneratorTGOV pSATGeneratorTGOV(
        V_b=20,
@@ -2782,19 +2785,23 @@ package AIOSStability
         angle_0=PowerFlow.voltage.Generatorangle_0,
         P_0=PowerFlow.power.GeneratorP_0,
         Q_0=PowerFlow.power.GeneratorQ_0)
-        annotation (Placement(transformation(extent={{-264,-110},{-244,-80}})));
+        annotation (Placement(transformation(extent={{-258,-176},{-238,-146}})));
     equation
       Imag =  sqrt(pwLine3.p.ir^2+pwLine3.p.ii^2);
       connect(TwoBus.p, twoWindingTransformer1.p)
-        annotation (Line(points={{-174,-92},{-143,-92}}, color={0,0,255}));
+        annotation (Line(points={{-168,-158},{-137,-158}},
+                                                         color={0,0,255}));
       connect(twoWindingTransformer1.n, ThreeBus.p)
-        annotation (Line(points={{-121,-92},{-72,-92}}, color={0,0,255}));
+        annotation (Line(points={{-115,-158},{-66,-158}},
+                                                        color={0,0,255}));
       connect(FiveBus.p, pwLine2.n)
-        annotation (Line(points={{28,-92},{-9,-92}}, color={0,0,255}));
-      connect(FiveBus.p, lOADPQ.p) annotation (Line(points={{28,-92},{56,-92}},
+        annotation (Line(points={{34,-158},{-3,-158}},
+                                                     color={0,0,255}));
+      connect(FiveBus.p, lOADPQ.p) annotation (Line(points={{34,-158},{62,-158}},
                                        color={0,0,255}));
       connect(pwLine2.p, ThreeBus.p)
-        annotation (Line(points={{-27,-92},{-72,-92}}, color={0,0,255}));
+        annotation (Line(points={{-21,-158},{-66,-158}},
+                                                       color={0,0,255}));
       connect(infiniteBus.p, OneBus.p)
         annotation (Line(points={{-270,-16},{-234,-16}},
                                                        color={0,0,255}));
@@ -2805,14 +2812,14 @@ package AIOSStability
               -16},{-226,-54},{-179,-54}}, color={0,0,255}));
       connect(pwLine3.n, pwLine1.n) annotation (Line(points={{-163,-16},{-116,
               -16},{-116,-54},{-161,-54}}, color={0,0,255}));
-      connect(ThreeBus.p, pwLine1.n) annotation (Line(points={{-72,-92},{-72,
-              -38},{-116,-38},{-116,-54},{-161,-54}}, color={0,0,255}));
-      connect(TwoBus.p, pSATGeneratorTGOV.pwPin) annotation (Line(points={{-174,
-              -92},{-198,-92},{-198,-92.75},{-243.6,-92.75}},
+      connect(TwoBus.p, pSATGeneratorTGOV.pwPin) annotation (Line(points={{-168,
+              -158},{-192,-158},{-192,-158.75},{-237.6,-158.75}},
                                                        color={0,0,255}));
+      connect(ThreeBus.p, pwLine1.n) annotation (Line(points={{-66,-158},{-66,
+              -34},{-116,-34},{-116,-54},{-161,-54}}, color={0,0,255}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
-                -140},{140,80}})),      Diagram(coordinateSystem(
-              preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
+                -200},{120,80}})),      Diagram(coordinateSystem(
+              preserveAspectRatio=false, extent={{-300,-200},{120,80}})));
     end Four;
 
     model Three
@@ -2942,7 +2949,8 @@ package AIOSStability
               -66},{-142,-54},{-161,-54}}, color={0,0,255}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
                 -140},{140,80}})),      Diagram(coordinateSystem(
-              preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
+              preserveAspectRatio=false, extent={{-300,-140},{140,80}})),
+        experiment(StopTime=15, Tolerance=0.01));
     end Three;
 
     model AVRGain
