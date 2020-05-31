@@ -11,6 +11,8 @@ This project is intended to reproduce 12 stability scenarios for the "All-In-One
 ![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/OneDiagram.png)
 ![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/OnePQ.png)
 
+**Simulation Notes:** Working PF: PF1. <br/>
+
 ## 2
 **Simulation time:** 10 secs. <br/>
 **Power Flow:** 1. <br/>  
@@ -21,14 +23,19 @@ This project is intended to reproduce 12 stability scenarios for the "All-In-One
 ![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/TwoDelta.png)
 ![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/TwoP.png)
 
+**Simulation Notes:** Working PF: PF1. <br/>
+
 ## 3
 **Simulation time:** 10 secs. <br/>
 **Power Flow:** 1. <br/>  
 **Disturbance:** Same fault ast #1, however, fault now lasts for t = 0.15 secs. <br/>
 **Disturbance Changes:** Change time from t = 1.14 secs. to 1.15 secs. in two places.<br/>
 **Observations:** The fault is too long now, the generator will loose synchronism. This is an example of transient (angle) instability. <br/>
+
 ![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/ThreeDiagram.png)
 ![alt text](https://github.com/ManuelNvro/AIOSStability/blob/master/Figures/ThreeDelta.png)
+
+**Simulation Notes:** Working PF: PF1. Line open: 1.14 secs. Fault: 1.15 secs. Tolerance: 0.01. Intervals: 500. <br/>
 
 ## 4
 **Simulation time:** 15 secs. <br/>
