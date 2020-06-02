@@ -9,14 +9,14 @@ Modelica experiment file
 double experiment(7,1)
        0                   # StartTime    Time at which integration starts
                            #              (and linearization and trimming time)
-      50                   # StopTime     Time at which integration stops
+       0                   # StopTime     Time at which integration stops
        0                   # Increment    Communication step size, if > 0
-    5000                   # nInterval    Number of communication intervals, if > 0
+     100                   # nInterval    Number of communication intervals, if > 0
   1.0000000000000000E-04   # Tolerance    Relative precision of signals for
                            #              simulation, linearization and trimming
        0                   # MaxFixedStep Maximum step size of fixed step size
                            #              integrators, if > 0.0
-       8                   # Algorithm    Integration algorithm as integer (1...28)
+       4                   # Algorithm    Integration algorithm as integer (1...28)
                            #
                            #             | model|       |        | dense | state |
                            # Algorithm   | typ  | stiff | order  | output| event |
@@ -70,10 +70,10 @@ double method(27,1)
        0                   # hmax     Maximum absolute stepsize, if > 0
        0                   # hmin     Minimum absolute stepsize, if > 0 (use with care!)
        0                   # h0       Stepsize to be attempted on first step, if > 0
-  2.0000000000000000E-14   # teps     Bound to check, if 2 equal time instants
+  9.9999999999999998E-13   # teps     Bound to check, if 2 equal time instants
   1.0000000000000000E-10   # eveps    Hysteresis epsilon at event points
       20                   # eviter   Maximum number of event iterations
-  9.9999999999999995E-07   # delaym   Minimum time increment in delay buffers
+       0                   # delaym   Minimum time increment in delay buffers
        1                   # fexcep   0/1 floating exception crashes/stops dymosim
        1                   # tscale   clock-time = tscale*simulation-time, if grid = 5
                            #          > 1: simulation too slow
@@ -102,1212 +102,651 @@ int settings(13,1)
 
 
 #    Names of initial variables
-char initialName(401,59)
+char initialName(214,38)
 SysData.S_b
 SysData.fn
-ThreeBus.V_b
-ThreeBus.V_0
-ThreeBus.angle_0
-ThreeBus.P_0
-ThreeBus.Q_0
-ThreeBus.S_b
-ThreeBus.fn
-ThreeBus.p.vr
-ThreeBus.p.vi
-ThreeBus.p.ir
-ThreeBus.p.ii
-ThreeBus.V
-ThreeBus.angle
-ThreeBus.displayPF
-OneBus.V_b
-OneBus.V_0
-OneBus.angle_0
-OneBus.P_0
-OneBus.Q_0
-OneBus.S_b
-OneBus.fn
-OneBus.p.vr
-OneBus.p.vi
-OneBus.p.ir
-OneBus.p.ii
-OneBus.V
-OneBus.angle
-OneBus.displayPF
-pwLine1.p.ir
-pwLine1.p.ii
-pwLine1.n.ir
-pwLine1.n.ii
-pwLine1.R
-pwLine1.X
-pwLine1.G
-pwLine1.B
-pwLine1.S_b
-pwLine1.t1
-pwLine1.t2
-pwLine1.opening
-pwLine1.displayPF
-pwLine1.P12
-pwLine1.P21
-pwLine1.Q12
-pwLine1.Q21
-pwLine1.Y.re
-pwLine1.Y.im
-pwLine1.Z.re
-pwLine1.Z.im
-pwLine3.p.ir
-pwLine3.p.ii
-pwLine3.n.ir
-pwLine3.n.ii
-pwLine3.R
-pwLine3.X
-pwLine3.G
-pwLine3.B
-pwLine3.S_b
-pwLine3.t1
-pwLine3.t2
-pwLine3.opening
-pwLine3.displayPF
-pwLine3.P12
-pwLine3.P21
-pwLine3.Q12
-pwLine3.Q21
-pwLine3.Y.re
-pwLine3.Y.im
-pwLine3.Z.re
-pwLine3.Z.im
-infiniteBus.V_b
-infiniteBus.V_0
-infiniteBus.angle_0
-infiniteBus.P_0
-infiniteBus.Q_0
-infiniteBus.S_b
-infiniteBus.fn
-infiniteBus.P
-infiniteBus.Q
-infiniteBus.p.ir
-infiniteBus.p.ii
-infiniteBus.displayPF
-TwoBus.V_b
-TwoBus.V_0
-TwoBus.angle_0
-TwoBus.P_0
-TwoBus.Q_0
-TwoBus.S_b
-TwoBus.fn
-TwoBus.p.vr
-TwoBus.p.vi
-TwoBus.p.ir
-TwoBus.p.ii
-TwoBus.V
-TwoBus.angle
-TwoBus.displayPF
-twoWindingTransformer1.p.ir
-twoWindingTransformer1.p.ii
-twoWindingTransformer1.n.ir
-twoWindingTransformer1.n.ii
-twoWindingTransformer1.S_b
-twoWindingTransformer1.V_b
-twoWindingTransformer1.Sn
-twoWindingTransformer1.Vn
-twoWindingTransformer1.rT
-twoWindingTransformer1.xT
-twoWindingTransformer1.m
-twoWindingTransformer1.Zn
-twoWindingTransformer1.Zb
-twoWindingTransformer1.r
-twoWindingTransformer1.x
-twoWindingTransformer1.tc
-FiveBus.V_b
-FiveBus.V_0
-FiveBus.angle_0
-FiveBus.P_0
-FiveBus.Q_0
-FiveBus.S_b
-FiveBus.fn
-FiveBus.p.vr
-FiveBus.p.vi
-FiveBus.p.ir
-FiveBus.p.ii
-FiveBus.V
-FiveBus.angle
-FiveBus.displayPF
-pwLine2.p.ir
-pwLine2.p.ii
-pwLine2.n.ir
-pwLine2.n.ii
-pwLine2.R
-pwLine2.X
-pwLine2.G
-pwLine2.B
-pwLine2.S_b
-pwLine2.t1
-pwLine2.t2
-pwLine2.opening
-pwLine2.displayPF
-pwLine2.P12
-pwLine2.P21
-pwLine2.Q12
-pwLine2.Q21
-pwLine2.Y.re
-pwLine2.Y.im
-pwLine2.Z.re
-pwLine2.Z.im
-Imag
-PowerFlow.voltage.InfiniteBusV_0
-PowerFlow.voltage.InfiniteBusangle_0
-PowerFlow.voltage.BreakerenableTrigger
-PowerFlow.voltage.TransformerB3B4m
-PowerFlow.voltage.GeneratorV_0
-PowerFlow.voltage.Generatorangle_0
-PowerFlow.voltage.MotorV_0
-PowerFlow.voltage.Motorangle_0
-PowerFlow.voltage.PQLoadV_0
-PowerFlow.voltage.PQLoadangle_0
-PowerFlow.power.InfiniteBusP_0
-PowerFlow.power.InfiniteBusQ_0
-PowerFlow.power.GeneratorP_0
-PowerFlow.power.GeneratorQ_0
-PowerFlow.power.PQLoadP_0
-PowerFlow.power.PQLoadQ_0
-PowerFlow.power.MotorP_0
-PowerFlow.power.MotorQ_0
-PowerFlow.power.ShuntCapacitorQnom
-exponentialRecovery.V_b
-exponentialRecovery.V_0
-exponentialRecovery.angle_0
-exponentialRecovery.P_0
-exponentialRecovery.Q_0
-exponentialRecovery.S_b
-exponentialRecovery.fn
-exponentialRecovery.Sn
-exponentialRecovery.V
-exponentialRecovery.Angle_V
-exponentialRecovery.P
-exponentialRecovery.Q
-exponentialRecovery.angle_0rad
-exponentialRecovery.CoB
-exponentialRecovery.Tp
-exponentialRecovery.Tq
-exponentialRecovery.alpha_s
-exponentialRecovery.alpha_t
-exponentialRecovery.beta_s
-exponentialRecovery.beta_t
-exponentialRecovery.ps
-exponentialRecovery.pt
-exponentialRecovery.qs
-exponentialRecovery.qt
-exponentialRecovery.xp
-exponentialRecovery.der(xp)
-exponentialRecovery.xq
-exponentialRecovery.der(xq)
-pSATGeneratorTGOV6_1.SysData.S_b
-pSATGeneratorTGOV6_1.SysData.fn
-pSATGeneratorTGOV6_1.V_b
-pSATGeneratorTGOV6_1.V_0
-pSATGeneratorTGOV6_1.angle_0
-pSATGeneratorTGOV6_1.P_0
-pSATGeneratorTGOV6_1.Q_0
-pSATGeneratorTGOV6_1.M_b
-pSATGeneratorTGOV6_1.avr2.v
-pSATGeneratorTGOV6_1.avr2.vf
-pSATGeneratorTGOV6_1.avr2.vref
-pSATGeneratorTGOV6_1.avr2.vrmin
-pSATGeneratorTGOV6_1.avr2.vrmax
-pSATGeneratorTGOV6_1.avr2.Ka
-pSATGeneratorTGOV6_1.avr2.Ta
-pSATGeneratorTGOV6_1.avr2.Kf
-pSATGeneratorTGOV6_1.avr2.Tf
-pSATGeneratorTGOV6_1.avr2.Ke
-pSATGeneratorTGOV6_1.avr2.Te
-pSATGeneratorTGOV6_1.avr2.Tr
-pSATGeneratorTGOV6_1.avr2.Ae
-pSATGeneratorTGOV6_1.avr2.Be
-pSATGeneratorTGOV6_1.avr2.v0
-pSATGeneratorTGOV6_1.avr2.vfstate
-pSATGeneratorTGOV6_1.avr2.vf00
-pSATGeneratorTGOV6_1.avr2.vr10
-pSATGeneratorTGOV6_1.avr2.vr20
-pSATGeneratorTGOV6_1.avr2.vref0
-pSATGeneratorTGOV6_1.avr2.vf0
-pSATGeneratorTGOV6_1.avr2.feedback.u1
-pSATGeneratorTGOV6_1.avr2.feedback.u2
-pSATGeneratorTGOV6_1.avr2.feedback.y
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.b[1]
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.a[1]
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.a[2]
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.initType
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.x_start[1]
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.y_start
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.x[1]
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.na
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.nb
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.nx
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.bb[1]
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.bb[2]
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.d
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.a_end
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.x_scaled[1]
-pSATGeneratorTGOV6_1.avr2.ExcitationSystem.der(x_scaled[1])
-pSATGeneratorTGOV6_1.avr2.ceilingBlock.Ae
-pSATGeneratorTGOV6_1.avr2.ceilingBlock.Be
-pSATGeneratorTGOV6_1.avr2.derivativeBlock.k
-pSATGeneratorTGOV6_1.avr2.derivativeBlock.T
-pSATGeneratorTGOV6_1.avr2.derivativeBlock.initType
-pSATGeneratorTGOV6_1.avr2.derivativeBlock.x_start
-pSATGeneratorTGOV6_1.avr2.derivativeBlock.y_start
-pSATGeneratorTGOV6_1.avr2.derivativeBlock.y
-pSATGeneratorTGOV6_1.avr2.derivativeBlock.x
-pSATGeneratorTGOV6_1.avr2.derivativeBlock.der(x)
-pSATGeneratorTGOV6_1.avr2.derivativeBlock.zeroGain
-pSATGeneratorTGOV6_1.avr2.feedback1.u1
-pSATGeneratorTGOV6_1.avr2.firstOrder2.k
-pSATGeneratorTGOV6_1.avr2.firstOrder2.T
-pSATGeneratorTGOV6_1.avr2.firstOrder2.initType
-pSATGeneratorTGOV6_1.avr2.firstOrder2.y_start
-pSATGeneratorTGOV6_1.avr2.firstOrder2.y
-pSATGeneratorTGOV6_1.avr2.firstOrder2.der(y)
-pSATGeneratorTGOV6_1.avr2.simpleLagLim.u
-pSATGeneratorTGOV6_1.avr2.simpleLagLim.state
-pSATGeneratorTGOV6_1.avr2.simpleLagLim.der(state)
-pSATGeneratorTGOV6_1.avr2.simpleLagLim.K
-pSATGeneratorTGOV6_1.avr2.simpleLagLim.T
-pSATGeneratorTGOV6_1.avr2.simpleLagLim.y_start
-pSATGeneratorTGOV6_1.avr2.simpleLagLim.outMax
-pSATGeneratorTGOV6_1.avr2.simpleLagLim.outMin
-pSATGeneratorTGOV6_1.avr2.simpleLagLim.T_mod
-pSATGeneratorTGOV6_1.oel.p
-pSATGeneratorTGOV6_1.oel.q
-pSATGeneratorTGOV6_1.oel.field_current.ifield
-pSATGeneratorTGOV6_1.oel.field_current.xd
-pSATGeneratorTGOV6_1.oel.field_current.xq
-pSATGeneratorTGOV6_1.oel.field_current.gamma_p
-pSATGeneratorTGOV6_1.oel.field_current.gamma_q
-pSATGeneratorTGOV6_1.oel.T0
-pSATGeneratorTGOV6_1.oel.xd
-pSATGeneratorTGOV6_1.oel.xq
-pSATGeneratorTGOV6_1.oel.if_lim
-pSATGeneratorTGOV6_1.oel.vOEL_max
-pSATGeneratorTGOV6_1.oel.Sn
-pSATGeneratorTGOV6_1.oel.Vn
-pSATGeneratorTGOV6_1.oel.V_b
-pSATGeneratorTGOV6_1.oel.Z_MBtoSB
-pSATGeneratorTGOV6_1.oel.I_MBtoSB
-pSATGeneratorTGOV6_1.oel.add.y
-pSATGeneratorTGOV6_1.oel.currentLimit.k
-pSATGeneratorTGOV6_1.oel.limIntegrator.k
-pSATGeneratorTGOV6_1.oel.limIntegrator.outMax
-pSATGeneratorTGOV6_1.oel.limIntegrator.outMin
-pSATGeneratorTGOV6_1.oel.limIntegrator.initType
-pSATGeneratorTGOV6_1.oel.limIntegrator.limitsAtInit
-pSATGeneratorTGOV6_1.oel.limIntegrator.y_start
-pSATGeneratorTGOV6_1.oel.limIntegrator.strict
-pSATGeneratorTGOV6_1.oel.limIntegrator.y
-pSATGeneratorTGOV6_1.oel.limIntegrator.der(y)
-pSATGeneratorTGOV6_1.tGTypeI.pm
-pSATGeneratorTGOV6_1.tGTypeI.wref
-pSATGeneratorTGOV6_1.tGTypeI.pref
-pSATGeneratorTGOV6_1.tGTypeI.R
-pSATGeneratorTGOV6_1.tGTypeI.pmax
-pSATGeneratorTGOV6_1.tGTypeI.pmin
-pSATGeneratorTGOV6_1.tGTypeI.Ts
-pSATGeneratorTGOV6_1.tGTypeI.Tc
-pSATGeneratorTGOV6_1.tGTypeI.T3
-pSATGeneratorTGOV6_1.tGTypeI.T4
-pSATGeneratorTGOV6_1.tGTypeI.T5
-pSATGeneratorTGOV6_1.tGTypeI.pin
-pSATGeneratorTGOV6_1.tGTypeI.pin0
-pSATGeneratorTGOV6_1.tGTypeI.xg10
-pSATGeneratorTGOV6_1.tGTypeI.xg20
-pSATGeneratorTGOV6_1.tGTypeI.xg30
-pSATGeneratorTGOV6_1.tGTypeI.pinstar
-pSATGeneratorTGOV6_1.tGTypeI.xg1
-pSATGeneratorTGOV6_1.tGTypeI.der(xg1)
-pSATGeneratorTGOV6_1.tGTypeI.xg2
-pSATGeneratorTGOV6_1.tGTypeI.der(xg2)
-pSATGeneratorTGOV6_1.tGTypeI.xg3
-pSATGeneratorTGOV6_1.tGTypeI.der(xg3)
-pSATGeneratorTGOV6_1.p0
-pSATGeneratorTGOV6_1.order6_1.V_b
-pSATGeneratorTGOV6_1.order6_1.V_0
-pSATGeneratorTGOV6_1.order6_1.angle_0
-pSATGeneratorTGOV6_1.order6_1.P_0
-pSATGeneratorTGOV6_1.order6_1.Q_0
-pSATGeneratorTGOV6_1.order6_1.S_b
-pSATGeneratorTGOV6_1.order6_1.fn
-pSATGeneratorTGOV6_1.order6_1.Sn
-pSATGeneratorTGOV6_1.order6_1.Vn
-pSATGeneratorTGOV6_1.order6_1.ra
-pSATGeneratorTGOV6_1.order6_1.x1d
-pSATGeneratorTGOV6_1.order6_1.M
-pSATGeneratorTGOV6_1.order6_1.D
-pSATGeneratorTGOV6_1.order6_1.delta
-pSATGeneratorTGOV6_1.order6_1.der(delta)
-pSATGeneratorTGOV6_1.order6_1.w
-pSATGeneratorTGOV6_1.order6_1.der(w)
-pSATGeneratorTGOV6_1.order6_1.anglev
-pSATGeneratorTGOV6_1.order6_1.vd
-pSATGeneratorTGOV6_1.order6_1.vq
-pSATGeneratorTGOV6_1.order6_1.id
-pSATGeneratorTGOV6_1.order6_1.iq
-pSATGeneratorTGOV6_1.order6_1.pe
-pSATGeneratorTGOV6_1.order6_1.vf_MB
-pSATGeneratorTGOV6_1.order6_1.w_b
-pSATGeneratorTGOV6_1.order6_1.S_SBtoMB
-pSATGeneratorTGOV6_1.order6_1.I_MBtoSB
-pSATGeneratorTGOV6_1.order6_1.V_MBtoSB
-pSATGeneratorTGOV6_1.order6_1.Z_MBtoSB
-pSATGeneratorTGOV6_1.order6_1.p0
-pSATGeneratorTGOV6_1.order6_1.q0
-pSATGeneratorTGOV6_1.order6_1.Vt0.re
-pSATGeneratorTGOV6_1.order6_1.Vt0.im
-pSATGeneratorTGOV6_1.order6_1.S0.re
-pSATGeneratorTGOV6_1.order6_1.S0.im
-pSATGeneratorTGOV6_1.order6_1.I0.re
-pSATGeneratorTGOV6_1.order6_1.I0.im
-pSATGeneratorTGOV6_1.order6_1.vr0
-pSATGeneratorTGOV6_1.order6_1.vi0
-pSATGeneratorTGOV6_1.order6_1.ir0
-pSATGeneratorTGOV6_1.order6_1.ii0
-pSATGeneratorTGOV6_1.order6_1.xq0
-pSATGeneratorTGOV6_1.order6_1.delta0
-pSATGeneratorTGOV6_1.order6_1.Vdq0.re
-pSATGeneratorTGOV6_1.order6_1.Vdq0.im
-pSATGeneratorTGOV6_1.order6_1.Idq0.re
-pSATGeneratorTGOV6_1.order6_1.Idq0.im
-pSATGeneratorTGOV6_1.order6_1.vd0
-pSATGeneratorTGOV6_1.order6_1.vq0
-pSATGeneratorTGOV6_1.order6_1.id0
-pSATGeneratorTGOV6_1.order6_1.iq0
-pSATGeneratorTGOV6_1.order6_1.pm00
-pSATGeneratorTGOV6_1.order6_1.xd
-pSATGeneratorTGOV6_1.order6_1.xq
-pSATGeneratorTGOV6_1.order6_1.x1q
-pSATGeneratorTGOV6_1.order6_1.x2d
-pSATGeneratorTGOV6_1.order6_1.x2q
-pSATGeneratorTGOV6_1.order6_1.T1d0
-pSATGeneratorTGOV6_1.order6_1.T1q0
-pSATGeneratorTGOV6_1.order6_1.T2d0
-pSATGeneratorTGOV6_1.order6_1.T2q0
-pSATGeneratorTGOV6_1.order6_1.Taa
-pSATGeneratorTGOV6_1.order6_1.e1q
-pSATGeneratorTGOV6_1.order6_1.der(e1q)
-pSATGeneratorTGOV6_1.order6_1.e1d
-pSATGeneratorTGOV6_1.order6_1.der(e1d)
-pSATGeneratorTGOV6_1.order6_1.e2q
-pSATGeneratorTGOV6_1.order6_1.der(e2q)
-pSATGeneratorTGOV6_1.order6_1.e2d
-pSATGeneratorTGOV6_1.order6_1.der(e2d)
-pSATGeneratorTGOV6_1.order6_1.e2q0
-pSATGeneratorTGOV6_1.order6_1.e2d0
-pSATGeneratorTGOV6_1.order6_1.e1d0
-pSATGeneratorTGOV6_1.order6_1.K1
-pSATGeneratorTGOV6_1.order6_1.K2
-pSATGeneratorTGOV6_1.order6_1.e1q0
-pSATGeneratorTGOV6_1.order6_1.vf00
+pwPin.vr
+pwPin.vi
+pwPin.ir
+pwPin.ii
+V_b
+V_0
+angle_0
+P_0
+Q_0
+M_b
+avr2.v
+avr2.vf
+avr2.vref
+avr2.vrmin
+avr2.vrmax
+avr2.Ka
+avr2.Ta
+avr2.Kf
+avr2.Tf
+avr2.Ke
+avr2.Te
+avr2.Tr
+avr2.Ae
+avr2.Be
+avr2.v0
+avr2.vfstate
+avr2.vf00
+avr2.vr10
+avr2.vr20
+avr2.vref0
+avr2.vf0
+avr2.feedback.u1
+avr2.feedback.u2
+avr2.feedback.y
+avr2.ExcitationSystem.b[1]
+avr2.ExcitationSystem.a[1]
+avr2.ExcitationSystem.a[2]
+avr2.ExcitationSystem.initType
+avr2.ExcitationSystem.x_start[1]
+avr2.ExcitationSystem.y_start
+avr2.ExcitationSystem.x[1]
+avr2.ExcitationSystem.na
+avr2.ExcitationSystem.nb
+avr2.ExcitationSystem.nx
+avr2.ExcitationSystem.bb[1]
+avr2.ExcitationSystem.bb[2]
+avr2.ExcitationSystem.d
+avr2.ExcitationSystem.a_end
+avr2.ExcitationSystem.x_scaled[1]
+avr2.ExcitationSystem.der(x_scaled[1])
+avr2.ceilingBlock.Ae
+avr2.ceilingBlock.Be
+avr2.derivativeBlock.k
+avr2.derivativeBlock.T
+avr2.derivativeBlock.initType
+avr2.derivativeBlock.x_start
+avr2.derivativeBlock.y_start
+avr2.derivativeBlock.y
+avr2.derivativeBlock.x
+avr2.derivativeBlock.der(x)
+avr2.derivativeBlock.zeroGain
+avr2.feedback1.u1
+avr2.firstOrder2.k
+avr2.firstOrder2.T
+avr2.firstOrder2.initType
+avr2.firstOrder2.y_start
+avr2.firstOrder2.y
+avr2.firstOrder2.der(y)
+avr2.simpleLagLim.u
+avr2.simpleLagLim.state
+avr2.simpleLagLim.der(state)
+avr2.simpleLagLim.K
+avr2.simpleLagLim.T
+avr2.simpleLagLim.y_start
+avr2.simpleLagLim.outMax
+avr2.simpleLagLim.outMin
+avr2.simpleLagLim.T_mod
+oel.p
+oel.q
+oel.field_current.p
+oel.field_current.q
+oel.field_current.ifield
+oel.field_current.xd
+oel.field_current.xq
+oel.field_current.gamma_p
+oel.field_current.gamma_q
+oel.T0
+oel.xd
+oel.xq
+oel.if_lim
+oel.vOEL_max
+oel.Sn
+oel.Vn
+oel.V_b
+oel.Z_MBtoSB
+oel.I_MBtoSB
+oel.add.y
+oel.currentLimit.k
+oel.limIntegrator.k
+oel.limIntegrator.outMax
+oel.limIntegrator.outMin
+oel.limIntegrator.initType
+oel.limIntegrator.limitsAtInit
+oel.limIntegrator.y_start
+oel.limIntegrator.strict
+oel.limIntegrator.y
+oel.limIntegrator.der(y)
+tGTypeI.pm
+tGTypeI.wref
+tGTypeI.pref
+tGTypeI.R
+tGTypeI.pmax
+tGTypeI.pmin
+tGTypeI.Ts
+tGTypeI.Tc
+tGTypeI.T3
+tGTypeI.T4
+tGTypeI.T5
+tGTypeI.pin
+tGTypeI.pin0
+tGTypeI.xg10
+tGTypeI.xg20
+tGTypeI.xg30
+tGTypeI.pinstar
+tGTypeI.xg1
+tGTypeI.der(xg1)
+tGTypeI.xg2
+tGTypeI.der(xg2)
+tGTypeI.xg3
+tGTypeI.der(xg3)
+p0
+order6_1.V_b
+order6_1.V_0
+order6_1.angle_0
+order6_1.P_0
+order6_1.Q_0
+order6_1.S_b
+order6_1.fn
+order6_1.Sn
+order6_1.Vn
+order6_1.ra
+order6_1.x1d
+order6_1.M
+order6_1.D
+order6_1.p.ir
+order6_1.p.ii
+order6_1.delta
+order6_1.der(delta)
+order6_1.w
+order6_1.der(w)
+order6_1.P
+order6_1.Q
+order6_1.anglev
+order6_1.vd
+order6_1.vq
+order6_1.id
+order6_1.iq
+order6_1.pe
+order6_1.vf_MB
+order6_1.w_b
+order6_1.S_SBtoMB
+order6_1.I_MBtoSB
+order6_1.V_MBtoSB
+order6_1.Z_MBtoSB
+order6_1.p0
+order6_1.q0
+order6_1.Vt0.re
+order6_1.Vt0.im
+order6_1.S0.re
+order6_1.S0.im
+order6_1.I0.re
+order6_1.I0.im
+order6_1.vr0
+order6_1.vi0
+order6_1.ir0
+order6_1.ii0
+order6_1.xq0
+order6_1.delta0
+order6_1.Vdq0.re
+order6_1.Vdq0.im
+order6_1.Idq0.re
+order6_1.Idq0.im
+order6_1.vd0
+order6_1.vq0
+order6_1.id0
+order6_1.iq0
+order6_1.pm00
+order6_1.xd
+order6_1.xq
+order6_1.x1q
+order6_1.x2d
+order6_1.x2q
+order6_1.T1d0
+order6_1.T1q0
+order6_1.T2d0
+order6_1.T2q0
+order6_1.Taa
+order6_1.e1q
+order6_1.der(e1q)
+order6_1.e1d
+order6_1.der(e1d)
+order6_1.e2q
+order6_1.der(e2q)
+order6_1.e2d
+order6_1.der(e2d)
+order6_1.e2q0
+order6_1.e2d0
+order6_1.e1d0
+order6_1.K1
+order6_1.K2
+order6_1.e1q0
+order6_1.vf00
 
-double initialValue(401,6)
+double initialValue(214,6)
  -1     750                       0                       0                
   1   280   # SysData.S_b
  -1      50                       0                       0                
   1   280   # SysData.fn
- -1     380                       0                       0                
-  1   280   # ThreeBus.V_b
- -1  1.0455000000000001E+00       0                       0                
-  1   280   # ThreeBus.V_0
- -1 -1.2699999999999999E+01       0                       0                
-  1   280   # ThreeBus.angle_0
- -1    1200                       0                       0                
-  1   280   # ThreeBus.P_0
- -1      53                       0                       0                
-  1   280   # ThreeBus.Q_0
   0       0                       0                       0                
-  6   256   # ThreeBus.S_b
+  6   260   # pwPin.vr
   0       0                       0                       0                
-  6   256   # ThreeBus.fn
+  6   260   # pwPin.vi
   0       0                       0                       0                
-  6   260   # ThreeBus.p.vr
+  6   388   # pwPin.ir
   0       0                       0                       0                
-  6   260   # ThreeBus.p.vi
-  0       0                       0                       0                
-  6   388   # ThreeBus.p.ir
-  0       0                       0                       0                
-  6   388   # ThreeBus.p.ii
-  0       0                       0                       0                
-  6   256   # ThreeBus.V
-  0       0                       0                       0                
-  6   256   # ThreeBus.angle
+  6   388   # pwPin.ii
+ -1     400                       0                       0                
+  1   280   # V_b
  -1       1                       0                       0                
-  1   281   # ThreeBus.displayPF
- -1     380                       0                       0                
-  1   280   # OneBus.V_b
- -1  1.0800000000000001E+00       0                       0                
-  1   280   # OneBus.V_0
+  1   280   # V_0
  -1       0                       0                       0                
-  1   280   # OneBus.angle_0
- -1     450                       0                       0                
-  1   280   # OneBus.P_0
- -1     118                       0                       0                
-  1   280   # OneBus.Q_0
-  0       0                       0                       0                
-  6   256   # OneBus.S_b
-  0       0                       0                       0                
-  6   256   # OneBus.fn
-  0       0                       0                       0                
-  6   260   # OneBus.p.vr
-  0       0                       0                       0                
-  6   260   # OneBus.p.vi
-  0       0                       0                       0                
-  6   388   # OneBus.p.ir
-  0       0                       0                       0                
-  6   388   # OneBus.p.ii
-  0       0                       0                       0                
-  6   256   # OneBus.V
-  0       0                       0                       0                
-  6   256   # OneBus.angle
+  1   280   # angle_0
  -1       1                       0                       0                
-  1   281   # OneBus.displayPF
-  0       0                       0                       0                
-  6   388   # pwLine1.p.ir
-  0       0                       0                       0                
-  6   388   # pwLine1.p.ii
-  0       0                       0                       0                
-  6   388   # pwLine1.n.ir
-  0       0                       0                       0                
-  6   388   # pwLine1.n.ii
+  1   280   # P_0
  -1       0                       0                       0                
-  1   280   # pwLine1.R
- -1  4.1433333330000000E-01       0                       0                
-  1   280   # pwLine1.X
- -1       0                       0                       0                
-  1   280   # pwLine1.G
- -1       0                       0                       0                
-  1   280   # pwLine1.B
+  1   280   # Q_0
+ -1     460                       0                       0                
+  1   280   # M_b
   0       0                       0                       0                
-  6   256   # pwLine1.S_b
-  0       1                       0                       0                
-  6   256   # pwLine1.t1
-  0  9.9999999999999995E+59       0                       0                
-  6   256   # pwLine1.t2
-  0       1                       0                       0                
-  6   258   # pwLine1.opening
- -1       1                       0                       0                
-  1   281   # pwLine1.displayPF
+  6   256   # avr2.v
   0       0                       0                       0                
-  6   256   # pwLine1.P12
+  6   256   # avr2.vf
   0       0                       0                       0                
-  6   256   # pwLine1.P21
-  0       0                       0                       0                
-  6   256   # pwLine1.Q12
-  0       0                       0                       0                
-  6   256   # pwLine1.Q21
-  0       0                       0                       0                
-  6  1280   # pwLine1.Y.re
-  0       0                       0                       0                
-  6  1280   # pwLine1.Y.im
-  0       0                       0                       0                
-  6  1280   # pwLine1.Z.re
-  0       0                       0                       0                
-  6  1280   # pwLine1.Z.im
-  0       0                       0                       0                
-  6   388   # pwLine3.p.ir
-  0       0                       0                       0                
-  6   388   # pwLine3.p.ii
-  0       0                       0                       0                
-  6   420   # pwLine3.n.ir
-  0       0                       0                       0                
-  6   420   # pwLine3.n.ii
- -1       0                       0                       0                
-  1   280   # pwLine3.R
- -1  4.1433333300000003E-01       0                       0                
-  1   280   # pwLine3.X
- -1       0                       0                       0                
-  1   280   # pwLine3.G
- -1       0                       0                       0                
-  1   280   # pwLine3.B
-  0       0                       0                       0                
-  6   256   # pwLine3.S_b
-  0       1                       0                       0                
-  6   256   # pwLine3.t1
-  0  9.9999999999999995E+59       0                       0                
-  6   256   # pwLine3.t2
-  0       1                       0                       0                
-  6   258   # pwLine3.opening
- -1       1                       0                       0                
-  1   281   # pwLine3.displayPF
-  0       0                       0                       0                
-  6   256   # pwLine3.P12
-  0       0                       0                       0                
-  6   256   # pwLine3.P21
-  0       0                       0                       0                
-  6   256   # pwLine3.Q12
-  0       0                       0                       0                
-  6   256   # pwLine3.Q21
-  0       0                       0                       0                
-  6  1280   # pwLine3.Y.re
-  0       0                       0                       0                
-  6  1280   # pwLine3.Y.im
-  0       0                       0                       0                
-  6  1280   # pwLine3.Z.re
-  0       0                       0                       0                
-  6  1280   # pwLine3.Z.im
- -1     380                       0                       0                
-  1   280   # infiniteBus.V_b
-  0       0                       0                       0                
-  6   256   # infiniteBus.V_0
-  0       0                       0                       0                
-  6   256   # infiniteBus.angle_0
-  0       0                       0                       0                
-  6   256   # infiniteBus.P_0
-  0       0                       0                       0                
-  6   256   # infiniteBus.Q_0
-  0       0                       0                       0                
-  6   256   # infiniteBus.S_b
-  0       0                       0                       0                
-  6   256   # infiniteBus.fn
-  0       0                       0                       0                
-  6   256   # infiniteBus.P
-  0       0                       0                       0                
-  6   256   # infiniteBus.Q
-  0       0                       0                       0                
-  6   388   # infiniteBus.p.ir
-  0       0                       0                       0                
-  6   388   # infiniteBus.p.ii
- -1       1                       0                       0                
-  1   281   # infiniteBus.displayPF
- -1     750                       0                       0                
-  1   280   # TwoBus.V_b
- -1       1                       0                       0                
-  1   280   # TwoBus.V_0
- -1       0                       0                       0                
-  1   280   # TwoBus.angle_0
- -1       1                       0                       0                
-  1   280   # TwoBus.P_0
- -1       0                       0                       0                
-  1   280   # TwoBus.Q_0
-  0       0                       0                       0                
-  6   256   # TwoBus.S_b
-  0       0                       0                       0                
-  6   256   # TwoBus.fn
-  0       0                       0                       0                
-  6   260   # TwoBus.p.vr
-  0       0                       0                       0                
-  6   260   # TwoBus.p.vi
-  0       0                       0                       0                
-  6   388   # TwoBus.p.ir
-  0       0                       0                       0                
-  6   388   # TwoBus.p.ii
-  0       0                       0                       0                
-  6   256   # TwoBus.V
-  0       0                       0                       0                
-  6   256   # TwoBus.angle
- -1       1                       0                       0                
-  1   281   # TwoBus.displayPF
-  0       0                       0                       0                
-  6   388   # twoWindingTransformer1.p.ir
-  0       0                       0                       0                
-  6   388   # twoWindingTransformer1.p.ii
-  0       0                       0                       0                
-  6   420   # twoWindingTransformer1.n.ir
-  0       0                       0                       0                
-  6   420   # twoWindingTransformer1.n.ii
- -1     750                       0                       0                
-  1   280   # twoWindingTransformer1.S_b
- -1      20                       0                       0                
-  1   280   # twoWindingTransformer1.V_b
- -1     500                       0                       0                
-  1   280   # twoWindingTransformer1.Sn
- -1      20                       0                       0                
-  1   280   # twoWindingTransformer1.Vn
- -1       0                       0                       0                
-  1   280   # twoWindingTransformer1.rT
- -1  8.0000000000000002E-02       0                       0                
-  1   280   # twoWindingTransformer1.xT
- -1  9.6153846153846145E-01       0                       0                
-  1   280   # twoWindingTransformer1.m
-  0       0                       0                       0                
-  6  1280   # twoWindingTransformer1.Zn
-  0       0                       0                       0                
-  6  1280   # twoWindingTransformer1.Zb
-  0       0                       0                       0                
-  6  1280   # twoWindingTransformer1.r
-  0       0                       0                       0                
-  6  1280   # twoWindingTransformer1.x
-  0       0                       0                       0                
-  6  1281   # twoWindingTransformer1.tc
- -1     380                       0                       0                
-  1   280   # FiveBus.V_b
- -1  1.0455000000000001E+00       0                       0                
-  1   280   # FiveBus.V_0
- -1 -1.5199999999999999E+01       0                       0                
-  1   280   # FiveBus.angle_0
- -1    1200                       0                       0                
-  1   280   # FiveBus.P_0
- -1       0                       0                       0                
-  1   280   # FiveBus.Q_0
-  0       0                       0                       0                
-  6   256   # FiveBus.S_b
-  0       0                       0                       0                
-  6   256   # FiveBus.fn
-  0       0                       0                       0                
-  6   260   # FiveBus.p.vr
-  0       0                       0                       0                
-  6   260   # FiveBus.p.vi
-  0       0                       0                       0                
-  6   388   # FiveBus.p.ir
-  0       0                       0                       0                
-  6   388   # FiveBus.p.ii
-  0       0                       0                       0                
-  6   256   # FiveBus.V
-  0       0                       0                       0                
-  6   256   # FiveBus.angle
- -1       1                       0                       0                
-  1   281   # FiveBus.displayPF
-  0       0                       0                       0                
-  6   420   # pwLine2.p.ir
-  0       0                       0                       0                
-  6   420   # pwLine2.p.ii
-  0       0                       0                       0                
-  6   420   # pwLine2.n.ir
-  0       0                       0                       0                
-  6   420   # pwLine2.n.ii
- -1       0                       0                       0                
-  1   280   # pwLine2.R
- -1  2.9999989612000000E-02       0                       0                
-  1   280   # pwLine2.X
- -1       0                       0                       0                
-  1   280   # pwLine2.G
- -1       0                       0                       0                
-  1   280   # pwLine2.B
-  0       0                       0                       0                
-  6   256   # pwLine2.S_b
-  0  9.9999999999999995E+59       0                       0                
-  6   256   # pwLine2.t1
-  0  9.9999999999999995E+59       0                       0                
-  6   256   # pwLine2.t2
-  0       1                       0                       0                
-  6   258   # pwLine2.opening
- -1       1                       0                       0                
-  1   281   # pwLine2.displayPF
-  0       0                       0                       0                
-  6   256   # pwLine2.P12
-  0       0                       0                       0                
-  6   256   # pwLine2.P21
-  0       0                       0                       0                
-  6   256   # pwLine2.Q12
-  0       0                       0                       0                
-  6   256   # pwLine2.Q21
-  0       0                       0                       0                
-  6  1280   # pwLine2.Y.re
-  0       0                       0                       0                
-  6  1280   # pwLine2.Y.im
-  0       0                       0                       0                
-  6  1280   # pwLine2.Z.re
-  0       0                       0                       0                
-  6  1280   # pwLine2.Z.im
-  0       0                       0                       0                
-  6   256   # Imag
- -1  1.0600000000000001E+00       0                       0                
-  1   280   # PowerFlow.voltage.InfiniteBusV_0
- -1       0                       0                       0                
-  1   280   # PowerFlow.voltage.InfiniteBusangle_0
- -1       0                       0                       0                
-  1   281   # PowerFlow.voltage.BreakerenableTrigger
- -1    9999                       0                       0                
-  1   280   # PowerFlow.voltage.TransformerB3B4m
- -1  1.0100000000000000E+00       0                       0                
-  1   280   # PowerFlow.voltage.GeneratorV_0
- -1  7.8151599999999999E-01       0                       0                
-  1   280   # PowerFlow.voltage.Generatorangle_0
- -1  1.0036000000000000E+00       0                       0                
-  1   280   # PowerFlow.voltage.MotorV_0
- -1 -2.1000000000000001E+00       0                       0                
-  1   280   # PowerFlow.voltage.Motorangle_0
- -1  1.0404000000000000E+00       0                       0                
-  1   280   # PowerFlow.voltage.PQLoadV_0
- -1 -3.2000000000000002E+00       0                       0                
-  1   280   # PowerFlow.voltage.PQLoadangle_0
- -1     150                       0                       0                
-  1   280   # PowerFlow.power.InfiniteBusP_0
- -1      66                       0                       0                
-  1   280   # PowerFlow.power.InfiniteBusQ_0
- -1  3.5000549999999998E+02       0                       0                
-  1   280   # PowerFlow.power.GeneratorP_0
- -1  5.0294699999999999E+01       0                       0                
-  1   280   # PowerFlow.power.GeneratorQ_0
- -1     500                       0                       0                
-  1   280   # PowerFlow.power.PQLoadP_0
- -1      80                       0                       0                
-  1   280   # PowerFlow.power.PQLoadQ_0
- -1       0                       0                       0                
-  1   280   # PowerFlow.power.MotorP_0
- -1       0                       0                       0                
-  1   280   # PowerFlow.power.MotorQ_0
- -1     117                       0                       0                
-  1   280   # PowerFlow.power.ShuntCapacitorQnom
- -1     380                       0                       0                
-  1   280   # exponentialRecovery.V_b
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.V_0
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.angle_0
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.P_0
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.Q_0
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.S_b
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.fn
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.Sn
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.V
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.Angle_V
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.P
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.Q
-  0       0                       0                       0                
-  6  1280   # exponentialRecovery.angle_0rad
-  0       0                       0                       0                
-  6  1280   # exponentialRecovery.CoB
- -1  5.0000000000000003E-02       0                       0                
-  1   280   # exponentialRecovery.Tp
- -1  5.0000000000000003E-02       0                       0                
-  1   280   # exponentialRecovery.Tq
- -1  1.5000000000000000E+00       0                       0                
-  1   280   # exponentialRecovery.alpha_s
- -1       2                       0                       0                
-  1   280   # exponentialRecovery.alpha_t
- -1  2.5000000000000000E+00       0                       0                
-  1   280   # exponentialRecovery.beta_s
- -1  5.0000000000000003E-02       0                       0                
-  1   280   # exponentialRecovery.beta_t
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.ps
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.pt
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.qs
-  0       0                       0                       0                
-  6   256   # exponentialRecovery.qt
- -1       0                       0                       0                
-  2  1304   # exponentialRecovery.xp
-  0       0                       0                       0                
-  3  1280   # exponentialRecovery.der(xp)
- -1       0                       0                       0                
-  2  1304   # exponentialRecovery.xq
-  0       0                       0                       0                
-  3  1280   # exponentialRecovery.der(xq)
- -1     750                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.SysData.S_b
- -1      50                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.SysData.fn
- -1      20                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.V_b
-  0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.V_0
-  0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.angle_0
-  0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.P_0
-  0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.Q_0
- -1     750                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.M_b
-  0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.v
-  0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.vf
-  0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.vref
+  6   256   # avr2.vref
  -1      -5                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.avr2.vrmin
+  1   280   # avr2.vrmin
  -1       5                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.avr2.vrmax
- -1      50                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.avr2.Ka
+  1   280   # avr2.vrmax
+ -1     400                       0                       0                
+  1   280   # avr2.Ka
  -1  2.0000000000000001E-01       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.avr2.Ta
- -1       1                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.avr2.Kf
- -1  5.0000000000000001E-04       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.avr2.Tf
- -1       1                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.avr2.Ke
- -1  1.0000000000000000E-04       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.avr2.Te
+  1   280   # avr2.Ta
  -1  1.0000000000000000E-02       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.avr2.Tr
+  1   280   # avr2.Kf
+ -1  5.0000000000000001E-04       0                       0                
+  1   280   # avr2.Tf
+ -1       1                       0                       0                
+  1   280   # avr2.Ke
+ -1  1.0000000000000000E-04       0                       0                
+  1   280   # avr2.Te
+ -1  1.0000000000000000E-02       0                       0                
+  1   280   # avr2.Tr
  -1       0                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.avr2.Ae
+  1   280   # avr2.Ae
  -1       1                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.avr2.Be
+  1   280   # avr2.Be
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.v0
+  6   256   # avr2.v0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.avr2.vfstate
+  6  1280   # avr2.vfstate
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.avr2.vf00
+  6  1280   # avr2.vf00
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.avr2.vr10
+  6  1280   # avr2.vr10
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.avr2.vr20
+  6  1280   # avr2.vr20
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.vref0
+  6   256   # avr2.vref0
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.vf0
+  6   256   # avr2.vf0
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.feedback.u1
+  6   256   # avr2.feedback.u1
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.feedback.u2
+  6   256   # avr2.feedback.u2
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.feedback.y
+  6   256   # avr2.feedback.y
  -1       1                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.b[1]
+  1   280   # avr2.ExcitationSystem.b[1]
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.a[1]
+  6   256   # avr2.ExcitationSystem.a[1]
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.a[2]
+  6   256   # avr2.ExcitationSystem.a[2]
   0       4                       1                       4                
-  6   258   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.initType
+  6   258   # avr2.ExcitationSystem.initType
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.x_start[1]
+  6   256   # avr2.ExcitationSystem.x_start[1]
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.y_start
+  6   256   # avr2.ExcitationSystem.y_start
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.x[1]
+  6   256   # avr2.ExcitationSystem.x[1]
   0       2                       0                       0                
-  6  1282   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.na
+  6  1282   # avr2.ExcitationSystem.na
   0       1                       0                       0                
-  6  1282   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.nb
+  6  1282   # avr2.ExcitationSystem.nb
   0       1                       0                       0                
-  6  1282   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.nx
+  6  1282   # avr2.ExcitationSystem.nx
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.bb[1]
+  6  1280   # avr2.ExcitationSystem.bb[1]
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.bb[2]
+  6  1280   # avr2.ExcitationSystem.bb[2]
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.d
+  6  1280   # avr2.ExcitationSystem.d
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.a_end
+  6  1280   # avr2.ExcitationSystem.a_end
  -1       0                       0                       0                
-  2  1296   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.x_scaled[1]
+  2  1296   # avr2.ExcitationSystem.x_scaled[1]
   0       0                       0                       0                
-  3  1280   # pSATGeneratorTGOV6_1.avr2.ExcitationSystem.der(x_scaled[1])
+  3  1280   # avr2.ExcitationSystem.der(x_scaled[1])
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.ceilingBlock.Ae
+  6   256   # avr2.ceilingBlock.Ae
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.ceilingBlock.Be
+  6   256   # avr2.ceilingBlock.Be
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.derivativeBlock.k
+  6   256   # avr2.derivativeBlock.k
   0  9.9999999999999997E-61  9.9999999999999997E-61 1.0000000000000000E+100
-  6   256   # pSATGeneratorTGOV6_1.avr2.derivativeBlock.T
+  6   256   # avr2.derivativeBlock.T
   0       2                       1                       4                
-  6   258   # pSATGeneratorTGOV6_1.avr2.derivativeBlock.initType
+  6   258   # avr2.derivativeBlock.initType
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.derivativeBlock.x_start
+  6   256   # avr2.derivativeBlock.x_start
  -1       0                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.avr2.derivativeBlock.y_start
+  1   280   # avr2.derivativeBlock.y_start
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.derivativeBlock.y
+  6   256   # avr2.derivativeBlock.y
  -1       0                       0                       0                
-  2   272   # pSATGeneratorTGOV6_1.avr2.derivativeBlock.x
+  2   272   # avr2.derivativeBlock.x
   0       0                       0                       0                
-  3   256   # pSATGeneratorTGOV6_1.avr2.derivativeBlock.der(x)
+  3   256   # avr2.derivativeBlock.der(x)
   0       0                       0                       0                
-  6  1281   # pSATGeneratorTGOV6_1.avr2.derivativeBlock.zeroGain
+  6  1281   # avr2.derivativeBlock.zeroGain
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.feedback1.u1
+  6   256   # avr2.feedback1.u1
  -1       1                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.avr2.firstOrder2.k
+  1   280   # avr2.firstOrder2.k
   0       1                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.firstOrder2.T
+  6   256   # avr2.firstOrder2.T
   0       2                       1                       4                
-  6   258   # pSATGeneratorTGOV6_1.avr2.firstOrder2.initType
+  6   258   # avr2.firstOrder2.initType
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.firstOrder2.y_start
+  6   256   # avr2.firstOrder2.y_start
  -1       0                       0                       0                
-  2   272   # pSATGeneratorTGOV6_1.avr2.firstOrder2.y
+  2   272   # avr2.firstOrder2.y
   0       0                       0                       0                
-  3   256   # pSATGeneratorTGOV6_1.avr2.firstOrder2.der(y)
+  3   256   # avr2.firstOrder2.der(y)
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.simpleLagLim.u
+  6   256   # avr2.simpleLagLim.u
  -1       0                       0                       0                
-  2   272   # pSATGeneratorTGOV6_1.avr2.simpleLagLim.state
+  2   272   # avr2.simpleLagLim.state
   0       0                       0                       0                
-  3   256   # pSATGeneratorTGOV6_1.avr2.simpleLagLim.der(state)
+  3   256   # avr2.simpleLagLim.der(state)
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.simpleLagLim.K
+  6   256   # avr2.simpleLagLim.K
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.simpleLagLim.T
+  6   256   # avr2.simpleLagLim.T
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.simpleLagLim.y_start
+  6   256   # avr2.simpleLagLim.y_start
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.simpleLagLim.outMax
+  6   256   # avr2.simpleLagLim.outMax
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.avr2.simpleLagLim.outMin
+  6   256   # avr2.simpleLagLim.outMin
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.avr2.simpleLagLim.T_mod
+  6  1280   # avr2.simpleLagLim.T_mod
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.oel.p
+  6   256   # oel.p
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.oel.q
+  6   256   # oel.q
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.oel.field_current.ifield
+  6   256   # oel.field_current.p
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.oel.field_current.xd
+  6   256   # oel.field_current.q
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.oel.field_current.xq
+  6   256   # oel.field_current.ifield
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.oel.field_current.gamma_p
+  6   256   # oel.field_current.xd
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.oel.field_current.gamma_q
+  6   256   # oel.field_current.xq
+  0       0                       0                       0                
+  6  1280   # oel.field_current.gamma_p
+  0       0                       0                       0                
+  6  1280   # oel.field_current.gamma_q
  -1      10                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.oel.T0
+  1   280   # oel.T0
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.oel.xd
+  6   256   # oel.xd
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.oel.xq
+  6   256   # oel.xq
  -1  2.8250000000000002E+00       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.oel.if_lim
+  1   280   # oel.if_lim
  -1       1                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.oel.vOEL_max
+  1   280   # oel.vOEL_max
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.oel.Sn
+  6   256   # oel.Sn
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.oel.Vn
+  6   256   # oel.Vn
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.oel.V_b
+  6   256   # oel.V_b
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.oel.Z_MBtoSB
+  6  1280   # oel.Z_MBtoSB
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.oel.I_MBtoSB
+  6  1280   # oel.I_MBtoSB
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.oel.add.y
+  6   256   # oel.add.y
   0       1                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.oel.currentLimit.k
+  6   256   # oel.currentLimit.k
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.oel.limIntegrator.k
+  6   256   # oel.limIntegrator.k
   0       1                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.oel.limIntegrator.outMax
+  6   256   # oel.limIntegrator.outMax
  -1       0                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.oel.limIntegrator.outMin
+  1   280   # oel.limIntegrator.outMin
   0       3                       1                       4                
-  6   258   # pSATGeneratorTGOV6_1.oel.limIntegrator.initType
+  6   258   # oel.limIntegrator.initType
   0       1                       0                       0                
-  6   257   # pSATGeneratorTGOV6_1.oel.limIntegrator.limitsAtInit
+  6   257   # oel.limIntegrator.limitsAtInit
  -1       0                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.oel.limIntegrator.y_start
+  1   280   # oel.limIntegrator.y_start
   0       1                       0                       0                
-  6   257   # pSATGeneratorTGOV6_1.oel.limIntegrator.strict
+  6   257   # oel.limIntegrator.strict
  -1       0                       0                       0                
-  2   272   # pSATGeneratorTGOV6_1.oel.limIntegrator.y
+  2   272   # oel.limIntegrator.y
   0       0                       0                       0                
-  3   256   # pSATGeneratorTGOV6_1.oel.limIntegrator.der(y)
+  3   256   # oel.limIntegrator.der(y)
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.tGTypeI.pm
+  6   256   # tGTypeI.pm
  -1       1                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.tGTypeI.wref
+  1   280   # tGTypeI.wref
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.tGTypeI.pref
+  6   256   # tGTypeI.pref
  -1  4.0000000000000001E-02       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.tGTypeI.R
+  1   280   # tGTypeI.R
   0       1                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.tGTypeI.pmax
+  6   256   # tGTypeI.pmax
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.tGTypeI.pmin
+  6   256   # tGTypeI.pmin
  -1  1.0000000000000001E-01       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.tGTypeI.Ts
+  1   280   # tGTypeI.Ts
  -1  4.0000000000000002E-01       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.tGTypeI.Tc
+  1   280   # tGTypeI.Tc
  -1       0                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.tGTypeI.T3
+  1   280   # tGTypeI.T3
  -1  2.3300000000000001E+00       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.tGTypeI.T4
+  1   280   # tGTypeI.T4
  -1       4                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.tGTypeI.T5
+  1   280   # tGTypeI.T5
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.tGTypeI.pin
+  6   256   # tGTypeI.pin
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.tGTypeI.pin0
+  6  1280   # tGTypeI.pin0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.tGTypeI.xg10
+  6  1280   # tGTypeI.xg10
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.tGTypeI.xg20
+  6  1280   # tGTypeI.xg20
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.tGTypeI.xg30
+  6  1280   # tGTypeI.xg30
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.tGTypeI.pinstar
+  6  1280   # tGTypeI.pinstar
  -1       0                       0                       0                
-  2  1296   # pSATGeneratorTGOV6_1.tGTypeI.xg1
+  2  1296   # tGTypeI.xg1
   0       0                       0                       0                
-  3  1280   # pSATGeneratorTGOV6_1.tGTypeI.der(xg1)
+  3  1280   # tGTypeI.der(xg1)
  -1       0                       0                       0                
-  2  1296   # pSATGeneratorTGOV6_1.tGTypeI.xg2
+  2  1296   # tGTypeI.xg2
   0       0                       0                       0                
-  3  1280   # pSATGeneratorTGOV6_1.tGTypeI.der(xg2)
+  3  1280   # tGTypeI.der(xg2)
  -1       0                       0                       0                
-  2  1296   # pSATGeneratorTGOV6_1.tGTypeI.xg3
+  2  1296   # tGTypeI.xg3
   0       0                       0                       0                
-  3  1280   # pSATGeneratorTGOV6_1.tGTypeI.der(xg3)
+  3  1280   # tGTypeI.der(xg3)
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.p0
+  6   256   # p0
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.V_b
+  6   256   # order6_1.V_b
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.V_0
+  6   256   # order6_1.V_0
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.angle_0
+  6   256   # order6_1.angle_0
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.P_0
+  6   256   # order6_1.P_0
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.Q_0
+  6   256   # order6_1.Q_0
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.S_b
+  6   256   # order6_1.S_b
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.fn
+  6   256   # order6_1.fn
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.Sn
+  6   256   # order6_1.Sn
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.Vn
+  6   256   # order6_1.Vn
  -1       0                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.order6_1.ra
+  1   280   # order6_1.ra
  -1  1.2391304350000001E+00       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.order6_1.x1d
+  1   280   # order6_1.x1d
  -1  5.0660999999999996E+00       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.order6_1.M
+  1   280   # order6_1.M
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.D
+  6   256   # order6_1.D
+  0       0                       0                       0                
+  6   388   # order6_1.p.ir
+  0       0                       0                       0                
+  6   388   # order6_1.p.ii
  -1       0                       0                       0                
-  2   272   # pSATGeneratorTGOV6_1.order6_1.delta
+  2   272   # order6_1.delta
   0       0                       0                       0                
-  3   256   # pSATGeneratorTGOV6_1.order6_1.der(delta)
+  3   256   # order6_1.der(delta)
  -1       1                       0                       0                
-  2   272   # pSATGeneratorTGOV6_1.order6_1.w
+  2   272   # order6_1.w
   0       0                       0                       0                
-  3   256   # pSATGeneratorTGOV6_1.order6_1.der(w)
+  3   256   # order6_1.der(w)
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.anglev
+  6   256   # order6_1.P
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.vd
+  6   256   # order6_1.Q
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.vq
+  6   256   # order6_1.anglev
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.id
+  6   256   # order6_1.vd
   0       0                       0                       0                
-  6   256   # pSATGeneratorTGOV6_1.order6_1.iq
+  6   256   # order6_1.vq
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.pe
+  6   256   # order6_1.id
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.vf_MB
+  6   256   # order6_1.iq
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.w_b
+  6  1280   # order6_1.pe
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.S_SBtoMB
+  6  1280   # order6_1.vf_MB
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.I_MBtoSB
+  6  1280   # order6_1.w_b
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.V_MBtoSB
+  6  1280   # order6_1.S_SBtoMB
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.Z_MBtoSB
+  6  1280   # order6_1.I_MBtoSB
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.p0
+  6  1280   # order6_1.V_MBtoSB
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.q0
+  6  1280   # order6_1.Z_MBtoSB
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.Vt0.re
+  6  1280   # order6_1.p0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.Vt0.im
+  6  1280   # order6_1.q0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.S0.re
+  6  1280   # order6_1.Vt0.re
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.S0.im
+  6  1280   # order6_1.Vt0.im
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.I0.re
+  6  1280   # order6_1.S0.re
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.I0.im
+  6  1280   # order6_1.S0.im
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.vr0
+  6  1280   # order6_1.I0.re
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.vi0
+  6  1280   # order6_1.I0.im
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.ir0
+  6  1280   # order6_1.vr0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.ii0
+  6  1280   # order6_1.vi0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.xq0
+  6  1280   # order6_1.ir0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.delta0
+  6  1280   # order6_1.ii0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.Vdq0.re
+  6  1280   # order6_1.xq0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.Vdq0.im
+  6  1280   # order6_1.delta0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.Idq0.re
+  6  1280   # order6_1.Vdq0.re
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.Idq0.im
+  6  1280   # order6_1.Vdq0.im
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.vd0
+  6  1280   # order6_1.Idq0.re
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.vq0
+  6  1280   # order6_1.Idq0.im
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.id0
+  6  1280   # order6_1.vd0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.iq0
+  6  1280   # order6_1.vq0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.pm00
+  6  1280   # order6_1.id0
+  0       0                       0                       0                
+  6  1280   # order6_1.iq0
+  0       0                       0                       0                
+  6  1280   # order6_1.pm00
  -1  4.0760869570000002E+00       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.order6_1.xd
+  1   280   # order6_1.xd
  -1  2.6902173910000000E+00       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.order6_1.xq
+  1   280   # order6_1.xq
  -1  5.0000000000000000E-01       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.order6_1.x1q
+  1   280   # order6_1.x1q
  -1  1.0108695649999999E+00       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.order6_1.x2d
+  1   280   # order6_1.x2d
  -1  9.4565173899999999E-01       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.order6_1.x2q
+  1   280   # order6_1.x2q
  -1  3.0666666660000002E+00       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.order6_1.T1d0
+  1   280   # order6_1.T1d0
  -1       2                       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.order6_1.T1q0
+  1   280   # order6_1.T1q0
  -1  4.2933300000000001E-02       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.order6_1.T2d0
+  1   280   # order6_1.T2d0
  -1  5.5199999999999999E-02       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.order6_1.T2q0
+  1   280   # order6_1.T2q0
  -1  1.2266600000000001E-03       0                       0                
-  1   280   # pSATGeneratorTGOV6_1.order6_1.Taa
+  1   280   # order6_1.Taa
  -1       0                       0                       0                
-  2   272   # pSATGeneratorTGOV6_1.order6_1.e1q
+  2   272   # order6_1.e1q
   0       0                       0                       0                
-  3   256   # pSATGeneratorTGOV6_1.order6_1.der(e1q)
+  3   256   # order6_1.der(e1q)
  -1       0                       0                       0                
-  2   272   # pSATGeneratorTGOV6_1.order6_1.e1d
+  2   272   # order6_1.e1d
   0       0                       0                       0                
-  3   256   # pSATGeneratorTGOV6_1.order6_1.der(e1d)
+  3   256   # order6_1.der(e1d)
  -1       0                       0                       0                
-  2   272   # pSATGeneratorTGOV6_1.order6_1.e2q
+  2   272   # order6_1.e2q
   0       0                       0                       0                
-  3   256   # pSATGeneratorTGOV6_1.order6_1.der(e2q)
+  3   256   # order6_1.der(e2q)
  -1       0                       0                       0                
-  2   272   # pSATGeneratorTGOV6_1.order6_1.e2d
+  2   272   # order6_1.e2d
   0       0                       0                       0                
-  3   256   # pSATGeneratorTGOV6_1.order6_1.der(e2d)
+  3   256   # order6_1.der(e2d)
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.e2q0
+  6  1280   # order6_1.e2q0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.e2d0
+  6  1280   # order6_1.e2d0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.e1d0
+  6  1280   # order6_1.e1d0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.K1
+  6  1280   # order6_1.K1
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.K2
+  6  1280   # order6_1.K2
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.e1q0
+  6  1280   # order6_1.e1q0
   0       0                       0                       0                
-  6  1280   # pSATGeneratorTGOV6_1.order6_1.vf00
+  6  1280   # order6_1.vf00
 
 
 # Matrix with 6 columns defining the initial value calculation
@@ -1358,206 +797,13 @@ double initialValue(401,6)
 #   nominal value (and maybe minimum and maximum values given in 
 #   column 3 and 4). If these values are zero, scale(i)=1 is used).
 #
-char initialDescription(401,127)
+char initialDescription(214,127)
 System base [MVA]
 System Frequency [Hz]
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Real part of the voltage
-Imaginary part of the voltage
-Real part of the current
-Imaginary part of the current
-Bus voltage magnitude (pu) [1]
-Bus voltage angle [deg]
-Display voltage values: [:#(type=Boolean)]
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Real part of the voltage
-Imaginary part of the voltage
-Real part of the current
-Imaginary part of the current
-Bus voltage magnitude (pu) [1]
-Bus voltage angle [deg]
-Display voltage values: [:#(type=Boolean)]
-Real part of the current
-Imaginary part of the current
-Real part of the current
-Imaginary part of the current
-Resistance (pu) [1]
-Reactance (pu) [1]
-Shunt half conductance (pu) [1]
-Shunt half susceptance (pu) [1]
-System base power (MVA) [MVA]
-[s]
-[s]
-[:#(type=Integer)]
-Display power flow results: [:#(type=Boolean)]
-[MW]
-[MW]
-[Mvar]
-[Mvar]
-Real part of complex number [1]
-Imaginary part of complex number [1]
-Real part of complex number [1]
-Imaginary part of complex number [1]
-Real part of the current
-Imaginary part of the current
-Real part of the current
-Imaginary part of the current
-Resistance (pu) [1]
-Reactance (pu) [1]
-Shunt half conductance (pu) [1]
-Shunt half susceptance (pu) [1]
-System base power (MVA) [MVA]
-[s]
-[s]
-[:#(type=Integer)]
-Display power flow results: [:#(type=Boolean)]
-[MW]
-[MW]
-[Mvar]
-[Mvar]
-Real part of complex number [1]
-Imaginary part of complex number [1]
-Real part of complex number [1]
-Imaginary part of complex number [1]
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Active Power absorbed by the Infinite bus (MW)
-Reactive Power absorbed by the Infinite bus (MVAr)
-Real part of the current
-Imaginary part of the current
-Display power flow results: [:#(type=Boolean)]
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
 Real part of the voltage [1]
 Imaginary part of the voltage [1]
 Real part of the current [1]
 Imaginary part of the current [1]
-Bus voltage magnitude (pu) [1]
-Bus voltage angle [deg]
-Display voltage values: [:#(type=Boolean)]
-Real part of the current [1]
-Imaginary part of the current [1]
-Real part of the current
-Imaginary part of the current
-System base power (MVA)
-Sending end bus voltage (kV)
-Power rating (MVA)
-Voltage rating of transformer (kV)
-Resistance (pu, transformer base)
-Reactance (pu, transformer base)
-Optional fixed tap ratio
-Transformer base impedance
-System base impedance
-Resistance (pu, system base)
-Reactance (pu, system base)
-Internal parameter to switch on the icon arrow [:#(type=Boolean)]
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Real part of the voltage
-Imaginary part of the voltage
-Real part of the current
-Imaginary part of the current
-Bus voltage magnitude (pu) [1]
-Bus voltage angle [deg]
-Display voltage values: [:#(type=Boolean)]
-Real part of the current
-Imaginary part of the current
-Real part of the current
-Imaginary part of the current
-Resistance (pu) [1]
-Reactance (pu) [1]
-Shunt half conductance (pu) [1]
-Shunt half susceptance (pu) [1]
-System base power (MVA) [MVA]
-[s]
-[s]
-[:#(type=Integer)]
-Display power flow results: [:#(type=Boolean)]
-[MW]
-[MW]
-[Mvar]
-[Mvar]
-Real part of complex number [1]
-Imaginary part of complex number [1]
-Real part of complex number [1]
-Imaginary part of complex number [1]
-
-[1]
-[deg]
-[:#(type=Boolean)]
-
-[1]
-[deg]
-
-
-[1]
-[deg]
-[MW]
-[Mvar]
-[MW]
-[Mvar]
-[MW]
-[Mvar]
-
-
-
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Power rating (MVA) [MVA]
-Voltage magnitude (pu) [1]
-voltage angle (rad) [rad|deg]
-Active power (pu) [1]
-Reactive power (pu) [1]
-[rad|deg]
-Change of base between Machine and System [1]
-Active power time constant (s) [s]
-Reactive power time constant (s) [s]
-Static active power exponent
-Dynamic active power exponent
-Static reactive power exponent
-Dynamic reactive power exponent
-Static real power absorption (pu) [1]
-Transient real power absorption (pu) [1]
-Static imaginary power absorption (pu) [1]
-Transient imaginary power absorption (pu) [1]
-[s]
-[1]
-[s]
-[1]
-System base [MVA]
-System Frequency [Hz]
 Base voltage of the bus [kV]
 Voltage magnitude (pu) [1]
 Voltage angle [deg]
@@ -1633,6 +879,8 @@ Minimum output value [1]
 [s]
 Active power (pu) [1]
 Reactive power (pu) [1]
+active power (pu) [1]
+reactive power (pu) [1]
 estimated field current (pu) [1]
 [1]
 [1]
@@ -1696,10 +944,14 @@ Armature resistance (pu) [1]
 d-axis transient reactance (pu) [1]
 Mechanical starting time (2H), kWs/kVA
 Damping coefficient
+Real part of the current [1]
+Imaginary part of the current [1]
 Rotor angle (rad) [rad|rad]
 der(Rotor angle (rad)) [rad/s]
 Rotor speed (pu) [1]
 der(Rotor speed (pu)) [s-1]
+Active power (pu) [1]
+Reactive power (pu) [1]
  Bus voltage angle (rad) [rad|deg]
 d-axis voltage (pu) [1]
 q-axis voltage (pu) [1]

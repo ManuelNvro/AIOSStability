@@ -1,28 +1,5 @@
-Log-file of program ./dymosim
-(generated: Sun May 31 16:05:42 2020)
+Log-file of program ./Modelica.Math.Matrices.LAPACK.dgeev
+(generated: Tue Jun  2 17:54:22 2020)
 
-dymosim started
-... "dsin.txt" loading (dymosim input file)
-... "Five6.mat" creating (simulation result file)
-
-Integration started at T = 0 using integration method DASSL
-(DAE multi-step solver (dassl/dasslrt of Petzold modified by Dassault Systemes))
-Integration terminated successfully at T = 50
-   CPU-time for integration      : 0.495 seconds
-   CPU-time for one GRID interval: 0.0991 milliseconds
-   CPU-time for initialization   : 0.00024 seconds
-   Number of result points       : 5003
-   Number of GRID   points       : 5001
-   Number of (successful) steps  : 152
-   Number of F-evaluations       : 821
-   Number of H-evaluations       : 5152
-   Number of Jacobian-evaluations: 62
-   Number of (model) time events : 1
-   Number of (U) time events     : 0
-   Number of state    events     : 0
-   Number of step     events     : 0
-   Minimum integration stepsize  : 1e-05
-   Maximum integration stepsize  : 3.43
-   Maximum integration order     : 5
-Calling terminal section
-... "dsfinal.txt" creating (final states)
+Modelica.Math.Matrices.LAPACK.dgeev started
+... "empty.txt" loading (dymosim input file)

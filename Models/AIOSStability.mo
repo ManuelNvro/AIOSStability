@@ -1838,8 +1838,8 @@ package AIOSStability
         Ae=0,
         Be=1,
         v0=V_0,
-        Kf=1,
-        Ka=50,
+        Kf=0.01,
+        Ka=400,
         Tr=0.01,
         Te=0.0001,
         Tf=0.0005)
@@ -3522,10 +3522,6 @@ package AIOSStability
         P_0=PowerFlow.power.GeneratorP_0,
         Q_0=PowerFlow.power.GeneratorQ_0)
         annotation (Placement(transformation(extent={{-270,-106},{-250,-80}})));
-      OpenIPSL.Electrical.Events.Breaker breaker(enableTrigger=true)
-        annotation (Placement(transformation(extent={{-220,-102},{-200,-82}})));
-      Modelica.Blocks.Sources.BooleanStep booleanStep(startTime=1)
-        annotation (Placement(transformation(extent={{-248,-46},{-228,-26}})));
     equation
       connect(pwLine1.p,OneBus. p) annotation (Line(points={{-191,38},{-210,
               38},{-210,10},{-234,10}},
@@ -3558,13 +3554,9 @@ package AIOSStability
         annotation (Line(points={{-53,6},{-72,6},{-72,-92}}, color={0,0,255}));
       connect(lOADPQ.p, FiveBus.p) annotation (Line(points={{56,-92},{42,-92},{
               42,-92},{28,-92}}, color={0,0,255}));
-      connect(pSATGeneratorTGOV.pwPin, breaker.s) annotation (Line(points={{
-              -249.6,-91.05},{-236,-91.05},{-236,-92},{-220,-92}}, color={0,0,
-              255}));
-      connect(TwoBus.p, breaker.r)
-        annotation (Line(points={{-164,-92},{-200,-92}}, color={0,0,255}));
-      connect(booleanStep.y, breaker.Trigger) annotation (Line(points={{-227,
-              -36},{-210,-36},{-210,-80}}, color={255,0,255}));
+      connect(pSATGeneratorTGOV.pwPin, TwoBus.p) annotation (Line(points={{
+              -249.6,-91.05},{-207.8,-91.05},{-207.8,-92},{-164,-92}}, color={0,
+              0,255}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
                 -280,-140},{140,80}})), Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-280,-140},{140,80}})));
@@ -4856,6 +4848,7 @@ package AIOSStability
         X=0.4143333333,
         G=0,
         B=0,
+        t1=1,
         displayPF=false)
         annotation (Placement(transformation(extent={{-180,-64},{-160,-44}})));
       OpenIPSL.Electrical.Branches.PwLine pwLine3(
@@ -5108,6 +5101,7 @@ package AIOSStability
         G=0,
         B=0,
         t1=1,
+        opening=3,
         displayPF=true)
         annotation (Placement(transformation(extent={{-180,-64},{-160,-44}})));
       OpenIPSL.Electrical.Branches.PwLine pwLine3(
@@ -5116,6 +5110,7 @@ package AIOSStability
         G=0,
         B=0,
         t1=1,
+        opening=3,
         displayPF=true)
         annotation (Placement(transformation(extent={{-180,-26},{-160,-6}})));
       OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
@@ -5158,19 +5153,6 @@ package AIOSStability
             Data.VoltageData.VPF2EX, redeclare record Power =
             Data.PowerData.PPF2EX)
         annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
-      OpenIPSL.Electrical.Loads.PSAT.ExponentialRecovery exponentialRecovery(
-        V_b=380,
-        V_0=PowerFlow.voltage.PQLoadV_0,
-        angle_0=PowerFlow.voltage.PQLoadangle_0,
-        Q_0=PowerFlow.power.PQLoadQ_0,
-        Tp=0.05,
-        Tq=0.05,
-        alpha_s=1.5,
-        alpha_t=2,
-        beta_s=2.5,
-        beta_t=0.05,
-        P_0=PowerFlow.power.PQLoadP_0)
-        annotation (Placement(transformation(extent={{40,-118},{60,-98}})));
       Components.PSATGeneratorTGOV6 pSATGeneratorTGOV6_1(
         V_b=20,
         V_0=PowerFlow.voltage.GeneratorV_0,
@@ -5179,6 +5161,15 @@ package AIOSStability
         Q_0=PowerFlow.power.GeneratorQ_0,
         M_b=750)
         annotation (Placement(transformation(extent={{-276,-106},{-258,-84}})));
+      OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ(
+        V_b=380,
+        V_0=PowerFlow.voltage.PQLoadV_0,
+        angle_0=PowerFlow.voltage.PQLoadangle_0,
+        P_0=PowerFlow.power.PQLoadP_0,
+        Q_0=PowerFlow.power.PQLoadQ_0) annotation (Placement(transformation(
+            extent={{-18,-18},{18,18}},
+            rotation=90,
+            origin={76,-92})));
     equation
       Imag =  sqrt(pwLine3.p.ir^2+pwLine3.p.ii^2);
       connect(TwoBus.p, twoWindingTransformer1.p)
@@ -5201,10 +5192,10 @@ package AIOSStability
               -16},{-116,-54},{-161,-54}}, color={0,0,255}));
       connect(ThreeBus.p, pwLine1.n) annotation (Line(points={{-72,-92},{-72,
               -38},{-116,-38},{-116,-54},{-161,-54}}, color={0,0,255}));
-      connect(exponentialRecovery.p, FiveBus.p) annotation (Line(points={{50,
-              -98},{50,-92},{28,-92}}, color={0,0,255}));
       connect(TwoBus.p, pSATGeneratorTGOV6_1.pwPin) annotation (Line(points={{-164,
               -92},{-198,-92},{-198,-93.35},{-257.64,-93.35}},   color={0,0,255}));
+      connect(FiveBus.p, lOADPQ.p)
+        annotation (Line(points={{28,-92},{58,-92}}, color={0,0,255}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
                 -140},{140,80}})),      Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
@@ -5437,9 +5428,9 @@ package AIOSStability
         Hm=0.6,
         V_b=15,
         Sup=0,
-        Rs=0.031,
+        Rs=0.08,
         Xs=0.1,
-        Rr1=0.05,
+        Rr1=0.08,
         Xr1=0.07,
         Xm=3.20,
         a=0.78,
