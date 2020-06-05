@@ -1928,6 +1928,229 @@ package AIOSStability
             coordinateSystem(preserveAspectRatio=false, extent={{-100,-140},{
                 100,100}})));
     end PSATGeneratorTGOV6;
+
+    model SixPSATGeneratorTGOV
+      OpenIPSL.Interfaces.PwPin pwPin
+        annotation (Placement(transformation(extent={{94,-12},{114,8}}),
+            iconTransformation(extent={{94,-12},{114,8}})));
+      inner OpenIPSL.Electrical.SystemBase SysData(S_b=750)
+        annotation (Placement(transformation(extent={{-98,78},{-38,98}})));
+      parameter OpenIPSL.Types.VoltageKilo V_b=400 "Base voltage of the bus";
+      parameter Modelica.SIunits.PerUnit V_0=1 "Voltage magnitude (pu)";
+      parameter Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_0=0
+        "Voltage angle";
+      parameter OpenIPSL.Types.ActivePowerMega P_0=1 "Active power";
+      parameter OpenIPSL.Types.ReactivePowerMega Q_0=0 "Reactive power";
+      parameter Real M_b=460 "Machine base power (MVA)";
+      OpenIPSL.Electrical.Machines.PSAT.Order5_Type2 order5(
+        Vn=V_b,
+        w(fixed=true),
+        T1d0=5,
+        T2d0=0.07,
+        T2q0=0.09,
+        M=8.56,
+        D=0,
+        xd=2.5,
+        xq=1.65,
+        x1d=0.76,
+        x2d=0.62,
+        x2q=0.58,
+        ra=0.01,
+        Sn=M_b,
+        V_b=V_b,
+        V_0=V_0,
+        angle_0=angle_0,
+        P_0=P_0,
+        Q_0=Q_0) annotation (Placement(transformation(extent={{30,-24},{78,24}})));
+      OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII avr2(
+        Ta=0.2,
+        Ke=1,
+        Tr=0.01,
+        Ae=0,
+        Be=1,
+        v0=V_0,
+        Te=0.0001,
+        Kf=1,
+        Tf=0.015,
+        Ka=50)  annotation (Placement(transformation(extent={{-66,22},{-28,-10}})));
+      OpenIPSL.Electrical.Controls.PSAT.OEL.OEL oel(
+        T0=10,
+        xd=order5.xd,
+        xq=order5.xq,
+        if_lim=2.825,
+        vOEL_max=1,
+        Sn=order5.Sn,
+        Vn=order5.Vn,
+        V_b=V_b)
+        annotation (Placement(transformation(extent={{-28,-120},{-66,-86}})));
+      OpenIPSL.Electrical.Controls.PSAT.TG.TGTypeI tGTypeI(
+        pref=p0,
+        R=25,
+        pmax=1,
+        pmin=0,
+        Ts=0.1,
+        Tc=0.4,
+        T3=0,
+        T4=2.33,
+        T5=4)
+        annotation (Placement(transformation(extent={{-10,-26},{14,-2}})));
+
+          //parameter Real p0 = 0.6; // for PF1 PF7
+         //parameter Real p0 = 0.466666667; // for PF2 PF3
+    protected
+         parameter Real p0 = 0.4;// for PF4 PF5 PF6 PF8
+          //parameter Real p0 = P_0/M_b;
+    equation
+      connect(order5.p, pwPin)
+        annotation (Line(points={{78,0},{92,0},{92,-2},{104,-2}},
+                                                    color={0,0,255}));
+      connect(order5.vf, avr2.vf)
+        annotation (Line(points={{25.2,12},{0,12},{0,6},{-24.2,6}},
+                                                        color={0,0,127}));
+      connect(order5.vf0, avr2.vf0) annotation (Line(points={{34.8,26.4},{34.8,
+              40},{-47,40},{-47,25.2}},
+                                   color={0,0,127}));
+      connect(avr2.vref0, oel.v_ref0) annotation (Line(points={{-47,-13.2},{-46,
+              -13.2},{-46,-83.96},{-46.62,-83.96}},
+                                             color={0,0,127}));
+      connect(order5.Q, oel.q) annotation (Line(points={{80.4,-16.8},{88,-16.8},{88,
+              -106.4},{-29.52,-106.4}}, color={0,0,127}));
+      connect(order5.P, oel.p) annotation (Line(points={{80.4,-7.2},{86,-7.2},{86,-99.6},
+              {-29.52,-99.6}}, color={0,0,127}));
+      connect(order5.v, oel.v) annotation (Line(points={{80.4,7.2},{84,7.2},{84,-92.8},
+              {-29.52,-92.8}}, color={0,0,127}));
+      connect(oel.v_ref, avr2.vref) annotation (Line(points={{-66.76,-103},{-78,
+              -103},{-78,-3.6},{-69.8,-3.6}},
+                                      color={0,0,127}));
+      connect(order5.v, avr2.v) annotation (Line(points={{80.4,7.2},{84,7.2},{
+              84,44},{-78,44},{-78,15.6},{-69.8,15.6}},
+                                                 color={0,0,127}));
+      connect(order5.pm, tGTypeI.pm)
+        annotation (Line(points={{25.2,-12},{20,-12},{20,-14},{15.2,-14}},
+                                                         color={0,0,127}));
+      connect(order5.w, tGTypeI.w) annotation (Line(points={{80.4,21.6},{74,21.6},{74,
+              30},{-18,30},{-18,-14},{-12.4,-14}},           color={0,0,127}));
+      annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
+                -100,-140},{100,100}}), graphics={
+                                       Ellipse(
+              extent={{-100,100},{100,-100}},
+              lineColor={0,0,0},
+              fillColor={215,215,215},
+              fillPattern=FillPattern.Solid), Line(points={{-78,-22},{-20,
+                  38},{46,-16},{82,48},{82,50}}, color={28,108,200})}),
+                                                                     Diagram(
+            coordinateSystem(preserveAspectRatio=false, extent={{-100,-140},{
+                100,100}})));
+    end SixPSATGeneratorTGOV;
+
+    model SixPSATGeneratorTGOV6
+      OpenIPSL.Interfaces.PwPin pwPin
+        annotation (Placement(transformation(extent={{94,-12},{114,8}}),
+            iconTransformation(extent={{94,-12},{114,8}})));
+      inner OpenIPSL.Electrical.SystemBase SysData(S_b=750)
+        annotation (Placement(transformation(extent={{-98,78},{-38,98}})));
+      parameter OpenIPSL.Types.VoltageKilo V_b=400 "Base voltage of the bus";
+      parameter Modelica.SIunits.PerUnit V_0=1 "Voltage magnitude (pu)";
+      parameter Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_0=0
+        "Voltage angle";
+      parameter OpenIPSL.Types.ActivePowerMega P_0=1 "Active power";
+      parameter OpenIPSL.Types.ReactivePowerMega Q_0=0 "Reactive power";
+      parameter Real M_b=460 "Machine base power (MVA)";
+      OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII avr2(
+        Ta=0.2,
+        Ke=1,
+        Tr=0.01,
+        Ae=0,
+        Be=1,
+        v0=V_0,
+        Te=0.0001,
+        Kf=1,
+        Tf=0.015,
+        Ka=50)  annotation (Placement(transformation(extent={{-66,22},{-28,-10}})));
+      OpenIPSL.Electrical.Controls.PSAT.OEL.OEL oel(
+        T0=10,
+        xd=order6_1.xd,
+        xq=order6_1.xq,
+        if_lim=2.825,
+        vOEL_max=1,
+        Sn=order6_1.Sn,
+        Vn=order6_1.Vn,
+        V_b=V_b)
+        annotation (Placement(transformation(extent={{-28,-120},{-66,-86}})));
+      OpenIPSL.Electrical.Controls.PSAT.TG.TGTypeI tGTypeI(
+        pref=p0,
+        R=25,
+        pmax=1,
+        pmin=0,
+        Ts=0.1,
+        Tc=0.4,
+        T3=0,
+        T4=2.33,
+        T5=4)
+        annotation (Placement(transformation(extent={{-10,-26},{14,-2}})));
+
+          //parameter Real p0 = 0.6; // for PF1 PF7
+         //parameter Real p0 = 0.466666667; // for PF2 PF3
+      OpenIPSL.Electrical.Machines.PSAT.Order6 order6_1(
+        V_b=V_b,
+        V_0=V_0,
+        angle_0=angle_0,
+        P_0=P_0,
+        Q_0=Q_0,
+        Sn=M_b,
+        Vn=V_b,
+        ra=0,
+        x1d=1.239130435,
+        M=5.0661,
+        D=0,
+        xd=4.076086957,
+        xq=2.690217391,
+        x2d=1.010869565,
+        x2q=0.945651739,
+        T1d0=3.066666666,
+        T2d0=0.0429333,
+        T2q0=0.0552,
+        Taa=0.00122666,
+        T1q0=2) annotation (Placement(transformation(extent={{46,-6},{82,30}})));
+    protected
+         parameter Real p0 = 0.4;// for PF4 PF5 PF6 PF8
+          //parameter Real p0 = P_0/M_b;
+    equation
+      connect(avr2.vref0, oel.v_ref0) annotation (Line(points={{-47,-13.2},{-46,
+              -13.2},{-46,-83.96},{-46.62,-83.96}},
+                                             color={0,0,127}));
+      connect(oel.v_ref, avr2.vref) annotation (Line(points={{-66.76,-103},{-78,
+              -103},{-78,-3.6},{-69.8,-3.6}},
+                                      color={0,0,127}));
+      connect(order6_1.pm, tGTypeI.pm) annotation (Line(points={{42.4,3},{27.2,
+              3},{27.2,-14},{15.2,-14}}, color={0,0,127}));
+      connect(order6_1.vf, avr2.vf) annotation (Line(points={{42.4,21},{9.2,21},
+              {9.2,6},{-24.2,6}}, color={0,0,127}));
+      connect(order6_1.vf0, avr2.vf0) annotation (Line(points={{49.6,31.8},{
+              49.6,42},{-47,42},{-47,25.2}}, color={0,0,127}));
+      connect(order6_1.v, avr2.v) annotation (Line(points={{83.8,17.4},{94,17.4},
+              {94,70},{-86,70},{-86,15.6},{-69.8,15.6}}, color={0,0,127}));
+      connect(oel.v, avr2.v) annotation (Line(points={{-29.52,-92.8},{88,-92.8},
+              {88,17.4},{94,17.4},{94,70},{-86,70},{-86,15.6},{-69.8,15.6}},
+            color={0,0,127}));
+      connect(oel.p, order6_1.P) annotation (Line(points={{-29.52,-99.6},{90,
+              -99.6},{90,6.6},{83.8,6.6}}, color={0,0,127}));
+      connect(oel.q, order6_1.Q) annotation (Line(points={{-29.52,-106.4},{92,
+              -106.4},{92,-0.6},{83.8,-0.6}}, color={0,0,127}));
+      connect(order6_1.w, tGTypeI.w) annotation (Line(points={{83.8,28.2},{88,
+              28.2},{88,52},{-20,52},{-20,-14},{-12.4,-14}}, color={0,0,127}));
+      annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
+                -100,-140},{100,100}}), graphics={
+                                       Ellipse(
+              extent={{-100,100},{100,-100}},
+              lineColor={0,0,0},
+              fillColor={215,215,215},
+              fillPattern=FillPattern.Solid), Line(points={{-78,-22},{-20,
+                  38},{46,-16},{82,48},{82,50}}, color={28,108,200})}),
+                                                                     Diagram(
+            coordinateSystem(preserveAspectRatio=false, extent={{-100,-140},{
+                100,100}})));
+    end SixPSATGeneratorTGOV6;
   end Components;
 
   package Data
@@ -3229,14 +3452,14 @@ package AIOSStability
       Data.SystemData.SystemData.PF8 PowerFlow(redeclare record Voltage =
             Data.VoltageData.VPF4, redeclare record Power = Data.PowerData.PPF4)
         annotation (Placement(transformation(extent={{-204,58},{-184,78}})));
-      Components.PSATGeneratorTGOV pSATGeneratorTGOV(
+      Components.SixPSATGeneratorTGOV sixPSATGeneratorTGOV(
         V_b=20,
-        M_b=750,
         V_0=PowerFlow.voltage.GeneratorV_0,
         angle_0=PowerFlow.voltage.Generatorangle_0,
         P_0=PowerFlow.power.GeneratorP_0,
-        Q_0=PowerFlow.power.GeneratorQ_0)
-        annotation (Placement(transformation(extent={{-222,-108},{-202,-84}})));
+        Q_0=PowerFlow.power.GeneratorQ_0,
+        M_b=750)
+        annotation (Placement(transformation(extent={{-206,-108},{-186,-84}})));
     equation
       connect(pwLine1.p,OneBus. p) annotation (Line(points={{-191,38},{-210,
               38},{-210,10},{-234,10}},
@@ -3268,6 +3491,9 @@ package AIOSStability
               42,-92},{28,-92}}, color={0,0,255}));
       connect(pwLine3.p, OneBus.p) annotation (Line(points={{-189,-16},{-210,
               -16},{-210,10},{-234,10}}, color={0,0,255}));
+      connect(sixPSATGeneratorTGOV.pwPin, TwoBus.p) annotation (Line(points={{
+              -185.6,-94.2},{-174.8,-94.2},{-174.8,-92},{-164,-92}}, color={0,0,
+              255}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
                 -280,-140},{140,80}})), Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-280,-140},{140,80}})));
