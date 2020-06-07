@@ -1,0 +1,5 @@
+Log-file of program ./Modelica.Math.Matrices.LAPACK.dgeev
+(generated: Sat Jun  6 23:24:18 2020)
+
+Modelica.Math.Matrices.LAPACK.dgeev started
+... "empty.txt" loading (dymosim input file)

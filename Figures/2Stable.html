@@ -1,0 +1,716 @@
+<html>
+<head>
+  <title>Analysis of a state space system from Modelica LinearSystems2</title>
+</head>
+<style type="text/css">
+* { font-size: 10pt; font-family: Arial,sans-serif; }
+</style>
+<h1>System report</h1>
+
+<h2>General information</h2>
+
+<h3>Matrices</h3>
+<p>
+The system described in the state space representation
+</p>
+<table style="font-size:10pt; font-family:Arial; border-collapse:collapse; margin: 20px 0 20px 20px" cellpadding="3" border="0"> 
+<tr><td>der(x) </td> <td>=</td> <td> Ax</td> <td> +</td><td> Bu</td></tr>
+         <tr><td> y </td>     <td>=</td> <td> Cx</td> <td> + </td><td>Du</td></tr>
+</table>
+<p>
+is defined by
+</p>
+<p>&nbsp;&nbsp;&nbsp;uNames&nbsp;=&nbsp;[&nbsp;], empty vector</p>
+
+<p>&nbsp;&nbsp;&nbsp;yNames&nbsp;=&nbsp;[&nbsp;], empty vector</p>
+
+<table border="0">
+<tr>
+  <td valign="middle">&nbsp;&nbsp;&nbsp;xNames</td>
+  <td valign="middle">=</td>
+  <td>
+    <table style="background-color:rgb(100, 100, 100);" cellpadding="3" border="0" cellspacing="1">
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">1</td>
+      <td align="left">pSATGeneratorTGOV6_1.avr2.ExcitationSystem.x_scaled[1]</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">2</td>
+      <td align="left">pSATGeneratorTGOV6_1.avr2.derivativeBlock.x</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">3</td>
+      <td align="left">pSATGeneratorTGOV6_1.avr2.firstOrder2.y</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">4</td>
+      <td align="left">pSATGeneratorTGOV6_1.avr2.simpleLagLim.state</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">5</td>
+      <td align="left">pSATGeneratorTGOV6_1.oel.limIntegrator.y</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">6</td>
+      <td align="left">pSATGeneratorTGOV6_1.tGTypeI.xg1</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">7</td>
+      <td align="left">pSATGeneratorTGOV6_1.tGTypeI.xg2</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">8</td>
+      <td align="left">pSATGeneratorTGOV6_1.tGTypeI.xg3</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">9</td>
+      <td align="left">pSATGeneratorTGOV6_1.order6_1.delta</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">10</td>
+      <td align="left">pSATGeneratorTGOV6_1.order6_1.w</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">11</td>
+      <td align="left">pSATGeneratorTGOV6_1.order6_1.e1q</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">12</td>
+      <td align="left">pSATGeneratorTGOV6_1.order6_1.e1d</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">13</td>
+      <td align="left">pSATGeneratorTGOV6_1.order6_1.e2q</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">14</td>
+      <td align="left">pSATGeneratorTGOV6_1.order6_1.e2d</td>
+    </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<table border="0">
+<tr>
+  <td valign="middle">&nbsp;&nbsp;&nbsp;A</td>
+  <td valign="middle">=</td>
+  <td>
+    <table style="background-color:rgb(100, 100, 100);" cellpadding="3" border="0" cellspacing="1">
+
+    <tr style="background-color:rgb(230, 230, 230); text-align:center;">
+      <td> </td>
+      <td align="center">1</td>
+      <td align="center">2</td>
+      <td align="center">3</td>
+      <td align="center">4</td>
+      <td align="center">5</td>
+      <td align="center">6</td>
+      <td align="center">7</td>
+      <td align="center">8</td>
+      <td align="center">9</td>
+      <td align="center">10</td>
+      <td align="center">11</td>
+      <td align="center">12</td>
+      <td align="center">13</td>
+      <td align="center">14</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">1</td>
+      <td align="right">-10000</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">10000</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">2</td>
+      <td align="right">2000</td>
+      <td align="right">-2000</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">3</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-100</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-11.161</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">25.6665</td>
+      <td align="right">21.8459</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">4</td>
+      <td align="right">-500000</td>
+      <td align="right">500000</td>
+      <td align="right">-250</td>
+      <td align="right">-5</td>
+      <td align="right">-250</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">5</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0.0992958</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0.294212</td>
+      <td align="right">0.0428191</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">6</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-10</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-250</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">7</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">2.5</td>
+      <td align="right">-2.5</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">8</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0.104375</td>
+      <td align="right">-0.25</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">9</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">314.159</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">10</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0.11498</td>
+      <td align="right">0.19739</td>
+      <td align="right">-0.150189</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-0.101492</td>
+      <td align="right">0.0911467</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">11</td>
+      <td align="right">0.325957</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-0.470223</td>
+      <td align="right">0</td>
+      <td align="right">-0.326087</td>
+      <td align="right">0</td>
+      <td align="right">-0.600058</td>
+      <td align="right">0.000927605</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">12</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0.479279</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-0.5</td>
+      <td align="right">0.00105279</td>
+      <td align="right">-0.729727</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">13</td>
+      <td align="right">0.00931673</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-3.12169</td>
+      <td align="right">0</td>
+      <td align="right">23.2919</td>
+      <td align="right">0</td>
+      <td align="right">-27.2756</td>
+      <td align="right">0.00615813</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">14</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-2.77157</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">18.1159</td>
+      <td align="right">-0.00608804</td>
+      <td align="right">-13.8961</td>
+    </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<p>&nbsp;&nbsp;&nbsp;B&nbsp;=&nbsp;[&nbsp;], empty matrix: 14 by 0</p>
+
+<p>&nbsp;&nbsp;&nbsp;C&nbsp;=&nbsp;[&nbsp;], empty matrix: 0 by 14</p>
+
+<p>&nbsp;&nbsp;&nbsp;D&nbsp;=&nbsp;[&nbsp;], empty matrix: 0 by 0</p>
+
+<p>
+<b>Note</b>, that the system has neither inputs nor outputs (and therefore matrices B, C, and D are empty matrices)!
+</p>
+
+<h2>Characteristics</h2>
+<p>
+The system
+</p>
+<p> is 
+<b>not</b> stable.
+<br>
+</p>
+
+<h3>Eigenvalues analysis</h3>
+<p>The system has the following real eigenvalues.</p>
+<table style="background-color:rgb(100, 100, 100); margin: 20px 0 20px 20px" cellpadding="3" border="0" cellspacing="1">
+<caption>Real eigenvalues</caption>
+<tr style="background-color:rgb(230, 230, 230); text-align:center;">
+  <td> number </td>
+  <td> eigenvalue </td>
+  <td> T [s] </td>
+  <td> characteristics </td>
+  <td> contribution to states</td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       1 </td>
+  <td style="text-align:left"> &nbsp;    -1.0000e+02 </td>
+  <td style="text-align:left"> &nbsp;    0.0100 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[1] contributes to pSATGeneratorTGOV6_1.avr2.firstOrder2.y with 97.2 %<br> </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       2 </td>
+  <td style="text-align:left"> &nbsp;    -2.6632e+01 </td>
+  <td style="text-align:left"> &nbsp;    0.0375 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[2] contributes to pSATGeneratorTGOV6_1.order6_1.e2q with 64.9 %<br>&nbsp;  z[2] contributes to pSATGeneratorTGOV6_1.avr2.firstOrder2.y with 22.9 % </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       3 </td>
+  <td style="text-align:left"> &nbsp;    -1.3376e+01 </td>
+  <td style="text-align:left"> &nbsp;    0.0748 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[3] contributes to pSATGeneratorTGOV6_1.order6_1.e2d with 48 %<br>&nbsp;  z[3] contributes to pSATGeneratorTGOV6_1.tGTypeI.xg1 with 22.3 % </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       4 </td>
+  <td style="text-align:left"> &nbsp;    -1.0460e+01 </td>
+  <td style="text-align:left"> &nbsp;    0.0956 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[4] contributes to pSATGeneratorTGOV6_1.tGTypeI.xg1 with 65.4 %<br>&nbsp;  z[4] contributes to pSATGeneratorTGOV6_1.tGTypeI.xg2 with 20.5 % </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       5 </td>
+  <td style="text-align:left"> &nbsp;    -2.3175e+00 </td>
+  <td style="text-align:left"> &nbsp;    0.4315 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[5] contributes to pSATGeneratorTGOV6_1.tGTypeI.xg2 with 36.3 %<br>&nbsp;  z[5] contributes to pSATGeneratorTGOV6_1.order6_1.e2d with 19.4 % </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       6 </td>
+  <td style="text-align:left"> &nbsp;    -1.1865e+00 </td>
+  <td style="text-align:left"> &nbsp;    0.8428 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[6] contributes to pSATGeneratorTGOV6_1.order6_1.e2d with 26.5 %<br>&nbsp;  z[6] contributes to pSATGeneratorTGOV6_1.order6_1.e1d with 20.3 % </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       7 </td>
+  <td style="text-align:left"> &nbsp;    -4.7586e-01 </td>
+  <td style="text-align:left"> &nbsp;    2.1014 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[7] contributes to pSATGeneratorTGOV6_1.order6_1.delta with 19 %<br>&nbsp;  z[7] contributes to pSATGeneratorTGOV6_1.order6_1.e1q with 17.3 % </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       8 </td>
+  <td style="text-align:left"> &nbsp;    -2.4030e-01 </td>
+  <td style="text-align:left"> &nbsp;    4.1614 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[8] contributes to pSATGeneratorTGOV6_1.order6_1.delta with 22.5 %<br>&nbsp;  z[8] contributes to pSATGeneratorTGOV6_1.order6_1.e2q with 13 % </td>
+</tr>
+</table>
+<p>The system has the following complex conjugate pairs of eigenvalues.<br>&nbsp;</p>
+<table style="background-color:rgb(100, 100, 100); margin: 20px 0 20px 20px" cellpadding="3" border="0" cellspacing="1">
+<caption>Complex conjugate pairs of eigenvalues</caption>
+<tr style="background-color:rgb(230, 230, 230); text-align:center;">
+  <td> number </td>
+  <td> eigenvalue </td>
+  <td> freq. [Hz] </td>
+  <td> damping </td>
+  <td> characteristics </td>
+  <td> contribution to states</td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left">    9/10 </td>
+  <td style="text-align:left"> &nbsp;     8.4642e-03 &plusmn;   3.2662e-01j </td>
+  <td style="text-align:left"> &nbsp;    0.0520 </td>
+  <td style="text-align:left"> &nbsp;   -0.0259 </td>
+  <td style="text-align:left"> &nbsp; not stable, not stabilizable, not detectable  </td>
+  <td style="text-align:left"> &nbsp;  z[9/10] contribute to pSATGeneratorTGOV6_1.avr2.simpleLagLim.state with 19.5 %<br>&nbsp;  z[9/10] contribute to pSATGeneratorTGOV6_1.avr2.ExcitationSystem.x_scaled[1] with 19.5 % </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left">   11/12 </td>
+  <td style="text-align:left"> &nbsp;    -4.8311e-02 &plusmn;   7.3974e+00j </td>
+  <td style="text-align:left"> &nbsp;    1.1774 </td>
+  <td style="text-align:left"> &nbsp;    0.0065 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[11/12] contribute to pSATGeneratorTGOV6_1.order6_1.delta with 42.1 %<br>&nbsp;  z[11/12] contribute to pSATGeneratorTGOV6_1.tGTypeI.xg1 with 20 % </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left">   13/14 </td>
+  <td style="text-align:left"> &nbsp;    -6.0025e+03 &plusmn;   7.0598e+04j </td>
+  <td style="text-align:left"> &nbsp; 11276.5065 </td>
+  <td style="text-align:left"> &nbsp;    0.0847 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[13/14] contribute to pSATGeneratorTGOV6_1.avr2.simpleLagLim.state with 87.3 %<br>&nbsp;  z[13/14] contribute to pSATGeneratorTGOV6_1.avr2.ExcitationSystem.x_scaled[1] with 12.3 % </td>
+</tr>
+</table>
+<p>
+In the tables above, the column <b>contribution to states</b> lists for each eigenvalue the states to which the corresponding modal state z[i] contributes most. This information is based on the two largest absolute values of the corresponding right eigenvector (if the second large value is less than 5&nbsp;% of the largest contribution, it is not shown). Note the <b>right eigenvector</b> v<sub>j</sub> and the <b>left eigenvector</b> u<sub>j</sub> of A satisfy the following relationships with regards to <b>eigenvalue</b> &lambda;<sub>j</sub>, state vector x and modal state vector z (u<sub>j</sub><sup>H</sup> denotes the conjugate transpose of u<sub>j</sub>): </p> <table border="0" cellspacing="0" cellpadding="2"> <tr><td width="50"></td>
+    <td>A * v<sub>j</sub> = &lambda;<sub>j</sub> * v<sub>j</sub>; &nbsp;&nbsp;&nbsp;&nbsp;         u<sub>j</sub><sup>H</sup> * A = &lambda;<sub>j</sub> * u<sub>j</sub><sup>H</sup>; &nbsp;&nbsp;&nbsp;&nbsp;               x = V * z; &nbsp;&nbsp;&nbsp;&nbsp; V = [v<sub>1</sub>, v<sub>2</sub>, ...]</td>           </tr>
+</table>
+<p>
+In the next table, for each state in the column <b>correlation to modal states</b>, the modal states z[i] which contribute most to the corresponding state are summarized, that is the state is mostly composed of these modal states.
+This information is based on the two largest absolute values of row i of the eigenvector matrix that is associated with eigenvalue i (if the second large value is less than 5&nbsp;% of the largest contribution, it is not shown). This only holds if the modal states z[i] are in the same order of magnitude. Otherwise, the listed modal states might be not the most relevant ones.</p>
+<table style="background-color:rgb(100, 100, 100); margin: 20px 0 20px 20px" cellpadding="3" border="0" cellspacing="1">
+<tr style="background-color:rgb(230, 230, 230); text-align:center;">
+  <td> state </td>
+  <td> correlation to modal states </td>
+  <td> eigenvalue # </td>
+  <td> freq. [Hz] </td>
+  <td> damping </td>
+  <td> T [s] </td>
+</tr>
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; pSATGeneratorTGOV6_1.avr2.ExcitationSystem.x_scaled[1] </td>
+  <td style="text-align:left"> &nbsp; is composed of  58.6% by z[9/10]</td>
+  <td style="text-align:center"> &nbsp; 9/10</td>
+  <td style="text-align:center"> &nbsp;    0.0520</td>
+  <td style="text-align:center"> &nbsp;   -0.0259</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  16.0% by z[13/14]</td>
+  <td style="text-align:center"> &nbsp; 13/14</td>
+  <td style="text-align:center"> &nbsp; 11276.5065</td>
+  <td style="text-align:center"> &nbsp;    0.0847</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; pSATGeneratorTGOV6_1.avr2.derivativeBlock.x </td>
+  <td style="text-align:left"> &nbsp; is composed of  69.3% by z[9/10]</td>
+  <td style="text-align:center"> &nbsp; 9/10</td>
+  <td style="text-align:center"> &nbsp;    0.0520</td>
+  <td style="text-align:center"> &nbsp;   -0.0259</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  10.3% by z[8]</td>
+  <td style="text-align:center"> &nbsp; 8</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    4.1614
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; pSATGeneratorTGOV6_1.avr2.firstOrder2.y </td>
+  <td style="text-align:left"> &nbsp; is composed of  39.8% by z[1]</td>
+  <td style="text-align:center"> &nbsp; 1</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.0748
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  13.2% by z[2]</td>
+  <td style="text-align:center"> &nbsp; 2</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.0375
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; pSATGeneratorTGOV6_1.avr2.simpleLagLim.state </td>
+  <td style="text-align:left"> &nbsp; is composed of  57.3% by z[13/14]</td>
+  <td style="text-align:center"> &nbsp; 13/14</td>
+  <td style="text-align:center"> &nbsp; 11276.5065</td>
+  <td style="text-align:center"> &nbsp;    0.0847</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  29.8% by z[9/10]</td>
+  <td style="text-align:center"> &nbsp; 9/10</td>
+  <td style="text-align:center"> &nbsp;    0.0520</td>
+  <td style="text-align:center"> &nbsp;   -0.0259</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; pSATGeneratorTGOV6_1.oel.limIntegrator.y </td>
+  <td style="text-align:left"> &nbsp; is composed of  41.2% by z[9/10]</td>
+  <td style="text-align:center"> &nbsp; 9/10</td>
+  <td style="text-align:center"> &nbsp;    0.0520</td>
+  <td style="text-align:center"> &nbsp;   -0.0259</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  21.0% by z[7]</td>
+  <td style="text-align:center"> &nbsp; 7</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    2.1014
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; pSATGeneratorTGOV6_1.tGTypeI.xg1 </td>
+  <td style="text-align:left"> &nbsp; is composed of  40.2% by z[4]</td>
+  <td style="text-align:center"> &nbsp; 4</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.8428
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  34.7% by z[11/12]</td>
+  <td style="text-align:center"> &nbsp; 11/12</td>
+  <td style="text-align:center"> &nbsp;    1.1774</td>
+  <td style="text-align:center"> &nbsp;    0.0065</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; pSATGeneratorTGOV6_1.tGTypeI.xg2 </td>
+  <td style="text-align:left"> &nbsp; is composed of  51.4% by z[5]</td>
+  <td style="text-align:center"> &nbsp; 5</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    2.1014
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  18.9% by z[4]</td>
+  <td style="text-align:center"> &nbsp; 4</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.0956
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; pSATGeneratorTGOV6_1.tGTypeI.xg3 </td>
+  <td style="text-align:left"> &nbsp; is composed of  68.4% by z[8]</td>
+  <td style="text-align:center"> &nbsp; 8</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    4.1614
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  18.6% by z[5]</td>
+  <td style="text-align:center"> &nbsp; 5</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.4315
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; pSATGeneratorTGOV6_1.order6_1.delta </td>
+  <td style="text-align:left"> &nbsp; is composed of  42.5% by z[11/12]</td>
+  <td style="text-align:center"> &nbsp; 11/12</td>
+  <td style="text-align:center"> &nbsp;    1.1774</td>
+  <td style="text-align:center"> &nbsp;    0.0065</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  15.9% by z[8]</td>
+  <td style="text-align:center"> &nbsp; 8</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    4.1614
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; pSATGeneratorTGOV6_1.order6_1.w </td>
+  <td style="text-align:left"> &nbsp; is composed of  72.7% by z[11/12]</td>
+  <td style="text-align:center"> &nbsp; 11/12</td>
+  <td style="text-align:center"> &nbsp;    1.1774</td>
+  <td style="text-align:center"> &nbsp;    0.0065</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of   9.8% by z[3]</td>
+  <td style="text-align:center"> &nbsp; 3</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.0748
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; pSATGeneratorTGOV6_1.order6_1.e1q </td>
+  <td style="text-align:left"> &nbsp; is composed of  28.3% by z[9/10]</td>
+  <td style="text-align:center"> &nbsp; 9/10</td>
+  <td style="text-align:center"> &nbsp;    0.0520</td>
+  <td style="text-align:center"> &nbsp;   -0.0259</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  25.9% by z[7]</td>
+  <td style="text-align:center"> &nbsp; 7</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    2.1014
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; pSATGeneratorTGOV6_1.order6_1.e1d </td>
+  <td style="text-align:left"> &nbsp; is composed of  29.1% by z[6]</td>
+  <td style="text-align:center"> &nbsp; 6</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.0000
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  18.5% by z[8]</td>
+  <td style="text-align:center"> &nbsp; 8</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    4.1614
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; pSATGeneratorTGOV6_1.order6_1.e2q </td>
+  <td style="text-align:left"> &nbsp; is composed of  33.7% by z[2]</td>
+  <td style="text-align:center"> &nbsp; 2</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.0000
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  17.5% by z[9/10]</td>
+  <td style="text-align:center"> &nbsp; 9/10</td>
+  <td style="text-align:center"> &nbsp;    0.0520</td>
+  <td style="text-align:center"> &nbsp;   -0.0259</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; pSATGeneratorTGOV6_1.order6_1.e2d </td>
+  <td style="text-align:left"> &nbsp; is composed of  27.4% by z[3]</td>
+  <td style="text-align:center"> &nbsp; 3</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.0000
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  21.1% by z[6]</td>
+  <td style="text-align:center"> &nbsp; 6</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.8428
+</table>
+<p>
+The system has no invariant zeros.
+</p>
+</html>
